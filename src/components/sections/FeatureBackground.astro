@@ -1,0 +1,19 @@
+---
+import ButtonLink from "@/components/buttons/ButtonLink";
+import Container from "@/components/layout/Container";
+import Image from "@/components/images/Image";
+---
+
+<div class="relative after:absolute after:inset-0 after:z-2 after:bg-gradient-to-b after:from-black/40 after:to-black/0 before:absolute before:inset-0 before:z-1 before:bg-radial-gradient before:opacity-40">
+	<Image src="https://cdn.cosmicjs.com/97e4cf30-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_074.jpg" class="absolute top-0 left-0 w-full h-full object-cover object-[50%75%] 3xl:object-center" />
+
+	<Container>
+		<div class="relative z-3 flex items-end 2xl:min-h-[54.3125rem] md:pb-24 xl:min-h-[48rem] min-h-screen pb-15">
+			<div class="max-w-[36.5rem]">
+				<div class="mb-8 text-display text-white">Modern solutions for current and future mobility needs.</div>
+
+				<ButtonLink arrow={true} light={true} class="md:min-w-[11rem] min-w-min">Order Now!</ButtonLink>
+			</div>
+		</div>
+	</Container>
+</div>

@@ -15,3 +15,18 @@ export const siteConfig = {
 	url: "https://atlasbroncos.com",
 	description: "Atlas Broncos",
 };
+
+export const Navigation = [
+	{
+		title: "Models",
+		href: "/models"
+	},
+	{
+		title: "Process",
+		href: "/process"
+	},
+	{
+		title: "Our Team",
+		href: "/our-team"
+	}
+];

@@ -1,0 +1,71 @@
+.header-burger.active {
+	@apply before:rotate-45 before:translate-y-[0.37rem] after:-rotate-45 after:-translate-y-[0.37rem];
+}
+
+.header-burger.active span {
+	@apply w-0 opacity-0;
+}
+/* 
+.header-wrap {
+	@apply transition-all invisible opacity-0;
+}
+
+.header-wrap.show {
+	@apply visible opacity-100 lg:opacity-0 lg:hidden;
+} */
+
+.btn {
+	@apply inline-flex items-center justify-center h-12 rounded-full px-4.5 border-2 font-sans font-medium transition-colors;
+}
+
+.label {
+	@apply font-normal text-g-100 text-[1rem] leading-[1.225rem];
+}
+.pt150 {
+	@apply pt-[9.375rem] xl:pt-30 lg:pt-25;
+}
+.pb150 {
+	@apply pb-[9.375rem] xl:pb-30 lg:pb-25;
+}
+.py150 {
+	@apply py-[9.375rem] xl:py-30 lg:py-25;
+}
+.text-display {
+	@apply font-inter-tight xl:text-[4rem] xl:leading-[4.8rem] font-medium -tracking-[.01em] text-[3rem] leading-[3.3rem];
+}
+.text-h1 {
+	@apply font-inter-tight xl:text-[3rem] xl:leading-[3.75rem] font-medium text-[2.19rem] leading-[2.73rem];
+}
+.text-h2 {
+	@apply font-inter-tight xl:text-[2.5rem] xl:leading-[3.125rem] font-medium text-[1.875rem] leading-[2.34rem];
+}
+.text-h3 {
+	@apply font-inter-tight text-[1.625rem] leading-[2.03rem] font-medium;
+}
+.text-h4 {
+	@apply font-inter-tight text-[1.5rem] leading-[1.875rem] font-medium;
+}
+.text-h5 {
+	@apply font-inter-tight xl:text-[1.25rem] xl:leading-[1.56rem] font-medium text-[1.125rem] leading-[1.41rem];
+}
+
+.swiper .swiper-pagination-bullet {
+    @apply !h-1 !mx-2 rounded-sm opacity-100 bg-g-50 transition-colors hover:bg-g-100 md:!mx-1;
+  }
+  .swiper .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    @apply bg-g-400;
+  }
+
+  .swiper-models .swiper-pagination {
+    @apply !left-1/2 !-bottom-[5.9rem] z-3 !w-[26rem] flex px-12 -translate-x-1/2 md:!left-12 md:!right-12 md:!-bottom-[5.4rem] md:!w-auto md:px-0 md:!translate-x-0;
+  }
+  .swiper-models .swiper-pagination-bullet {
+    @apply flex-1;
+  }
+
+  .swiper-reviews .swiper-pagination {
+    @apply !left-0 !-bottom-[6.9rem] flex md:!right-12 md:!-bottom-[4.8rem] md:!w-auto;
+  }
+  .swiper-reviews .swiper-pagination-bullet {
+    @apply w-15 !mx-1 xl:w-12 lg:w-8 md:w-auto md:flex-1;
+  }

@@ -1,0 +1,43 @@
+---
+import Container from "@/components/layout/Container";
+import Image from "@/components/images/Image";
+import Section from "@/components/layout/Section";
+
+const items = [
+	"https://cdn.cosmicjs.com/63aa72b0-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_020.jpg",
+	"https://cdn.cosmicjs.com/6434d860-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_004.jpg",
+	"https://cdn.cosmicjs.com/64697cf0-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_011.jpg",
+	"https://cdn.cosmicjs.com/76ae2780-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_031.jpg",
+	"https://cdn.cosmicjs.com/776bab20-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_033.jpg",
+	"https://cdn.cosmicjs.com/78412390-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_023.jpg",
+	"https://cdn.cosmicjs.com/7858f150-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_037.jpg",
+	"https://cdn.cosmicjs.com/9932d300-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_063.jpg",
+];
+---
+
+<Section classes="overflow-hidden">
+	<Container>
+		<div class="mb-14 label">Driving happiness with carsova</div>
+
+		<div class="lg:flex justify-between xl:items-end xl:mb-25 items-start mb-20 block">
+			<div class="max-w-[38rem] mr-10 text-h1 lg:mb-0 mb-8">Capture your moment with carsova electric vehicle</div>
+			<div class="shrink-0 lg:w-[29.5rem] text-g-100 w-full">
+				Carsova Electric Vehicles, every journey is an adventure worth capturing, and this gallery is a place to share excitement and inspiration with the electric car enthusiast community
+			</div>
+		</div>
+
+		<div class="max-w-[80%] md:w-full">
+			<div class="swiper swiper-driving !overflow-visible">
+				<div class="swiper-wrapper">
+					{
+						items.map((i) => (
+							<div class="swiper-slide">
+								<Image class="rounded-2xl w-full" src={i} />
+							</div>
+						))
+					}
+				</div>
+			</div>
+		</div>
+	</Container>
+</Section>

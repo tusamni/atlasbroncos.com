@@ -1,0 +1,49 @@
+---
+import { Navigation } from "@/config";
+import ButtonLink from "@/components/buttons/ButtonLink";
+import Container from "@/components/layout/Container";
+
+interface Props {
+	headerLight?: boolean;
+}
+
+const { headerLight = false } = Astro.props;
+---
+
+<header class:list={["z-10", headerLight ? "absolute top-0 left-0 right-0" : "relative"]}>
+	<Container>
+		<div x-data="{ open: false }" class="header-wrap flex items-center md:h-20 h-17">
+			<a class:list={["w-fit shrink-0 relative z-3 text-2xl font-semibold tracking-tight", headerLight ? "text-white" : "text-black"]} href="index.html">Atlas</a>
+
+			<div
+				:class="{ 'fixed' : open, 'hidden md:!flex': !open }"
+				x-show="open"
+				x-transition
+				class:list={["transition duration-500 flex md:items-center md:grow md:static z-2 inset-0 flex-col md:flex-row items-start pt-24 md:pt-0 px-5 md:px-0 pb-8 md:pb-0", headerLight ? "maxmd:bg-g-300" : "maxmd:bg-white"]}
+			>
+				<nav class="flex md:mx-auto md:space-x-6 flex-col md:flex-row mx-0 space-x-0 space-y-8 md:space-y-0 mb-auto md:mb-0">
+					{
+						Navigation.map((n) => (
+							<a class:list={["text-lg md:text-base lg:text-lg transition-colors", headerLight ? "text-w-50 hover:text-w-300" : "text-g-500 hover:text-g-200"]} href={n.href}>
+								{n.title}
+							</a>
+						))
+					}
+				</nav>
+
+				<ButtonLink href="contact.html" light={headerLight ? true : false} arrow={true}>Contact</ButtonLink>
+			</div>
+
+			<button
+				@click="open = !open"
+				:class="{ 'active' : open }"
+				class:list={[
+					"header-burger md:hidden flex relative z-20 flex-col justify-center items-center w-9 h-9 ml-auto rounded-full tap-highlight-color before:w-4 before:h-0.5 before:rounded-full before:transition-all after:w-4 after:h-0.5 after:rounded-full after:transition-all active",
+					headerLight ? "bg-white before:bg-g-500 after:bg-g-500" : "bg-g-500 before:bg-[#DEDEDE] after:bg-[#DEDEDE]",
+				]}
+			>
+				<span class:list={["w-4 h-0.5 my-1 rounded-full transition-all", headerLight ? "bg-g-500" : "bg-[#DEDEDE]"]}></span>
+			</button>
+		</div>
+	</Container>
+</header>

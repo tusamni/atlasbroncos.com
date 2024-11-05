@@ -1,8 +1,4 @@
 ---
-// Import the global.css file here so that it is included on
-// all pages through the use of the <BaseHead /> component.
-import "../styles/global.css";
-
 interface Props {
 	title: string;
 	description: string;
@@ -16,23 +12,44 @@ const { title, description, image = "/blog-placeholder-1.jpg" } = Astro.props;
 
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <meta name="generator" content={Astro.generator} />
-
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="canonical" href={canonicalURL} />
 
+<!-- preconnect -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+<!-- fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500&family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+
+<!-- css  -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+<!-- scripts -->
+<script>
+	let viewportmeta = document.querySelector('meta[name="viewport"]');
+	if (viewportmeta) {
+		if (screen.width < 375) {
+			let newScale = screen.width / 375;
+			viewportmeta.content = "width=375, minimum-scale=" + newScale + ", maximum-scale=1.0, user-scalable=no, initial-scale=" + newScale + "";
+		} else {
+			viewportmeta.content = "width=device-width, maximum-scale=1.0, initial-scale=1.0";
+		}
+	}
+</script>
+
+<!-- seo -->
 <title>{title}</title>
 <meta name="title" content={title} />
 <meta name="description" content={description} />
 
-<!-- Open Graph / Facebook -->
+<!-- media -->
 <meta property="og:type" content="website" />
 <meta property="og:url" content={Astro.url} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={new URL(image, Astro.url)} />
-
-<!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content={Astro.url} />
 <meta property="twitter:title" content={title} />

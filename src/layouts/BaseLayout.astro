@@ -1,11 +1,11 @@
 ---
-import "@/assets/styles/_base.css";
+import "/src/assets/styles/_base.css";
 
-import BaseHead from "@/components/BaseHead";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import BaseHead from "@/components/layout/BaseHead";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
 
-const { title, description } = Astro.props;
+const { title, description, transparentHeader = false } = Astro.props;
 ---
 
 <html lang="en">
@@ -14,12 +14,103 @@ const { title, description } = Astro.props;
 	</head>
 
 	<body>
-		<Header />
+		<Header headerLight={transparentHeader ? true : false} />
 
-		<main>
-			<slot />
+		<main class="flex flex-col min-h-screen">
+			<div class="grow">
+				<slot />
+			</div>
 		</main>
 
 		<Footer />
+
+		<div class="overlay fixed inset-0 z-20 bg-black/60 invisible opacity-0 transition-all"></div>
+
+		<script is:inline src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+		<script is:inline>
+			// swiper driving for home page
+			let swiperDriving = new Swiper(".swiper-driving", {
+				slidesPerView: 1,
+				spaceBetween: 16,
+				speed: 500,
+				breakpoints: {
+					1024: {
+						slidesPerView: 3,
+						spaceBetween: 24,
+					},
+					768: {
+						slidesPerView: 2,
+						spaceBetween: 24,
+					},
+				},
+			});
+
+			// swiper models for model page
+			let swiperModels = new Swiper(".swiper-models", {
+				slidesPerView: 1,
+				spaceBetween: 24,
+				initialSlide: 1,
+				loop: true,
+				speed: 500,
+				navigation: {
+					nextEl: ".swiper-button-next-custom",
+					prevEl: ".swiper-button-prev-custom",
+				},
+				pagination: {
+					el: ".swiper-pagination",
+					clickable: true,
+				},
+				breakpoints: {
+					1440: {
+						spaceBetween: 120,
+					},
+					1024: {
+						spaceBetween: 92,
+					},
+					768: {
+						spaceBetween: 48,
+					},
+				},
+			});
+
+			// swiper technology for technology page
+			let swiperTechnology = new Swiper(".swiper-technology", {
+				slidesPerView: 1,
+				spaceBetween: 16,
+				speed: 500,
+				breakpoints: {
+					1024: {
+						slidesPerView: 3,
+						spaceBetween: 24,
+					},
+					768: {
+						slidesPerView: 2,
+						spaceBetween: 24,
+					},
+				},
+			});
+
+			// swiper reviews for company page
+			let swiperReviews = new Swiper(".swiper-reviews", {
+				slidesPerView: 1,
+				spaceBetween: 32,
+				loop: true,
+				speed: 500,
+				navigation: {
+					nextEl: ".swiper-button-next-custom",
+					prevEl: ".swiper-button-prev-custom",
+				},
+				pagination: {
+					el: ".swiper-pagination",
+					clickable: true,
+				},
+				breakpoints: {
+					768: {
+						slidesPerView: 2,
+						spaceBetween: 48,
+					},
+				},
+			});
+		</script>
 	</body>
 </html>

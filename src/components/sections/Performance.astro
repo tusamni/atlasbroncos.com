@@ -1,0 +1,20 @@
+---
+import Button from "@/components/buttons/Button";
+import Container from "@/components/layout/Container";
+import Image from "@/components/images/Image";
+---
+
+<div class="relative after:absolute after:inset-0 after:z-2 after:bg-gradient-to-r after:from-black/60 after:to-black/0">
+	<Image class="absolute top-0 left-0 w-full h-full object-cover" src="https://cdn.cosmicjs.com/c72d7440-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_133.jpg" />
+
+	<Container>
+		<div class="relative z-3 flex items-end 2xl:min-h-[49.625rem] pb-21 xl:min-h-[45rem] min-h-[40rem]">
+			<div class="xl:max-w-[34.25rem] text-white max-w-[30rem]">
+				<div class="mb-4 text-h1">Advanced Technology for Optimal Performance</div>
+				<div class="mb-12">From the efficient electric drive system to the advanced stabilization control, every component is designed to blend harmoniously to create an extraordinary driving experience</div>
+
+				<Button arrow={true} light={true}>Schedule a Test Run</Button>
+			</div>
+		</div>
+	</Container>
+</div>
