@@ -4,35 +4,37 @@ import Image from "@/components/images/Image";
 import Section from "@/components/layout/Section";
 
 const items = [
-	"https://cdn.cosmicjs.com/63aa72b0-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_020.jpg",
-	"https://cdn.cosmicjs.com/6434d860-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_004.jpg",
-	"https://cdn.cosmicjs.com/64697cf0-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_011.jpg",
-	"https://cdn.cosmicjs.com/76ae2780-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_031.jpg",
-	"https://cdn.cosmicjs.com/776bab20-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_033.jpg",
-	"https://cdn.cosmicjs.com/78412390-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_023.jpg",
-	"https://cdn.cosmicjs.com/7858f150-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_037.jpg",
-	"https://cdn.cosmicjs.com/9932d300-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_063.jpg",
+	"https://cdn.cosmicjs.com/b4e917d0-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_114.jpg",
+	"https://cdn.cosmicjs.com/c7792340-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_132.jpg",
+	"https://cdn.cosmicjs.com/b51cd200-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_111.jpg",
+	"https://cdn.cosmicjs.com/a94a8b70-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_082.jpg",
+	"https://cdn.cosmicjs.com/a8b10a90-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_084.jpg",
+	"https://cdn.cosmicjs.com/a80ed720-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_088.jpg",
+	"https://cdn.cosmicjs.com/de819770-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_163.jpg",
+	"https://cdn.cosmicjs.com/98e80e60-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_062.jpg",
+	"https://cdn.cosmicjs.com/636b1fc0-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_017.jpg",
+	"https://cdn.cosmicjs.com/8bffc3f0-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_052.jpg",
 ];
 ---
 
 <Section classes="overflow-hidden">
-	<Container>
-		<div class="mb-14 label">Driving happiness with carsova</div>
+	<Container classes="space-y-24">
+		<div class="label">Our Team</div>
 
-		<div class="lg:flex justify-between xl:items-end xl:mb-25 items-start mb-20 block">
-			<div class="max-w-[38rem] mr-10 text-h1 lg:mb-0 mb-8">Capture your moment with carsova electric vehicle</div>
-			<div class="shrink-0 lg:w-[29.5rem] text-g-100 w-full">
-				Carsova Electric Vehicles, every journey is an adventure worth capturing, and this gallery is a place to share excitement and inspiration with the electric car enthusiast community
+		<div class="flex justify-between items-center">
+			<div class="max-w-3xl text-balance text-h1">Where passion meets decades of experience</div>
+			<div class="text-right max-w-xl text-balance text-gray-500 w-full">
+				Our team of experienced professionals brings over 80 years of combined expertise in restoring classic vehicles, and we are passionate about bringing these timeless off-road legends back to life with modern precision and craftsmanship.
 			</div>
 		</div>
 
-		<div class="max-w-[80%] md:w-full">
+		<div class="w-full">
 			<div class="swiper swiper-driving !overflow-visible">
 				<div class="swiper-wrapper">
 					{
 						items.map((i) => (
-							<div class="swiper-slide">
-								<Image class="rounded-2xl w-full" src={i} />
+							<div class="!h-auto swiper-slide">
+								<Image class="rounded-2xl h-full w-full object-cover" src={i} />
 							</div>
 						))
 					}

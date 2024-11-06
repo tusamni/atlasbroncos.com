@@ -100,11 +100,11 @@ export default {
 		plugin(function ({ addBase, addComponents, addUtilities }) {
 			addBase({
 				html: {
-					"@apply text-[calc(1rem+.15vw)] 2xl:text-[calc(1rem+.1vw)]":
+					"@apply 2xl:text-[calc(1rem+.15vw)] text-[calc(1rem+.1vw)]":
 						{},
 				},
 				body: {
-					"@apply bg-white font-sans font-medium text-g-500 antialiased":
+					"@apply bg-white font-sans font-medium text-gray-800 antialiased":
 						{},
 				},
 			});

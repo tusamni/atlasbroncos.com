@@ -1,25 +1,17 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout";
 import Container from "@/components/layout/Container";
-import Details from "@/components/sections/Details";
-import Section from "@/components/layout/Section";
 import HeadingBase from "@/components/sections/HeadingBase";
-import ImageCaption from "@/components/sections/ImageCaption";
 import ModelCarousel from "@/components/sections/ModelCarousel";
+import Section from "@/components/layout/Section";
 ---
 
-<BaseLayout transparentHeader={false}>
-	<Section size="sm">
+<BaseLayout>
+	<Section>
 		<Container>
-			<HeadingBase> The amazing experience of the newest model of carsova electric cars. </HeadingBase>
+			<HeadingBase>The Broncos we restore are more than just vehicles—they're pieces of American automotive history.</HeadingBase>
 		</Container>
+
+		<ModelCarousel />
 	</Section>
-
-	<Container>
-		<ImageCaption />
-	</Container>
-
-	<ModelCarousel />
-
-	<Details />
 </BaseLayout>

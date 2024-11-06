@@ -1,32 +1,22 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout";
-import Design from "@/components/sections/Design";
+import Container from "@/components/layout/Container";
 import Driving from "@/components/sections/Driving";
-import FeatureBackground from "@/components/sections/FeatureBackground";
-import HeadingIntroduction from "@/components/sections/HeadingIntroduction";
-import Partners from "@/components/sections/Partners";
-import Performance from "@/components/sections/Performance";
+import HeadingBase from "@/components/sections/HeadingBase";
+import ImageCaption from "@/components/sections/ImageCaption";
 import Section from "@/components/layout/Section";
-import Subscribe from "@/components/sections/Subscribe";
-import Technology from "@/components/sections/Technology";
 ---
 
-<BaseLayout transparentHeader={true}>
-	<FeatureBackground />
-
+<BaseLayout>
 	<Section size="sm">
-		<HeadingIntroduction />
+		<Container>
+			<HeadingBase>At Atlas Broncos, we specialize in frame-off, Vintage Bronco restorations.</HeadingBase>
+		</Container>
 	</Section>
 
-	<Design />
-
-	<Performance />
-
-	<Technology />
+	<Container>
+		<ImageCaption />
+	</Container>
 
 	<Driving />
-
-	<Partners />
-
-	<Subscribe />
 </BaseLayout>
