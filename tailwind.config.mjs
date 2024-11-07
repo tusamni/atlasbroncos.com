@@ -1,7 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 
 const defaultTheme = require("tailwindcss/defaultTheme");
-import plugin from "tailwindcss/plugin";
 
 export default {
 	content: ['./src/**/*.{astro,html,js,jsx,ts,tsx,css,scss}'],
@@ -96,23 +95,8 @@ export default {
 		},
 	},
 	plugins: [
-		require("@tailwindcss/forms"), require("@tailwindcss/typography"), require("@tailwindcss/container-queries"),
-		plugin(function ({ addBase, addComponents, addUtilities }) {
-			addBase({
-				html: {
-					"@apply 2xl:text-[calc(1rem+.15vw)] text-[calc(1rem+.1vw)]":
-						{},
-				},
-				body: {
-					"@apply bg-white font-sans font-medium text-gray-800 antialiased":
-						{},
-				},
-			});
-			addUtilities({
-				".tap-highlight-color": {
-					"-webkit-tap-highlight-color": "rgba(0, 0, 0, 0)",
-				},
-			});
-		}),
+		require("@tailwindcss/forms"),
+		require("@tailwindcss/typography"),
+		require("@tailwindcss/container-queries")
 	],
 }

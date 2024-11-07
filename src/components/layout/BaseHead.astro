@@ -26,19 +26,6 @@ const { title, description, image = "/blog-placeholder-1.jpg" } = Astro.props;
 <!-- css  -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-<!-- scripts -->
-<script>
-	let viewportmeta = document.querySelector('meta[name="viewport"]');
-	if (viewportmeta) {
-		if (screen.width < 375) {
-			let newScale = screen.width / 375;
-			viewportmeta.content = "width=375, minimum-scale=" + newScale + ", maximum-scale=1.0, user-scalable=no, initial-scale=" + newScale + "";
-		} else {
-			viewportmeta.content = "width=device-width, maximum-scale=1.0, initial-scale=1.0";
-		}
-	}
-</script>
-
 <!-- seo -->
 <title>{title}</title>
 <meta name="title" content={title} />

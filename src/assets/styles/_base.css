@@ -1,3 +1,10 @@
+html {
+	@apply 2xl:text-[calc(1rem+.15vw)] text-[calc(1rem+.1vw)]
+}
+body {
+	@apply bg-white font-sans font-medium text-gray-800 antialiased
+}
+
 .header-burger.active {
 	@apply before:rotate-45 before:translate-y-[0.37rem] after:-rotate-45 after:-translate-y-[0.37rem];
 }
@@ -71,4 +78,8 @@
 }
 .swiper-reviews .swiper-pagination-bullet {
 	@apply w-15 !mx-1 xl:w-12 lg:w-8 md:w-auto md:flex-1;
+}
+
+.tap-highlight-color {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0)
 }
