@@ -10,7 +10,7 @@ const media = defineCollection({
 
 		while (hasMore) {
 			try {
-				const response = await cosmic.media.find({ type: "image/jpeg" }).props("name, original_name, folder, url, imgix_url, width, height, alt_text, metadata").limit(limit).skip(skip);
+				const response = await cosmic.media.find().props("name, original_name, folder, url, imgix_url, width, height, alt_text, metadata").limit(limit).skip(skip);
 
 				allMedia = allMedia.concat(response.media);
 
