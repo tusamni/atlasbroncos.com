@@ -27,6 +27,6 @@ export const Navigation = [
 	},
 	{
 		title: "Our Team",
-		href: "/our-team"
+		href: "/team"
 	}
 ];

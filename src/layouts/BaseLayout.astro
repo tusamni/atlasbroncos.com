@@ -1,5 +1,6 @@
 ---
 import "/src/assets/styles/_base.css";
+import "bigger-picture/css";
 
 import BaseHead from "@/components/layout/BaseHead";
 import Header from "@/components/layout/Header";
@@ -26,13 +27,43 @@ const { title, description, transparentHeader = false } = Astro.props;
 
 		<div class="overlay fixed inset-0 z-20 bg-black/60 invisible opacity-0 transition-all"></div>
 
+		<script>
+			// modal
+			import BiggerPicture from "bigger-picture";
+
+			let bp = BiggerPicture({
+				target: document.body,
+			});
+
+			// open (will be a child of the target element above)
+			let imageLinks = document.querySelectorAll(`.gallery img`);
+
+			// add click listener to open BiggerPicture
+			for (let link of imageLinks) {
+				link.addEventListener("click", openGallery);
+			}
+
+			// function to open BiggerPicture
+			function openGallery(e) {
+				e.preventDefault();
+				bp.open({
+					items: imageLinks,
+					el: e.currentTarget,
+					scale: 0.8,
+				});
+			}
+		</script>
 		<script is:inline src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 		<script is:inline>
 			// swiper driving for home page
 			let swiperDriving = new Swiper(".swiper-driving", {
 				slidesPerView: 1,
 				spaceBetween: 16,
-				speed: 500,
+				autoplay: {
+					delay: 2500,
+				},
+				loop: true,
+				speed: 400,
 				breakpoints: {
 					1024: {
 						slidesPerView: 3,

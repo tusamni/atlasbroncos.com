@@ -1,0 +1,41 @@
+---
+import BaseLayout from "@/layouts/BaseLayout";
+import Container from "@/components/layout/Container";
+import HeadingBase from "@/components/sections/HeadingBase";
+import Milestones from "@/components/sections/Milestones";
+import Section from "@/components/layout/Section";
+
+const images = [
+	"https://cdn.cosmicjs.com/ff5b7660-a857-11ef-9e9d-13d5c6cfea7a-1973-ford-bronco-by-velocity-restorations_100670069_h.jpg",
+	"https://cdn.cosmicjs.com/eecbe3f0-a859-11ef-9e9d-13d5c6cfea7a-1973-ford-bronco-by-velocity-restorations_100670063_h.jpg",
+	"https://cdn.cosmicjs.com/ff374c90-a857-11ef-9e9d-13d5c6cfea7a-1973-ford-bronco-by-velocity-restorations_100670070_h.jpg",
+];
+---
+
+<BaseLayout>
+	<Section>
+		<Container>
+			<HeadingBase>
+				<div class="text-display">At Atlas Broncos, we offer a complete frame-off restoration that leaves no detail untouched.</div>
+			</HeadingBase>
+
+			<div class="space-y-8">
+				<img src="https://cdn.cosmicjs.com/ff39bd90-a857-11ef-9e9d-13d5c6cfea7a-1973-ford-bronco-by-velocity-restorations_100670068_h.jpg" class="rounded-2xl w-full object-cover h-[750px]" />
+
+				<div class="grid grid-cols-3 gap-8">
+					{images.map((i) => <img src={i} class="w-full h-[300px] object-cover rounded-2xl" />)}
+				</div>
+			</div>
+		</Container>
+	</Section>
+
+	<Container>
+		<Milestones />
+	</Container>
+
+	<Section>
+		<Container>
+			<img src="https://images.unsplash.com/photo-1581293738510-077bb089a20a" class="rounded-2xl w-full h-[80vh] object-cover" />
+		</Container>
+	</Section>
+</BaseLayout>

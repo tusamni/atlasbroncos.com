@@ -1,0 +1,80 @@
+---
+import BaseLayout from "@/layouts/BaseLayout";
+import Container from "@/components/layout/Container";
+import HeadingBase from "@/components/sections/HeadingBase";
+import Image from "@/components/images/Image";
+import Milestones from "@/components/sections/Milestones";
+import Section from "@/components/layout/Section";
+
+const images = [
+	"https://imgix.cosmicjs.com/e886c5a0-c983-11ef-bee4-3bb1d3c55332-jack-finnigan-rriAI0nhcbc-unsplash.jpg",
+	"https://imgix.cosmicjs.com/e9280eb0-c983-11ef-bee4-3bb1d3c55332-cherry-laithang-tLxQhu4qkjg-unsplash.jpg",
+	"https://imgix.cosmicjs.com/e9612010-c983-11ef-bee4-3bb1d3c55332-robert-godwin-cdksyTqEXzo-unsplash.jpg",
+];
+const team = [
+	{
+		title: "Experience",
+		content: "Our team collectively boasts over 180 years of experience in automotive restoration.",
+	},
+	{
+		title: "Heritage",
+		content: "Having restored thousands of classic vehicles, we are proud of our rich history in the industry.",
+	},
+	{
+		title: "Awards",
+		content: "We've been recognized for our work on Ford retractables, earning several prestigious awards.",
+	},
+	{
+		title: "Transition",
+		content: "In 2020, we shifted our focus to Vintage Broncos, bringing our passion and expertise to the restoration of these iconic vehicles.",
+	},
+];
+---
+
+<BaseLayout>
+	<Section>
+		<Container>
+			<HeadingBase>
+				<div class="text-display">Our team is composed of experts who share a deep passion for vintage vehicles, particularly the Ford Bronco.</div>
+			</HeadingBase>
+
+			<div class="grid grid-cols-3 gap-8">
+				{
+					images.map((i) => (
+						<div class="flex flex-col space-y-4">
+							<img src={i} class="w-full rounded-2xl object-cover h-[650px]" />
+
+							<div class="flex flex-col justify-center items-center">
+								<div class="font-semibold">John Smith</div>
+								<div class="text-sm">CEO</div>
+							</div>
+						</div>
+					))
+				}
+			</div>
+		</Container>
+	</Section>
+
+	<Container>
+		<Milestones />
+	</Container>
+
+	<Section>
+		<Container>
+			<img src="https://imgix.cosmicjs.com/47226c60-c9fa-11ef-bee4-3bb1d3c55332-egor-vikhrev-S0cqn0mZU0E-unsplash.jpg" class="rounded-2xl w-full h-[80vh] object-cover" />
+		</Container>
+	</Section>
+
+	<Container>
+		<div class="grid grid-cols-4 gap-10">
+			{
+				team.map((t) => (
+					<div class="space-y-6">
+						<div class="text-h3">{t.title}</div>
+						<div class="font-light text-balance">{t.content}</div>
+					</div>
+				))
+			}
+		</div>
+	</Container>
+</BaseLayout>

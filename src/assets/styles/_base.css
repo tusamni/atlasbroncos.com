@@ -2,7 +2,7 @@ html {
 	@apply 2xl:text-[calc(1rem+.15vw)] text-[calc(1rem+.1vw)]
 }
 body {
-	@apply bg-white font-sans font-medium text-gray-800 antialiased
+	@apply bg-white font-sans text-gray-800 antialiased
 }
 
 .header-burger.active {
@@ -26,7 +26,7 @@ body {
 }
 
 .label {
-	@apply font-normal text-gray-100 text-[1rem] leading-[1.225rem];
+	@apply font-normal text-gray-500 text-[1rem] leading-[1.225rem];
 }
 .pt150 {
 	@apply pt-[9.375rem] xl:pt-30 lg:pt-25;

@@ -4,8 +4,11 @@ import { getEntry } from "astro:content";
 
 export interface Props {
 	src: string;
+	gallery: boolean;
+	pictureClass?: string;
+	lazy?: boolean;
 }
-const { src, ...attrs } = Astro.props;
+const { src, gallery = true, pictureClass, lazy = true, ...attrs } = Astro.props;
 
 // image details
 const imageName = src.replace("https://cdn.cosmicjs.com/", "");
@@ -22,4 +25,24 @@ for (let size of imageConfig.imageSizes) {
 const imageSrcSet = imageOptimized.join(", ");
 ---
 
-<img src={`${imageMetadata.data.imgix_url}?auto=format`} srcset={imageSrcSet} {...attrs} />
+<picture class:list={[pictureClass, gallery && "gallery hover:cursor-pointer"]}>
+	{
+		imageMetadata ? (
+			<img
+				srcset={imageSrcSet}
+				src={`${imageMetadata.data.imgix_url}?auto=format`}
+				alt={imageMetadata.data.alt}
+				width={imageMetadata.data.width}
+				height={imageMetadata.data.height}
+				data-img={imageSrcSet}
+				data-width={imageMetadata.data.width}
+				data-height={imageMetadata.data.height}
+				data-caption={imageMetadata.data.alt}
+				{...attrs}
+				loading={lazy ? "lazy" : "eager"}
+			/>
+		) : (
+			<img src={`${imageMetadata.data.imgix_url}?auto=format`} srcset={imageSrcSet} loading={lazy ? "lazy" : "eager"} {...attrs} />
+		)
+	}
+</picture>
