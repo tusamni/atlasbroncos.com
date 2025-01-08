@@ -2,6 +2,7 @@
 import BaseLayout from "@/layouts/BaseLayout";
 import Container from "@/components/layout/Container";
 import HeadingBase from "@/components/sections/HeadingBase";
+import Image from "@/components/images/Image";
 import ModelCarousel from "@/components/sections/ModelCarousel";
 import Section from "@/components/layout/Section";
 ---
@@ -9,9 +10,48 @@ import Section from "@/components/layout/Section";
 <BaseLayout>
 	<Section>
 		<Container>
-			<HeadingBase>The Broncos we restore are more than just vehicles—they're pieces of American automotive history.</HeadingBase>
+			<HeadingBase>
+				<h1 class="mb-4">The Broncos we restore are more than just vehicles—they're pieces of American automotive history.</h1>
+			</HeadingBase>
 		</Container>
 
 		<ModelCarousel />
+	</Section>
+
+	<Container>
+		<h2>Available Models</h2>
+		<div class="text-balance text-2xl font-light leading-normal">Each Atlas Bronco is restored with precision and care, combining vintage aesthetics with modern technology for a driving experience unlike any other.</div>
+
+		<div class="w-3/4 grid grid-cols-2 gap-12 mt-16">
+			<div class="space-y-4">
+				<h3>Classic</h3>
+				<div class="font-light">These are faithful restorations of original models, retaining the timeless look and feel of the early Broncos while upgrading essential components for safety and performance.</div>
+				<div>
+					<a class="font-semibold flex gap-2">
+						See Classic Builds
+						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"></path>
+						</svg>
+					</a>
+				</div>
+			</div>
+
+			<div class="space-y-4">
+				<h3>Custom</h3>
+				<div class="font-light">For those who want something unique, we offer custom builds tailored to individual specifications. Choose your engine, transmission, suspension, paint, and more.</div>
+				<div>
+					<a class="font-semibold flex gap-2">
+						See Custom Builds
+						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"></path>
+						</svg>
+					</a>
+				</div>
+			</div>
+		</div>
+	</Container>
+
+	<Section bottom={false}>
+		<Image class="h-[70vh] w-full object-cover" src="https://cdn.cosmicjs.com/c709e6b0-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_137.jpg" sizes="100vw" />
 	</Section>
 </BaseLayout>

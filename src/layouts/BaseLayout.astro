@@ -59,9 +59,6 @@ const { title, description, transparentHeader = false } = Astro.props;
 			let swiperDriving = new Swiper(".swiper-driving", {
 				slidesPerView: 1,
 				spaceBetween: 16,
-				autoplay: {
-					delay: 2500,
-				},
 				loop: true,
 				speed: 400,
 				breakpoints: {
@@ -88,12 +85,15 @@ const { title, description, transparentHeader = false } = Astro.props;
 					prevEl: ".swiper-button-prev-custom",
 				},
 				pagination: {
-					el: ".swiper-pagination",
-					clickable: true,
+					el: ".swiper-pag",
+					type: "custom",
+					renderCustom: function (swiper, current, total) {
+						return current + " of " + total;
+					},
 				},
 				breakpoints: {
 					1440: {
-						spaceBetween: 120,
+						spaceBetween: 36,
 					},
 					1024: {
 						spaceBetween: 92,

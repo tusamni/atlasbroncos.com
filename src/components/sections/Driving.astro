@@ -1,4 +1,5 @@
 ---
+import ButtonLink from "@/components/buttons/ButtonLink";
 import Container from "@/components/layout/Container";
 import Image from "@/components/images/Image";
 import Section from "@/components/layout/Section";
@@ -19,24 +20,33 @@ const items = [
 
 <Section classes="overflow-hidden">
 	<Container classes="space-y-24">
-		<div class="space-y-6">
+		<div>
 			<div class="label">Atlas Broncos</div>
-
-			<div class="flex justify-between items-center">
-				<div class="max-w-3xl text-balance text-h1">Where passion meets decades of experience</div>
-			</div>
+			<h2 class="text-balance max-w-[16em]">Where passion meets decades of experience</h2>
 		</div>
 
-		<div class="w-full">
-			<div class="swiper swiper-driving !overflow-visible">
-				<div class="swiper-wrapper">
-					{
-						items.map((i) => (
-							<div class="!h-auto swiper-slide">
-								<Image class="rounded-2xl h-full w-full object-cover" src={i} sizes="20vw" />
-							</div>
-						))
-					}
+		<div class="grid grid-cols-6 gap-12">
+			<div class="space-y-6 col-span-2 flex flex-col h-full justify-between">
+				<div class="font-light space-y-4">
+					<h3 class="h5">Why Choose Atlas?</h3>
+					<p>When you choose Atlas Broncos, you're not just getting a restored Bronco—you're getting a vehicle built with passion, expertise, and an uncompromising attention to detail.</p>
+					<p>We take pride in every Bronco we restore, ensuring that it's not only visually stunning but also built to perform at the highest level, whether you're cruising on the highway or exploring rugged trails.</p>
+				</div>
+
+				<ButtonLink>Contact Us</ButtonLink>
+			</div>
+
+			<div class="w-full col-span-4 overflow-hidden">
+				<div class="swiper swiper-driving">
+					<div class="swiper-wrapper">
+						{
+							items.map((i) => (
+								<div class="swiper-slide">
+									<Image class="rounded-2xl h-auto w-full object-cover" src={i} sizes="20vw" />
+								</div>
+							))
+						}
+					</div>
 				</div>
 			</div>
 		</div>
