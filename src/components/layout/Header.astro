@@ -12,19 +12,19 @@ const { headerLight = false } = Astro.props;
 
 <header class:list={["z-10", headerLight ? "absolute top-0 left-0 right-0" : "relative"]}>
 	<Container>
-		<div x-data="{ open: false }" class="header-wrap flex items-center md:h-20 h-17">
+		<div x-data="{ open: false }" class="flex items-center h-20">
 			<a class:list={["w-fit shrink-0 relative z-3 text-2xl font-semibold tracking-tight", headerLight ? "text-white" : "text-black"]} href="index.html">Atlas</a>
 
 			<div
 				:class="{ 'fixed' : open, 'hidden md:!flex': !open }"
 				x-show="open"
 				x-transition
-				class:list={["transition duration-500 flex md:items-center md:grow md:static z-2 inset-0 flex-col md:flex-row items-start pt-24 md:pt-0 px-5 md:px-0 pb-8 md:pb-0", headerLight ? "maxmd:bg-g-300" : "maxmd:bg-white"]}
+				class:list={["transition duration-500 flex md:items-center md:grow md:static z-2 inset-0 flex-col md:flex-row items-start pt-24 md:pt-0 px-5 md:px-0 pb-8 md:pb-0", headerLight ? "maxmd:bg-g-300" : "bg-white md:bg-transparent"]}
 			>
 				<nav class="flex md:mx-auto md:space-x-6 flex-col md:flex-row mx-0 space-x-0 space-y-8 md:space-y-0 mb-auto md:mb-0">
 					{
 						Navigation.map((n) => (
-							<a class:list={["text-lg md:text-base lg:text-lg transition-colors", headerLight ? "text-gray-100 hover:text-white" : "text-gray-700 hover:text-black"]} href={n.href}>
+							<a class:list={["text-lg md:text-base lg:text-lg transition-colors", headerLight ? "text-gray-200 hover:text-white" : "text-gray-700 hover:text-black"]} href={n.href}>
 								{n.title}
 							</a>
 						))

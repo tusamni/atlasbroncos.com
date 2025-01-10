@@ -1,4 +1,5 @@
 @import url("typography.css");
+@import url("buttons.css");
 
 html {
 	@apply 2xl:text-[calc(1rem+.15vw)] text-[calc(1rem+.1vw)]
@@ -22,38 +23,6 @@ body {
 .header-wrap.show {
 	@apply visible opacity-100 lg:opacity-0 lg:hidden;
 } */
-
-.btn {
-	@apply inline-flex items-center justify-center h-12 rounded-full px-4.5 border-2 font-sans font-medium transition-colors w-fit;
-}
-
-.label {
-	@apply font-normal text-gray-500 text-xs tracking-widest;
-}
-.pt150 {
-	@apply pt-[9.375rem] xl:pt-30 lg:pt-25;
-}
-.pb150 {
-	@apply pb-[9.375rem] xl:pb-30 lg:pb-25;
-}
-.py150 {
-	@apply py-[9.375rem] xl:py-30 lg:py-25;
-}
-.text-h1 {
-	@apply font-inter-tight xl:text-[3rem] xl:leading-[3.75rem] font-medium text-[2.19rem] leading-[2.73rem];
-}
-.text-h2 {
-	@apply font-inter-tight xl:text-[2.5rem] xl:leading-[3.125rem] font-medium text-[1.875rem] leading-[2.34rem];
-}
-.text-h3 {
-	@apply font-inter-tight text-[1.625rem] leading-[2.03rem] font-medium;
-}
-.text-h4 {
-	@apply font-inter-tight text-[1.5rem] leading-[1.875rem] font-medium;
-}
-.text-h5 {
-	@apply font-inter-tight xl:text-[1.25rem] xl:leading-[1.56rem] font-medium text-[1.125rem] leading-[1.41rem];
-}
 
 .swiper .swiper-pagination-bullet {
 	@apply !h-1 md:!mx-2 rounded-sm opacity-100 bg-g-50 transition-colors hover:bg-g-100 !mx-1;

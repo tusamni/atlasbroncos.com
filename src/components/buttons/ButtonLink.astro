@@ -7,15 +7,15 @@ interface Props {
 const { arrow = false, light = false, ...attrs } = Astro.props;
 ---
 
-<a class:list={["btn group", light ? "border-w-50 bg-w-50 text-gray-900 hover:bg-g-500 hover:text-white" : "border-g-500 bg-g-500 text-w-50 hover:bg-white hover:text-gray-500"]} {...attrs}>
+<a class:list={["btn group", light ? "bg-white text-black hover:bg-black hover:text-white" : "border-black bg-black text-white hover:bg-white hover:text-black"]} {...attrs}>
 	<span class="mr-auto">
 		<slot />
 	</span>
 
 	{
 		arrow && (
-			<span class:list={["flex items-center justify-center w-8 h-8 ml-6 -mr-3 rounded-full transition-colors", light ? "bg-g-500 group-hover:bg-white" : "bg-white group-hover:bg-g-500"]}>
-				<svg class:list={["!w-5 !h-5 transition-colors", light ? "fill-white group-hover:fill-g-500" : "fill-g-500 group-hover:fill-white"]} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+			<span class:list={["flex items-center justify-center w-8 h-8 ml-6 -mr-3 rounded-full transition-colors", light ? "bg-black group-hover:bg-white" : "bg-white group-hover:bg-black"]}>
+				<svg class:list={["!w-5 !h-5 transition-colors", light ? "fill-white group-hover:fill-black" : "fill-black group-hover:fill-white"]} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
 					<path d="M14.877 18.359l5.657-5.657a1 1 0 0 0 0-1.414l-5.657-5.657a1 1 0 0 0-1.402.012 1 1 0 0 0-.012 1.402l3.95 3.95H4.17a1 1 0 0 0-1 1 1 1 0 0 0 1 1h13.243l-3.95 3.95a1 1 0 0 0-.305.711 1 1 0 0 0 .293.716 1 1 0 0 0 .716.293 1 1 0 0 0 .711-.305z" />
 				</svg>
 			</span>
