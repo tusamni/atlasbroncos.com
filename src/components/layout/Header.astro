@@ -12,16 +12,24 @@ const { headerLight = false } = Astro.props;
 
 <header class:list={["z-10", headerLight ? "absolute top-0 left-0 right-0" : "relative"]}>
 	<Container>
-		<div x-data="{ open: false }" class="flex items-center h-20">
-			<a class:list={["w-fit shrink-0 relative z-3 text-2xl font-semibold tracking-tight", headerLight ? "text-white" : "text-black"]} href="index.html">Atlas</a>
+		<div x-data="{ open: true }" class="flex md:items-center justify-between flex-col md:flex-row mt-4 md:mt-0 md:h-20">
+			<div class="w-full md:w-auto flex flex-row items-center justify-between text-gray-900 text-sm">
+				<a class:list={["w-fit shrink-0 relative z-3 text-2xl font-semibold tracking-tight", headerLight ? "text-white" : "text-black"]} href="index.html">Atlas</a>
 
-			<div
-				:class="{ 'fixed' : open, 'hidden md:!flex': !open }"
-				x-show="open"
-				x-transition
-				class:list={["transition duration-500 flex md:items-center md:grow md:static z-2 inset-0 flex-col md:flex-row items-start pt-24 md:pt-0 px-5 md:px-0 pb-8 md:pb-0", headerLight ? "maxmd:bg-g-300" : "bg-white md:bg-transparent"]}
-			>
-				<nav class="flex md:mx-auto md:space-x-6 flex-col md:flex-row mx-0 space-x-0 space-y-8 md:space-y-0 mb-auto md:mb-0">
+				<div class="flex gap-2 md:hidden">
+					<ButtonLink href="contact.html" light={headerLight ? true : false} arrow={false}>Contact</ButtonLink>
+
+					<button @click="open = !open">
+						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-8">
+							<path :class="{'hidden': open, 'inline-flex': !open }" stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+							<path :class="{'hidden': !open, 'inline-flex': open }" stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+						</svg>
+					</button>
+				</div>
+			</div>
+
+			<div :class="{ 'flex' : open, 'hidden': !open }" x-transition class="mt-8 md:mt-0 flex-col hidden md:pb-0 md:flex md:flex-row">
+				<nav class="flex md:mx-auto md:space-x-6 flex-col md:flex-row space-y-4 md:space-y-0">
 					{
 						Navigation.map((n) => (
 							<a class:list={["text-lg md:text-base lg:text-lg transition-colors", headerLight ? "text-gray-200 hover:text-white" : "text-gray-700 hover:text-black"]} href={n.href}>
@@ -30,20 +38,9 @@ const { headerLight = false } = Astro.props;
 						))
 					}
 				</nav>
-
-				<ButtonLink href="contact.html" light={headerLight ? true : false} arrow={true}>Contact</ButtonLink>
 			</div>
 
-			<button
-				@click="open = !open"
-				:class="{ 'active' : open }"
-				class:list={[
-					"header-burger md:hidden flex relative z-20 flex-col justify-center items-center w-9 h-9 ml-auto rounded-full tap-highlight-color before:w-4 before:h-0.5 before:rounded-full before:transition-all after:w-4 after:h-0.5 after:rounded-full after:transition-all active",
-					headerLight ? "bg-white before:bg-g-500 after:bg-g-500" : "bg-g-500 before:bg-[#DEDEDE] after:bg-[#DEDEDE]",
-				]}
-			>
-				<span class:list={["w-4 h-0.5 my-1 rounded-full transition-all", headerLight ? "bg-g-500" : "bg-[#DEDEDE]"]}></span>
-			</button>
+			<ButtonLink href="contact.html" light={headerLight ? true : false} arrow={true} classes="!hidden md:!inline-flex">Contact</ButtonLink>
 		</div>
 	</Container>
 </header>

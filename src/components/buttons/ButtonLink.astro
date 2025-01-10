@@ -2,12 +2,13 @@
 interface Props {
 	arrow?: boolean;
 	light?: boolean;
+	classes?: string;
 }
 
-const { arrow = false, light = false, ...attrs } = Astro.props;
+const { arrow = false, light = false, classes, ...attrs } = Astro.props;
 ---
 
-<a class:list={["btn group", light ? "bg-white text-black hover:bg-black hover:text-white" : "border-black bg-black text-white hover:bg-white hover:text-black"]} {...attrs}>
+<a class:list={["btn group", light ? "bg-white text-black hover:bg-black hover:text-white" : "border-black bg-black text-white hover:bg-white hover:text-black", classes]} {...attrs}>
 	<span class="mr-auto">
 		<slot />
 	</span>
