@@ -1,17 +1,12 @@
 ---
-interface Props {
-	top?: boolean;
-	bottom?: boolean;
-	size?: "sm" | "lg";
+// props
+export interface Props {
+	size?: "small" | "large";
 	classes?: string;
 }
-
-const { top = true, bottom = true, size = "lg", classes, ...attrs } = Astro.props;
+const { size = "large", classes } = Astro.props;
 ---
 
-<div
-	class:list={[top && size == "lg" && "pt-25 lg:pt-30 xl:pt-[9.375rem]", bottom && size == "lg" && "pb-25 lg:pt-30 xl:pt-[9.375rem]", top && size == "sm" && "pt-15 lg:pt-20 xl:pt-30", bottom && size == "lg" && "pb-15 lg:pt-20 xl:pt-30", classes]}
-	{...attrs}
->
+<div class:list={[size == "small" ? "space-y-12 sm:space-y-24" : "space-y-16 sm:space-y-32", classes]}>
 	<slot />
 </div>

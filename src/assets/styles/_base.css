@@ -28,7 +28,7 @@ body {
 }
 
 .label {
-	@apply font-normal text-gray-500 text-[1rem] leading-[1.225rem];
+	@apply font-normal text-gray-500 text-xs tracking-widest;
 }
 .pt150 {
 	@apply pt-[9.375rem] xl:pt-30 lg:pt-25;

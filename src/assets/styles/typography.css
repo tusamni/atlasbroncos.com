@@ -1,8 +1,8 @@
 h1, h2, h3, h4, h5, h6 {
 	@apply font-inter-tight;
 }
-h1, .h1 { @apply xl:text-[4rem] xl:leading-[4.8rem] font-medium -tracking-[.01em] text-[3rem] leading-[3.3rem] }
+h1, .h1 { @apply xl:text-[4rem] xl:leading-[4.8rem] font-medium text-[3rem] leading-[3.3rem] }
 h2, .h2 { @apply xl:text-[3.5rem] xl:leading-[4.2rem] font-medium text-[2.5rem] leading-[3rem] }
-h3, .h3 { @apply xl:text-[3rem] font-medium text-[2rem] }
+h3, .h3 { @apply xl:text-[3rem] xl:leading-[3.6rem] font-medium text-[2rem] leading-[2.5rem] }
 h4, .h4 { @apply xl:text-[2.5rem] font-medium text-[1.75rem] }
 h5, .h5 { @apply xl:text-[2rem] font-medium text-[1.4rem] }

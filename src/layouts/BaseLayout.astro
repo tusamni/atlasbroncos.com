@@ -6,7 +6,16 @@ import BaseHead from "@/components/layout/BaseHead";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
-const { title, description, transparentHeader = false } = Astro.props;
+// props
+export interface Props {
+	title?: string;
+	description?: string;
+	transparentHeader?: boolean;
+	marginTop?: boolean;
+	marginBottom?: boolean;
+}
+
+const { title, description, transparentHeader = false, marginTop = true, marginBottom = true } = Astro.props;
 ---
 
 <html lang="en">
@@ -14,10 +23,10 @@ const { title, description, transparentHeader = false } = Astro.props;
 		<BaseHead title={title} description={description} />
 	</head>
 
-	<body>
+	<body class="min-h-screen bg-[radial-gradient(100vw_circle_at_top_right,_rgba(224,242,254,1),_transparent)]">
 		<Header headerLight={transparentHeader ? true : false} />
 
-		<main class="flex flex-col min-h-screen">
+		<main class:list={["flex flex-col min-h-screen bg-[radial-gradient(80vw_circle_at_bottom_left,_rgba(224,242,254,1),_transparent)]", marginTop && "pt-32", marginBottom && "pb-32"]}>
 			<div class="grow">
 				<slot />
 			</div>
@@ -58,28 +67,27 @@ const { title, description, transparentHeader = false } = Astro.props;
 			// swiper driving for home page
 			let swiperDriving = new Swiper(".swiper-driving", {
 				slidesPerView: 1,
-				spaceBetween: 16,
+				spaceBetween: 20,
 				loop: true,
 				speed: 400,
 				breakpoints: {
 					1024: {
 						slidesPerView: 3,
-						spaceBetween: 24,
+						spaceBetween: 28,
 					},
 					768: {
 						slidesPerView: 2,
-						spaceBetween: 24,
+						spaceBetween: 28,
 					},
 				},
 			});
 
 			// swiper models for model page
 			let swiperModels = new Swiper(".swiper-models", {
-				slidesPerView: 1,
 				spaceBetween: 24,
 				initialSlide: 1,
+				centeredSlides: true,
 				loop: true,
-				speed: 500,
 				navigation: {
 					nextEl: ".swiper-button-next-custom",
 					prevEl: ".swiper-button-prev-custom",
