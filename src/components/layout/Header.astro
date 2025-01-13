@@ -47,22 +47,24 @@ const { headerLight = false } = Astro.props;
 
 		<!-- mobile -->
 		<div
+			x-cloak
 			x-show="open"
-			x-transition:enter="transition ease-in-out duration-300"
+			x-transition:enter="transition ease-in-out duration-200"
 			x-transition:enter-start="opacity-0 transform scale-x-0 -translate-x-1/2"
 			x-transition:enter-end="opacity-100 transform scale-x-100 translate-x-0"
-			x-transition:leave="transition ease-in-out duration-300"
+			x-transition:leave="transition ease-in-out duration-100"
 			x-transition:leave-start="opacity-100 transform scale-x-100 translate-x-0"
 			x-transition:leave-end="opacity-0 transform scale-x-0 -translate-x-1/2"
 			class="fixed md:hidden inset-0 bg-black/50 h-screen"
 		>
 		</div>
 		<div
+			x-cloak
 			x-show="open"
-			x-transition:enter="transition ease-in-out duration-300"
+			x-transition:enter="transition ease-in-out duration-200"
 			x-transition:enter-start="opacity-0 transform scale-x-0 -translate-x-1/2"
 			x-transition:enter-end="opacity-100 transform scale-x-100 translate-x-0"
-			x-transition:leave="transition ease-in-out duration-300"
+			x-transition:leave="transition ease-in-out duration-100"
 			x-transition:leave-start="opacity-100 transform scale-x-100 translate-x-0"
 			x-transition:leave-end="opacity-0 transform scale-x-0 -translate-x-1/2"
 			class="md:hidden absolute inset-0 x-10"
