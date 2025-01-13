@@ -8,6 +8,11 @@ body {
 	@apply bg-white font-sans text-gray-800 antialiased
 }
 
+/* alpinejs hide */
+[x-cloak] {
+	display: none !important;
+}
+
 .header-burger.active {
 	@apply before:rotate-45 before:translate-y-[0.37rem] after:-rotate-45 after:-translate-y-[0.37rem];
 }
@@ -15,14 +20,6 @@ body {
 .header-burger.active span {
 	@apply w-0 opacity-0;
 }
-/* 
-.header-wrap {
-	@apply transition-all invisible opacity-0;
-}
-
-.header-wrap.show {
-	@apply visible opacity-100 lg:opacity-0 lg:hidden;
-} */
 
 .swiper .swiper-pagination-bullet {
 	@apply !h-1 md:!mx-2 rounded-sm opacity-100 bg-g-50 transition-colors hover:bg-g-100 !mx-1;
@@ -46,8 +43,4 @@ body {
 }
 .swiper-reviews .swiper-pagination-bullet {
 	@apply w-15 !mx-1 xl:w-12 lg:w-8 md:w-auto md:flex-1;
-}
-
-.tap-highlight-color {
-	-webkit-tap-highlight-color: rgba(0, 0, 0, 0)
 }

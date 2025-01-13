@@ -11,36 +11,65 @@ const { headerLight = false } = Astro.props;
 ---
 
 <header class:list={["z-10", headerLight ? "absolute top-0 left-0 right-0" : "relative"]}>
-	<Container>
-		<div x-data="{ open: true }" class="flex md:items-center justify-between flex-col md:flex-row mt-4 md:mt-0 md:h-20">
-			<div class="w-full md:w-auto flex flex-row items-center justify-between text-gray-900 text-sm">
-				<a class:list={["w-fit shrink-0 relative z-3 text-2xl font-semibold tracking-tight", headerLight ? "text-white" : "text-black"]} href="index.html">Atlas</a>
+	<div x-data="{ open: true }" x-transition.duration.500ms>
+		<Container>
+			<div class="relative flex md:items-center justify-between flex-col pt-4 md:pt-0 md:flex-row md:h-20">
+				<div class="w-full md:w-auto flex flex-row items-center justify-between text-gray-900 text-sm">
+					<a class:list={["w-fit shrink-0 relative z-3 text-2xl font-semibold tracking-tight", headerLight ? "text-white" : "text-black"]} href="index.html">Atlas</a>
 
-				<div class="flex gap-2 md:hidden">
-					<ButtonLink href="contact.html" light={headerLight ? true : false} arrow={false}>Contact</ButtonLink>
+					<div class="flex gap-4 md:hidden z-10">
+						<ButtonLink href="contact.html" light={headerLight ? true : false} arrow={false}>Contact</ButtonLink>
 
-					<button @click="open = !open">
-						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-8">
-							<path :class="{'hidden': open, 'inline-flex': !open }" stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
-							<path :class="{'hidden': !open, 'inline-flex': open }" stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-						</svg>
-					</button>
+						<button @click="open = !open">
+							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-8">
+								<path :class="{'hidden': open, 'inline-flex': !open }" stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+								<path :class="{'hidden': !open, 'inline-flex': open }" x-cloak stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"></path>
+							</svg>
+						</button>
+					</div>
 				</div>
-			</div>
 
-			<div :class="{ 'flex' : open, 'hidden': !open }" x-transition class="mt-8 md:mt-0 flex-col hidden md:pb-0 md:flex md:flex-row">
-				<nav class="flex md:mx-auto md:space-x-6 flex-col md:flex-row space-y-4 md:space-y-0">
-					{
-						Navigation.map((n) => (
-							<a class:list={["text-lg md:text-base lg:text-lg transition-colors", headerLight ? "text-gray-200 hover:text-white" : "text-gray-700 hover:text-black"]} href={n.href}>
-								{n.title}
-							</a>
-						))
-					}
-				</nav>
-			</div>
+				<div class="hidden md:mt-0 md:pb-0 md:flex md:flex-row">
+					<nav class="flex md:mx-auto md:space-x-6 flex-col md:flex-row space-y-4 md:space-y-0">
+						{
+							Navigation.map((n) => (
+								<a class:list={["text-lg md:text-base lg:text-lg transition-colors", headerLight ? "text-gray-50 hover:text-white" : "text-gray-700 hover:text-black"]} href={n.href}>
+									{n.title}
+								</a>
+							))
+						}
+					</nav>
+				</div>
 
-			<ButtonLink href="contact.html" light={headerLight ? true : false} arrow={true} classes="!hidden md:!inline-flex">Contact</ButtonLink>
+				<ButtonLink href="contact.html" light={headerLight ? true : false} arrow={true} classes="!hidden md:!inline-flex">Contact</ButtonLink>
+			</div>
+		</Container>
+
+		<!-- mobile -->
+		<div x-show="open" x-transition.duration.600ms class="fixed inset-0 bg-black/50 h-screen"></div>
+		<div x-show="open" @click.outside="open = false" x-transition.duration.600ms class="md:hidden absolute inset-0">
+			<div class="bg-white pt-24 pb-8 shadow-2xl">
+				<Container>
+					<hr class="mb-10" />
+
+					<nav class="flex md:mx-auto md:space-x-6 flex-col md:flex-row space-y-4 md:space-y-0">
+						{
+							Navigation.map((n) => (
+								<a class:list={["text-lg md:text-base lg:text-lg transition-colors", headerLight ? "text-gray-50 hover:text-white" : "text-gray-700 hover:text-black"]} href={n.href}>
+									{n.title}
+								</a>
+							))
+						}
+					</nav>
+
+					<hr class="mt-10" />
+
+					<div class="flex justify-between items-center mt-10">
+						<ButtonLink href="contact.html" light={headerLight ? true : false} arrow={false}>Let's Chat!</ButtonLink>
+						<div class="text-lg font-medium tracking-tighter"><a href="tel:123-456-7890">(800) 123-4567</a></div>
+					</div>
+				</Container>
+			</div>
 		</div>
-	</Container>
+	</div>
 </header>
