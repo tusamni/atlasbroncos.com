@@ -3,6 +3,7 @@ import BaseLayout from "@/layouts/BaseLayout";
 import Container from "@/components/layout/Container";
 import HeadingBase from "@/components/sections/HeadingBase";
 import Image from "@/components/images/Image";
+import Metadata from "@/components/sections/Metadata";
 import Section from "@/components/layout/Section";
 
 const models = [
@@ -48,17 +49,8 @@ const imagesNormal = [
 
 		<div class="overflow-hidden">
 			<Container>
-				<div class="flex justify-between mb-6 md:mb-4">
-					<div>Classic #001</div>
-					<div class="shrink-0 ml-6 text-sm font-light flex gap-3 items-center">
-						<div>Sky Blue</div>
-						<div class="text-grayray-400 text-sm">|</div>
-						<div>5.0L Coyote</div>
-						<div class="text-grayray-400 text-sm">|</div>
-						<div>Diamond Leather</div>
-					</div>
-				</div>
-		
+				<Metadata />
+
 				<div class="xl:max-w-[54.25rem] mx-auto lg:max-w-[48rem] max-w-[40rem]">
 					<div class="swiper swiper-models !overflow-visible">
 						<div class="swiper-wrapper">
@@ -73,7 +65,7 @@ const imagesNormal = [
 							}
 						</div>
 					</div>
-		
+
 					<div class="flex justify-center items-center mt-16">
 						<div class="flex items-center gap-4">
 							<button class="swiper-button-prev-custom group w-10 h-10 border border-g-75 rounded-full text-0 transition-colors hover:bg-g-500 hover:border-g-500">
@@ -83,9 +75,9 @@ const imagesNormal = [
 									></path>
 								</svg>
 							</button>
-		
+
 							<div class="swiper-pag w-fit"></div>
-		
+
 							<button class="swiper-button-next-custom group w-10 h-10 border border-g-75 rounded-full text-0 transition-colors hover:bg-g-500 hover:border-g-500">
 								<svg class="inline-block fill-g-500 transition-colors group-hover:fill-w-50" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
 									<path
