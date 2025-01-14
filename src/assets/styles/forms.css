@@ -1,0 +1,1 @@
+input, textarea { @apply focus:!ring-4 focus:!ring-stone-600 focus:!border-stone-600 }

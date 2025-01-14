@@ -6,8 +6,12 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 import BaseHead from "@/components/layout/BaseHead";
+import Container from "@/components/layout/Container";
+import Image from "@/components/images/Image";
+import Button from "@/components/buttons/Button";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import Section from "@/components/layout/Section";
 
 // props
 export interface Props {
@@ -29,51 +33,74 @@ const { title, description, transparentHeader = false, marginTop = true, marginB
 	<body class="min-h-screen bg-[radial-gradient(80vw_circle_at_top_center,_rgba(224,242,254,1),_transparent)]">
 		<Header headerLight={transparentHeader ? true : false} />
 
-		<main class:list={["flex flex-col min-h-screen bg-[radial-gradient(80vw_circle_at_bottom_left,_rgba(224,242,254,1),_transparent)]", marginTop && "pt-32", marginBottom && "pb-32"]}>
-			<div class="grow">
-				<slot />
+		<main class:list={["bg-[radial-gradient(80vw_circle_at_bottom_left,_rgba(224,242,254,1),_transparent)]", marginTop && "pt-32", marginBottom && "pb-32"]}>
+			<slot />
+
+			<div class="mt-16 sm:mt-32">
+				<Section>
+					<hr />
+
+					<Container>
+						<div class="grid grid-cols-1 lg:grid-cols-6 gap-12">
+							<div class="lg:col-span-3 order-2">
+								<iframe
+									class="w-full h-full rounded shadow-2xl"
+									src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3444.653318365195!2d-97.78350599332342!3d30.303929609841248!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1736892491480!5m2!1sen!2sus"
+									style="border:0;"
+									allowfullscreen=""
+									loading="lazy"
+									referrerpolicy="no-referrer-when-downgrade"
+								>
+								</iframe>
+							</div>
+
+							<form class="col-span-3 space-y-8">
+								<div class="text-6xl font-medium tracking-tight">Ready to Get Started?</div>
+								<div class="font-light text-gray-700">
+									Ready to bring your vintage Bronco dream to life? Contact us today to discuss your restoration project. Our team is here to guide you through every step of the process, ensuring your Bronco is restored to its full
+									potential.
+								</div>
+
+								<div class="flex gap-4">
+									<div class="flex flex-col gap-1 w-full">
+										<label class="text-sm font-semibold text-white sr-only">First Name</label>
+										<input type="text" name="first-name" id="first-name" class="rounded shadow-2xl border border-gray-300 text-sm p-3" placeholder="First Name" />
+									</div>
+
+									<div class="flex flex-col gap-1 w-full">
+										<label class="text-sm font-semibold text-white sr-only">Last Name</label>
+										<input type="text" name="last-name" id="last-name" class="rounded shadow-2xl border border-gray-300 text-sm p-3" placeholder="Last Name" />
+									</div>
+								</div>
+
+								<div class="flex gap-4">
+									<div class="flex flex-col gap-1 w-full">
+										<label class="text-sm font-semibold text-white sr-only">Email</label>
+										<input type="email" name="email" id="email" class="rounded shadow-2xl border border-gray-300 text-sm p-3" placeholder="Email" />
+									</div>
+
+									<div class="flex flex-col gap-1 w-full">
+										<label class="text-sm font-semibold text-white sr-only">Phone</label>
+										<input type="tel" name="phone" id="phone" class="rounded shadow-2xl border border-gray-300 text-sm p-3" placeholder="Phone" />
+									</div>
+								</div>
+
+								<div class="flex flex-col gap-1 w-full">
+									<label class="text-sm font-semibold text-white sr-only">Message</label>
+									<textarea name="message" id="message" class="rounded shadow-2xl border border-gray-300 h-40 text-sm" placeholder="What can we help you with?"></textarea>
+								</div>
+
+								<Button light={true} arrow={true}>Contact Us</Button>
+							</form>
+						</div>
+					</Container>
+				</Section>
 			</div>
 		</main>
 
 		<Footer />
 
-		<div class="overlay fixed inset-0 z-20 bg-black/60 invisible opacity-0 transition-all"></div>
-
 		<script>
-			// swiper
-			// import Swiper from "swiper";
-			// import { Navigation, Pagination } from "swiper/modules";
-
-			// let swiperModels = new Swiper(".swiper-models", {
-			// 	modules: [Navigation, Pagination],
-			// 	spaceBetween: 24,
-			// 	initialSlide: 1,
-			// 	centeredSlides: true,
-			// 	loop: true,
-			// 	navigation: {
-			// 		nextEl: ".swiper-button-next-custom",
-			// 		prevEl: ".swiper-button-prev-custom",
-			// 	},
-			// 	pagination: {
-			// 		el: ".swiper-pag",
-			// 		type: "custom",
-			// 		renderCustom: function (swiper, current, total) {
-			// 			return current + " of " + total;
-			// 		},
-			// 	},
-			// 	breakpoints: {
-			// 		1440: {
-			// 			spaceBetween: 36,
-			// 		},
-			// 		1024: {
-			// 			spaceBetween: 36,
-			// 		},
-			// 		768: {
-			// 			spaceBetween: 36,
-			// 		},
-			// 	},
-			// });
-
 			// modal
 			import BiggerPicture from "bigger-picture";
 
