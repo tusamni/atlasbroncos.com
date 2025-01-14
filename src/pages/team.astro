@@ -2,6 +2,7 @@
 import BaseLayout from "@/layouts/BaseLayout";
 import Container from "@/components/layout/Container";
 import HeadingBase from "@/components/sections/HeadingBase";
+import Image from "@/components/images/Image";
 import Section from "@/components/layout/Section";
 
 const images = [
@@ -42,7 +43,7 @@ const team = [
 				{
 					images.map((i) => (
 						<div class="flex flex-col space-y-4">
-							<img src={i} class="w-full rounded-2xl object-cover h-[650px]" />
+							<img src={i} class="w-full rounded-2xl object-cover h-[200px] sm:h-[275px] md:h-[350px] lg:h-[500px] xl:h-[650px]" />
 
 							<div class="flex flex-col justify-center items-center">
 								<div class="font-semibold">John Smith</div>
@@ -55,23 +56,24 @@ const team = [
 		</Container>
 
 		<Container>
-			<div class="lg:flex block">
-				<div class="label shrink-0 2xl:w-[27.13rem] xl:w-[16rem] lg:w-[12rem] w-full mb-16 mr-0 lg:mb-auto lg:mr-0">About Our Team</div>
+			<div class="grid lg:grid-cols-8 gap-8">
+				<div class="col-span-8 lg:col-span-5 flex flex-col gap-8 w-full h-full">
+					<div class="space-y-4">
+						<div class="label">About Our Team</div>
+						<div class="text-3xl text-balance">With decades of hands-on experience, we've built or restored thousands of vehicles, refining our techniques along the way.</div>
+					</div>
 
-				<div class="grow space-y-8">
-					<h2 class="h3">With decades of hands-on experience, we've built or restored thousands of vehicles, refining our techniques along the way.</h2>
-
-					<div class="flex -mt-12 lg:-ml-16 md:-ml-12 -ml-8 md:-mt-10 xl:ml-0 text-lg font-light leading-relaxed">
+					<div class="font-light leading-relaxed">
 						Originally, our focus was on Ford retractables, and our team has won numerous awards for excellence in this area. In 2020, we decided to channel our skills and passion into restoring Vintage Broncos, giving these classics the
 						attention they deserve. Every restoration is a labor of love, and our reputation for quality has followed us into this new chapter of our business.
 					</div>
 
-					<div class="grid grid-cols-2 gap-8">
+					<div class="grid grid-cols-2 gap-4">
 						{
 							team.map((t) => (
-								<div class="space-y-4 p-6 border border-black/20 rounded">
-									<div class="text-xl font-medium">{t.title}</div>
-									<div class="font-light text-balance">{t.content}</div>
+								<div class="space-y-2 p-6 border border-black/10 rounded">
+									<div class="text-lg font-medium">{t.title}</div>
+									<div class="text-sm font-light text-balance">{t.content}</div>
 								</div>
 							))
 						}
