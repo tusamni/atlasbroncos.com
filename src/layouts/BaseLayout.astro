@@ -1,6 +1,9 @@
 ---
 import "/src/assets/styles/_base.css";
 import "bigger-picture/css";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 import BaseHead from "@/components/layout/BaseHead";
 import Header from "@/components/layout/Header";
@@ -37,6 +40,40 @@ const { title, description, transparentHeader = false, marginTop = true, marginB
 		<div class="overlay fixed inset-0 z-20 bg-black/60 invisible opacity-0 transition-all"></div>
 
 		<script>
+			// swiper
+			// import Swiper from "swiper";
+			// import { Navigation, Pagination } from "swiper/modules";
+
+			// let swiperModels = new Swiper(".swiper-models", {
+			// 	modules: [Navigation, Pagination],
+			// 	spaceBetween: 24,
+			// 	initialSlide: 1,
+			// 	centeredSlides: true,
+			// 	loop: true,
+			// 	navigation: {
+			// 		nextEl: ".swiper-button-next-custom",
+			// 		prevEl: ".swiper-button-prev-custom",
+			// 	},
+			// 	pagination: {
+			// 		el: ".swiper-pag",
+			// 		type: "custom",
+			// 		renderCustom: function (swiper, current, total) {
+			// 			return current + " of " + total;
+			// 		},
+			// 	},
+			// 	breakpoints: {
+			// 		1440: {
+			// 			spaceBetween: 36,
+			// 		},
+			// 		1024: {
+			// 			spaceBetween: 36,
+			// 		},
+			// 		768: {
+			// 			spaceBetween: 36,
+			// 		},
+			// 	},
+			// });
+
 			// modal
 			import BiggerPicture from "bigger-picture";
 
@@ -61,95 +98,6 @@ const { title, description, transparentHeader = false, marginTop = true, marginB
 					scale: 0.8,
 				});
 			}
-		</script>
-		<script is:inline src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-		<script is:inline>
-			// swiper driving for home page
-			let swiperDriving = new Swiper(".swiper-driving", {
-				slidesPerView: 1,
-				spaceBetween: 20,
-				loop: true,
-				speed: 400,
-				breakpoints: {
-					1024: {
-						slidesPerView: 3,
-						spaceBetween: 28,
-					},
-					768: {
-						slidesPerView: 2,
-						spaceBetween: 28,
-					},
-				},
-			});
-
-			// swiper models for model page
-			let swiperModels = new Swiper(".swiper-models", {
-				spaceBetween: 24,
-				initialSlide: 1,
-				centeredSlides: true,
-				loop: true,
-				navigation: {
-					nextEl: ".swiper-button-next-custom",
-					prevEl: ".swiper-button-prev-custom",
-				},
-				pagination: {
-					el: ".swiper-pag",
-					type: "custom",
-					renderCustom: function (swiper, current, total) {
-						return current + " of " + total;
-					},
-				},
-				breakpoints: {
-					1440: {
-						spaceBetween: 36,
-					},
-					1024: {
-						spaceBetween: 92,
-					},
-					768: {
-						spaceBetween: 48,
-					},
-				},
-			});
-
-			// swiper technology for technology page
-			let swiperTechnology = new Swiper(".swiper-technology", {
-				slidesPerView: 1,
-				spaceBetween: 16,
-				speed: 500,
-				breakpoints: {
-					1024: {
-						slidesPerView: 3,
-						spaceBetween: 24,
-					},
-					768: {
-						slidesPerView: 2,
-						spaceBetween: 24,
-					},
-				},
-			});
-
-			// swiper reviews for company page
-			let swiperReviews = new Swiper(".swiper-reviews", {
-				slidesPerView: 1,
-				spaceBetween: 32,
-				loop: true,
-				speed: 500,
-				navigation: {
-					nextEl: ".swiper-button-next-custom",
-					prevEl: ".swiper-button-prev-custom",
-				},
-				pagination: {
-					el: ".swiper-pagination",
-					clickable: true,
-				},
-				breakpoints: {
-					768: {
-						slidesPerView: 2,
-						spaceBetween: 48,
-					},
-				},
-			});
 		</script>
 	</body>
 </html>

@@ -60,8 +60,8 @@ const items = [
 				</div>
 
 				<div class="w-full h-full col-span-6 lg:col-span-4">
-					<div class="grid grid-cols-3 lg:grid-cols-3 gap-6 h-full">
-						{items.map((i) => <Image pictureClass="h-full w-full" class="rounded-2xl h-full w-full object-cover shadow-2xl" src={i} sizes="20vw" />)}
+					<div class="grid grid-cols-6 gap-6 h-full">
+						{items.map((i, n) => <Image pictureClass={["h-full w-full lg:col-span-2", n == 0 ? "col-span-6" : "col-span-3"]} class="rounded-2xl h-full w-full object-cover shadow-2xl" src={i} sizes="20vw" />)}
 					</div>
 				</div>
 			</div>
