@@ -33,9 +33,14 @@ const items = [
 
 			<Container fullWidth={true}>
 				<div class="relative grid md:grid-cols-2 md:grid-rows-2 md:gap-6">
-					<Image src="https://cdn.cosmicjs.com/a352d5b0-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_093.jpg" pictureClass="row-span-2" class="w-full h-full object-cover md:rounded-lg md:shadow-2xl" sizes="90vw" />
-					<Image src="https://cdn.cosmicjs.com/d2e8fe80-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_146.jpg" class="w-full h-full object-cover md:rounded-lg md:shadow-2xl" sizes="50vw" />
-					<Image src="https://cdn.cosmicjs.com/c72d7440-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_133.jpg" class="w-full h-full object-cover md:rounded-lg md:shadow-2xl" sizes="50vw" />
+					<Image
+						src="https://cdn.cosmicjs.com/a352d5b0-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_093.jpg"
+						pictureClass="row-span-2"
+						class="w-full h-full object-cover md:rounded-lg md:shadow-2xl"
+						sizes="(min-width: 768px) 50vw, 100vw"
+					/>
+					<Image src="https://cdn.cosmicjs.com/d2e8fe80-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_146.jpg" class="w-full h-full object-cover md:rounded-lg md:shadow-2xl" sizes="(min-width: 768px) 100vw, 100vw" />
+					<Image src="https://cdn.cosmicjs.com/c72d7440-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_133.jpg" class="w-full h-full object-cover md:rounded-lg md:shadow-2xl" sizes="(min-width: 768px) 50vw, 100vw" />
 				</div>
 			</Container>
 		</div>
@@ -61,7 +66,16 @@ const items = [
 
 				<div class="w-full h-full col-span-6 lg:col-span-4">
 					<div class="grid grid-cols-6 gap-6 h-full">
-						{items.map((i, n) => <Image pictureClass={["h-full w-full lg:col-span-2", n == 0 ? "col-span-6" : "col-span-3"]} class="rounded-2xl h-full w-full object-cover shadow-2xl" src={i} sizes="20vw" />)}
+						{
+							items.map((i, n) => (
+								<Image
+									pictureClass={["h-full w-full lg:col-span-2", n == 0 ? "col-span-6" : "col-span-3"]}
+									class="rounded-2xl h-full w-full object-cover shadow-2xl"
+									src={i}
+									sizes={n == 0 ? "(min-width: 1024px) 350px, 100vw" : "(min-width: 1024px) 350px, 50vw"}
+								/>
+							))
+						}
 					</div>
 				</div>
 			</div>
