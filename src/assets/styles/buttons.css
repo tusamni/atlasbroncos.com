@@ -1,3 +1,21 @@
 .btn {
-	@apply shadow-2xl inline-flex items-center justify-center h-12 rounded-full px-5 border-2 font-sans font-medium transition-colors w-fit;
+	@apply shadow-2xl inline-flex items-center justify-center h-12 rounded-full px-5 font-sans font-medium transition-colors w-fit;
+
+	.btn-arrow {
+		@apply flex items-center justify-center w-8 h-8 ml-6 -mr-3 rounded-full transition-colors;
+
+		svg {
+			@apply w-5 h-5 fill-white;
+		}
+	}
+
+	&.btn-light {
+		@apply bg-white text-black hover:bg-gradient-to-br from-white via-white to-sky-50 border-2 border-white;
+
+		.btn-arrow { @apply bg-black }
+	}
+	
+	/* &.btn-dark {
+		@apply
+	} */
 }
