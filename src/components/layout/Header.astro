@@ -18,7 +18,7 @@ const { headerLight = false } = Astro.props;
 					<a class:list={["w-fit shrink-0 relative z-10 text-2xl font-semibold tracking-tight", headerLight ? "text-white" : "text-black"]} :class="{'!text-black': open }" href="index.html">Atlas</a>
 
 					<div class="flex gap-4 md:hidden z-10">
-						<ButtonLink href="contact.html" light={headerLight ? true : false} arrow={false}>Contact</ButtonLink>
+						<ButtonLink href="/contact" theme={headerLight ? "light" : "dark"} arrow={false}>Contact</ButtonLink>
 
 						<button @click="open = !open">
 							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-8">
@@ -33,7 +33,7 @@ const { headerLight = false } = Astro.props;
 					<nav class="flex md:mx-auto md:space-x-6 flex-col md:flex-row space-y-4 md:space-y-0">
 						{
 							Navigation.map((n) => (
-								<a class:list={["text-lg md:text-base lg:text-lg transition-colors", headerLight ? "text-gray-50 hover:text-white" : "text-gray-700 hover:text-black"]} href={n.href}>
+								<a class:list={["text-lg md:text-base lg:text-lg transition-colors", headerLight ? "text-gray-50 hover:text-white" : "text-gray-900 hover:text-black"]} href={n.href}>
 									{n.title}
 								</a>
 							))
@@ -41,7 +41,7 @@ const { headerLight = false } = Astro.props;
 					</nav>
 				</div>
 
-				<ButtonLink href="contact.html" light={headerLight ? true : false} arrow={true} classes="!hidden md:!inline-flex">Contact</ButtonLink>
+				<ButtonLink href="/contact" theme={headerLight ? "light" : "dark"} arrow={true} classes="!hidden md:!inline-flex">Contact</ButtonLink>
 			</div>
 		</Container>
 

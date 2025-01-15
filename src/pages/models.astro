@@ -39,7 +39,7 @@ const imagesNormal = [
 ];
 ---
 
-<BaseLayout marginBottom={false} footerPadding={false}>
+<BaseLayout footerPadding={false}>
 	<Section>
 		<Container>
 			<HeadingBase>
@@ -99,7 +99,7 @@ const imagesNormal = [
 				{
 					models.map((m) => (
 						<div class="space-y-3 group p-6 border border-black/20 rounded">
-							<h3 class="h4">{m.title}</h3>
+							<div class="h4">{m.title}</div>
 							<div class="font-light leading-relaxed">{m.description}</div>
 							<div>
 								<a class="font-semibold flex gap-2">

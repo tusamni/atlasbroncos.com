@@ -62,8 +62,8 @@ const features = [
 	</div>
 
 	<Section>
-		<div class="grid grid-cols-3 md:grid-cols-6 gap-4 mx-4 mt-4">
-			{images.map((i) => <Image src={i} class="object-cover w-full h-full aspect-square rounded shadow-2xl" sizes="20vw" />)}
+		<div class="grid grid-cols-3 md:grid-cols-6">
+			{images.map((i) => <Image src={i} class="object-cover w-full h-full aspect-square shadow-2xl" sizes="20vw" />)}
 		</div>
 
 		<Container>
@@ -82,6 +82,8 @@ const features = [
 				</div>
 			</div>
 		</Container>
+
+		<hr />
 
 		<Container>
 			<div class="space-y-6 md:space-y-12 @container">

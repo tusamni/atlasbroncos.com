@@ -10,12 +10,20 @@
 	}
 
 	&.btn-light {
-		@apply bg-white text-black hover:bg-gradient-to-br from-white via-white to-sky-50 border-2 border-white;
+		@apply bg-white text-black hover:bg-gradient-to-br from-white via-white to-gray-100 border-2 border-white;
 
 		.btn-arrow { @apply bg-black }
 	}
 	
-	/* &.btn-dark {
-		@apply
-	} */
+	&.btn-dark {
+		@apply bg-black text-white hover:bg-gray-900;
+
+		.btn-arrow {
+			@apply bg-white;
+
+			svg {
+				@apply fill-black;
+			}
+		}
+	}
 }
