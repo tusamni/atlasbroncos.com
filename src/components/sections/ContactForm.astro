@@ -1,0 +1,38 @@
+---
+import Button from "@/components/buttons/Button"
+---
+
+<form class="col-span-6 lg:col-span-3 space-y-8 order-2 lg:order-1">
+	<div class="space-y-4">
+		<div class="flex flex-col sm:flex-row gap-4">
+			<div class="w-full">
+				<label class="text-sm font-semibold text-white sr-only">First Name</label>
+				<input type="text" name="first-name" id="first-name" class="w-full rounded shadow-2xl border border-gray-300 text-sm p-3" placeholder="First Name" />
+			</div>
+
+			<div class="w-full">
+				<label class="text-sm font-semibold text-white sr-only">Last Name</label>
+				<input type="text" name="last-name" id="last-name" class="w-full rounded shadow-2xl border border-gray-300 text-sm p-3" placeholder="Last Name" />
+			</div>
+		</div>
+
+		<div class="flex flex-col sm:flex-row gap-4">
+			<div class="w-full">
+				<label class="text-sm font-semibold text-white sr-only">Email</label>
+				<input type="email" name="email" id="email" class="w-full rounded shadow-2xl border border-gray-300 text-sm p-3" placeholder="Email" />
+			</div>
+
+			<div class="w-full">
+				<label class="text-sm font-semibold text-white sr-only">Phone</label>
+				<input type="tel" name="phone" id="phone" class="w-full rounded shadow-2xl border border-gray-300 text-sm p-3" placeholder="Phone" />
+			</div>
+		</div>
+
+		<div class="flex flex-col w-full">
+			<label class="text-sm font-semibold text-white sr-only">Message</label>
+			<textarea name="message" id="message" class="rounded shadow-2xl border border-gray-300 h-40 text-sm" placeholder="What can we help you with?"></textarea>
+		</div>
+	</div>
+
+	<Button arrow={true}>Contact Us</Button>
+</form>

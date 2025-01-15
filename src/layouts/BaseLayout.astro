@@ -6,8 +6,8 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 import BaseHead from "@/components/layout/BaseHead";
+import ContactForm from "@/components/sections/ContactForm";
 import Container from "@/components/layout/Container";
-import Image from "@/components/images/Image";
 import Button from "@/components/buttons/Button";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -45,47 +45,26 @@ const { title, description, transparentHeader = false, marginTop = true, marginB
 						<div class="h1 tracking-tight mb-8">Ready to Get Started?</div>
 
 						<div class="grid grid-cols-6 gap-12">
-							<div class="col-span-6 lg:col-span-3 order-2 space-y-8">
+							<div class="col-span-6 lg:col-span-3 order-1 lg:order-2 space-y-8">
 								<div class="font-light text-gray-700">
 									Ready to bring your vintage Bronco dream to life? Contact us today to discuss your restoration project. Our team is here to guide you through every step of the process, ensuring your Bronco is restored to its full
 									potential.
 								</div>
-							</div>
 
-							<form class="col-span-6 lg:col-span-3 space-y-8">
-								<div class="space-y-4">
-									<div class="flex flex-col sm:flex-row gap-4">
-										<div class="w-full">
-											<label class="text-sm font-semibold text-white sr-only">First Name</label>
-											<input type="text" name="first-name" id="first-name" class="w-full rounded shadow-2xl border border-gray-300 text-sm p-3" placeholder="First Name" />
-										</div>
-
-										<div class="w-full">
-											<label class="text-sm font-semibold text-white sr-only">Last Name</label>
-											<input type="text" name="last-name" id="last-name" class="w-full rounded shadow-2xl border border-gray-300 text-sm p-3" placeholder="Last Name" />
-										</div>
+								<div class="grid grid-cols-2 gap-6">
+									<div class="flex flex-col gap-1">
+										<div class="text-lg font-medium">Call Us</div>
+										<div class="font-light">(512) 560-2474</div>
 									</div>
 
-									<div class="flex flex-col sm:flex-row gap-4">
-										<div class="w-full">
-											<label class="text-sm font-semibold text-white sr-only">Email</label>
-											<input type="email" name="email" id="email" class="w-full rounded shadow-2xl border border-gray-300 text-sm p-3" placeholder="Email" />
-										</div>
-
-										<div class="w-full">
-											<label class="text-sm font-semibold text-white sr-only">Phone</label>
-											<input type="tel" name="phone" id="phone" class="w-full rounded shadow-2xl border border-gray-300 text-sm p-3" placeholder="Phone" />
-										</div>
-									</div>
-
-									<div class="flex flex-col w-full">
-										<label class="text-sm font-semibold text-white sr-only">Message</label>
-										<textarea name="message" id="message" class="rounded shadow-2xl border border-gray-300 h-40 text-sm" placeholder="What can we help you with?"></textarea>
+									<div class="flex flex-col gap-1">
+										<div class="text-lg font-medium">Visit Us</div>
+										<div class="font-light">(512) 560-2474</div>
 									</div>
 								</div>
+							</div>
 
-								<Button arrow={true}>Contact Us</Button>
-							</form>
+							<ContactForm />
 						</div>
 					</Container>
 
