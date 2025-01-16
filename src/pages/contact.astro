@@ -2,22 +2,21 @@
 import BaseLayout from "@/layouts/BaseLayout";
 import ContactForm from "@/components/sections/ContactForm";
 import Container from "@/components/layout/Container";
-import HeadingBase from "@/components/sections/HeadingBase";
 import Section from "@/components/layout/Section";
 ---
 
-<BaseLayout>
+<BaseLayout contactForm={false} marginBottom={true}>
 	<Section>
 		<Container>
-			<HeadingBase>
-				<h1 class="mb-4">At Atlas Broncos, we specialize in frame-off, Vintage Bronco restorations.</h1>
-				<div class="text-lg md:text-xl lg:text-2xl font-light leading-relaxed md:leading-normal">
-					Our team of experienced professionals brings over 80 years of combined expertise in restoring classic vehicles, and we are passionate about bringing these timeless off-road legends back to life with modern precision and
-					craftsmanship.
-				</div>
-			</HeadingBase>
+			<div class="w-1/2 mx-auto space-y-6">
+				<h1 class="mb-4">Let's Chat!</h1>
 
-			<ContactForm />
+				<div class="font-light text-gray-700">
+					Ready to bring your vintage Bronco dream to life? Contact us today to discuss your restoration project. Our team is here to guide you through every step of the process, ensuring your Bronco is restored to its full potential.
+				</div>
+
+				<ContactForm />
+			</div>
 		</Container>
 	</Section>
 </BaseLayout>

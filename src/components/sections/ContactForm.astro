@@ -1,8 +1,14 @@
 ---
-import Button from "@/components/buttons/Button"
+export const prerender = false;
+
+import { actions } from "astro:actions";
+import Button from "@/components/buttons/Button";
+
+// content
+const result = Astro.getActionResult(actions.contact);
 ---
 
-<form class="col-span-6 lg:col-span-3 space-y-8 order-2 lg:order-1">
+<form class="col-span-6 lg:col-span-3 space-y-8 order-2 lg:order-1" id="form-contact" action={"/contact/success" + actions.contact} method="POST">
 	<div class="space-y-4">
 		<div class="flex flex-col sm:flex-row gap-4">
 			<div class="w-full">
@@ -34,5 +40,13 @@ import Button from "@/components/buttons/Button"
 		</div>
 	</div>
 
+	<input type="hidden" name="path" id="path" value={Astro.url.pathname} />
+	<input type="hidden" name="marketing" id="marketing" value="" />
+
 	<Button arrow={true}>Contact Us</Button>
 </form>
+
+<script is:inline>
+	// insert marketing data into form variable
+	document.getElementById("marketing").value = JSON.stringify(visitData.get());
+</script>
