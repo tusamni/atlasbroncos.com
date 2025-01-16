@@ -2,21 +2,27 @@
 import BaseLayout from "@/layouts/BaseLayout";
 import ContactForm from "@/components/sections/ContactForm";
 import Container from "@/components/layout/Container";
+import Image from "@/components/images/Image";
+import HeadingBase from "@/components/sections/HeadingBase";
 import Section from "@/components/layout/Section";
 ---
 
-<BaseLayout contactForm={false} marginBottom={true}>
-	<Section>
-		<Container>
-			<div class="w-1/2 mx-auto space-y-6">
-				<h1 class="mb-4">Let's Chat!</h1>
+<BaseLayout contactForm={false} transparentHeader={true} marginTop={false}>
+	<div class="relative after:absolute after:inset-0 after:z-10 after:bg-gradient-to-b after:from-black after:via-black/10 after:to-black/10 before:absolute before:inset-0 before:z-10 before:bg-radial-gradient before:opacity-40">
+		<Image src="https://cdn.cosmicjs.com/a78338f0-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_094.jpg" gallery={false} sizes="100vw" pictureClass="absolute top-0 left-0 w-full h-full" class="w-full h-full object-cover" />
 
-				<div class="font-light text-gray-700">
+		<Container classes="relative z-30 flex items-center pb-24 min-h-screen py-24">
+			<div class="w-1/2 mx-auto space-y-6 bg-black rounded-md bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-30 p-16">
+				<h1 class="mb-4 text-white">Let's Chat!</h1>
+
+				<div class="font-light text-gray-200">
 					Ready to bring your vintage Bronco dream to life? Contact us today to discuss your restoration project. Our team is here to guide you through every step of the process, ensuring your Bronco is restored to its full potential.
 				</div>
 
 				<ContactForm />
 			</div>
 		</Container>
-	</Section>
+	</div>
+
+	<Section />
 </BaseLayout>

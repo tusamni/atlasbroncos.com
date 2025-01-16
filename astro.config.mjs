@@ -1,11 +1,13 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 
-import tailwind from '@astrojs/tailwind';
 import alpinejs from '@astrojs/alpinejs';
+import netlify from "@astrojs/netlify";
+import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://example.com',
-	integrations: [tailwind({ applyBaseStyles: true }), alpinejs()],
+	adapter: netlify(),
+	integrations: [alpinejs(), tailwind({ applyBaseStyles: true })],
+	site: 'https://atlasbroncos.com',
 });
