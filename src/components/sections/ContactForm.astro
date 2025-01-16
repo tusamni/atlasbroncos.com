@@ -13,7 +13,7 @@ const result = Astro.getActionResult(actions.contact);
 		<div class="flex flex-col sm:flex-row gap-4">
 			<div class="w-full">
 				<label class="text-sm font-semibold text-white sr-only">First Name</label>
-				<input type="text" name="first-name" id="first-name" class="w-full rounded shadow-2xl border border-gray-300 text-sm p-3" placeholder="First Name" />
+				<input type="text" name="first-name" id="first-name" class="w-full rounded shadow-2xl border border-gray-300 text-sm p-3" placeholder="First Name" required />
 			</div>
 
 			<div class="w-full">
@@ -25,7 +25,7 @@ const result = Astro.getActionResult(actions.contact);
 		<div class="flex flex-col sm:flex-row gap-4">
 			<div class="w-full">
 				<label class="text-sm font-semibold text-white sr-only">Email</label>
-				<input type="email" name="email" id="email" class="w-full rounded shadow-2xl border border-gray-300 text-sm p-3" placeholder="Email" />
+				<input type="email" name="email" id="email" class="w-full rounded shadow-2xl border border-gray-300 text-sm p-3" placeholder="Email" required />
 			</div>
 
 			<div class="w-full">
@@ -43,7 +43,7 @@ const result = Astro.getActionResult(actions.contact);
 	<input type="hidden" name="path" id="path" value={Astro.url.pathname} />
 	<input type="hidden" name="marketing" id="marketing" value="" />
 
-	<Button arrow={true}>Contact Us</Button>
+	<Button arrow={true} theme={Astro.url.pathname.includes("contact") ? "light" : "dark"}>Contact Us</Button>
 </form>
 
 <script is:inline>

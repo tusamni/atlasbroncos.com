@@ -33,6 +33,8 @@ const { title, description, contactForm = true, transparentHeader = false, margi
 	</head>
 
 	<body class="min-h-screen bg-[radial-gradient(80vw_circle_at_top_center,_rgba(224,242,254,1),_transparent)]">
+		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5W2NH2T7" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
 		<Header headerLight={transparentHeader ? true : false} />
 
 		<main class:list={["bg-[radial-gradient(80vw_circle_at_bottom_left,_rgba(224,242,254,1),_transparent)]", marginTop && "pt-32", marginBottom && "pb-32"]}>
@@ -49,7 +51,7 @@ const { title, description, contactForm = true, transparentHeader = false, margi
 
 								<div class="grid grid-cols-6 gap-12">
 									<div class="col-span-6 lg:col-span-3 order-1 lg:order-2 space-y-8">
-										<div class="font-light text-gray-700">
+										<div class="font-light text-gray-700 leading-relaxed">
 											Ready to bring your vintage Bronco dream to life? Contact us today to discuss your restoration project. Our team is here to guide you through every step of the process, ensuring your Bronco is restored to
 											its full potential.
 										</div>
