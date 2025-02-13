@@ -18,8 +18,12 @@ export const siteConfig = {
 
 export const Navigation = [
 	{
-		title: "Models",
-		href: "/models"
+		title: "Home",
+		href: "/"
+	},
+	{
+		title: "Builds",
+		href: "/builds"
 	},
 	{
 		title: "Process",

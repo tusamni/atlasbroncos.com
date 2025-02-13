@@ -24,7 +24,7 @@ export interface Props {
 	footerPadding?: boolean;
 }
 
-const { title, description, contactForm = true, transparentHeader = false, marginTop = true, marginBottom = false, footerPadding = true } = Astro.props;
+const { title, description, contactForm = true, transparentHeader = false, marginTop = true, marginBottom = true, footerPadding = true } = Astro.props;
 ---
 
 <html lang="en">
@@ -72,15 +72,6 @@ const { title, description, contactForm = true, transparentHeader = false, margi
 									<ContactForm />
 								</div>
 							</Container>
-
-							<iframe
-								class="w-full h-full aspect-square lg:aspect-auto lg:h-[600px] rounded shadow-2xl"
-								src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3444.653318365195!2d-97.78350599332342!3d30.303929609841248!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1736892491480!5m2!1sen!2sus"
-								style="border:0;"
-								allowfullscreen=""
-								loading="lazy"
-								referrerpolicy="no-referrer-when-downgrade"
-							/>
 						</Section>
 					</div>
 				)
