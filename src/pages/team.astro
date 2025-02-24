@@ -6,9 +6,9 @@ import Image from "@/components/images/Image";
 import Section from "@/components/layout/Section";
 
 const images = [
-	"https://imgix.cosmicjs.com/e886c5a0-c983-11ef-bee4-3bb1d3c55332-jack-finnigan-rriAI0nhcbc-unsplash.jpg",
-	"https://imgix.cosmicjs.com/e9280eb0-c983-11ef-bee4-3bb1d3c55332-cherry-laithang-tLxQhu4qkjg-unsplash.jpg",
-	"https://imgix.cosmicjs.com/e9612010-c983-11ef-bee4-3bb1d3c55332-robert-godwin-cdksyTqEXzo-unsplash.jpg",
+	"https://cdn.cosmicjs.com/e886c5a0-c983-11ef-bee4-3bb1d3c55332-jack-finnigan-rriAI0nhcbc-unsplash.jpg",
+	"https://cdn.cosmicjs.com/e9280eb0-c983-11ef-bee4-3bb1d3c55332-cherry-laithang-tLxQhu4qkjg-unsplash.jpg",
+	"https://cdn.cosmicjs.com/e9612010-c983-11ef-bee4-3bb1d3c55332-robert-godwin-cdksyTqEXzo-unsplash.jpg",
 ];
 const team = [
 	{
@@ -42,8 +42,8 @@ const team = [
 			<div class="grid grid-cols-3 gap-8">
 				{
 					images.map((i) => (
-						<div class="flex flex-col space-y-4">
-							<img src={i} class="w-full rounded-2xl object-cover h-[200px] sm:h-[275px] md:h-[350px] lg:h-[500px] xl:h-[650px]" />
+						<div class="flex flex-col space-y-4 h-[200px] sm:h-[275px] md:h-[350px] lg:h-[500px] xl:h-[650px]">
+							<Image src={i} class="w-full h-full rounded-2xl object-cover" sizes="33vw" />
 
 							<div class="flex flex-col justify-center items-center">
 								<div class="font-semibold">John Smith</div>
