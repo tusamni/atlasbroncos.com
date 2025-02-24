@@ -1,4 +1,6 @@
 ---
+export const prerender = false;
+
 import BaseLayout from "@/layouts/BaseLayout";
 import ContactForm from "@/components/sections/ContactForm";
 import Container from "@/components/layout/Container";
@@ -6,7 +8,7 @@ import Image from "@/components/images/Image";
 import Section from "@/components/layout/Section";
 ---
 
-<BaseLayout contactForm={false} transparentHeader={true} marginTop={false}>
+<BaseLayout contactForm={false} transparentHeader={true} marginTop={false} marginBottom={false}>
 	<div class="relative after:absolute after:inset-0 after:z-10 after:bg-gradient-to-b after:from-black after:via-black/10 after:to-black/10 before:absolute before:inset-0 before:z-10 before:bg-radial-gradient before:opacity-40">
 		<Image src="https://cdn.cosmicjs.com/8962d1f0-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_049.jpg" gallery={false} sizes="100vw" pictureClass="absolute top-0 left-0 w-full h-full" class="w-full h-full object-cover" />
 

@@ -17,6 +17,9 @@ export const server = {
 			marketing: z.string().optional()
 		}),
 		handler: async (input) => {
+			console.log("got into handler")
+
+			// check for zip code honeypot
 			if (input.zip) {
 				throw new ActionError({
 					code: "SPAM_ERROR",
@@ -25,6 +28,7 @@ export const server = {
 			}
 
 			// get todays date
+			// format for insert into Cosmic CMS
 			let date = new Date();
 			const dateOffset = date.getTimezoneOffset();
 			date = new Date(date.getTime() - dateOffset * 60 * 1000);
@@ -57,7 +61,7 @@ export const server = {
 			const sentFrom = new Sender(siteConfig.email.base, siteConfig.name);
 
 			// set personalization variables
-			const leadSubject = `New Lead from eriksolsen.com - ${input.name}`;
+			const leadSubject = `New Lead from atlasbroncos.com - ${input.name}`;
 			const leadRecipients = [new Recipient(siteConfig.email.base, siteConfig.name)];
 			const leadReplyTo = new Sender(input.email, input.name);
 			const leadPersonalization = [
@@ -73,34 +77,39 @@ export const server = {
 					},
 				},
 			];
-			const leadParams = new EmailParams().setFrom(sentFrom).setTo(leadRecipients).setReplyTo(leadReplyTo).setSubject(leadSubject).setPersonalization(leadPersonalization).setTemplateId("3z0vklo0r3el7qrx");
+			const leadParams = new EmailParams().setFrom(sentFrom).setTo(leadRecipients).setReplyTo(leadReplyTo).setSubject(leadSubject).setPersonalization(leadPersonalization).setTemplateId("3zxk54v15mz4jy6v");
 
 			// send the contact email
 			try {
 				await mailerSend.email.send(leadParams);
 			} catch (error) {
 				console.error(error);
+
+				throw new ActionError({
+					code: "MS_ERROR",
+					message: "There's been an error. Please try again later.",
+				});
 			}
 
-			const thanksSubject = `Thanks ${input.name}, I've Received Your Message!`;
-			const thanksRecipients = [new Recipient(input.email, input.name)];
-			const thanksReplyTo = new Sender(siteConfig.email.base, siteConfig.name);
-			const thanksPersonalization = [
-				{
-					email: input.email,
-					data: {
-						name: input.name
-					}
-				}
-			]
-			const thanksParams = new EmailParams().setFrom(sentFrom).setTo(thanksRecipients).setReplyTo(thanksReplyTo).setSubject(thanksSubject).setPersonalization(thanksPersonalization).setTemplateId("v69oxl51n6x4785k");
+			// const thanksSubject = `Thanks ${input.name}, I've Received Your Message!`;
+			// const thanksRecipients = [new Recipient(input.email, input.name)];
+			// const thanksReplyTo = new Sender(siteConfig.email.base, siteConfig.name);
+			// const thanksPersonalization = [
+			// 	{
+			// 		email: input.email,
+			// 		data: {
+			// 			name: input.name
+			// 		}
+			// 	}
+			// ]
+			// const thanksParams = new EmailParams().setFrom(sentFrom).setTo(thanksRecipients).setReplyTo(thanksReplyTo).setSubject(thanksSubject).setPersonalization(thanksPersonalization).setTemplateId("v69oxl51n6x4785k");
 
-			// send the thanks email
-			try {
-				await mailerSend.email.send(thanksParams);
-			} catch (error) {
-				console.error(error);
-			}
+			// // send the thanks email
+			// try {
+			// 	await mailerSend.email.send(thanksParams);
+			// } catch (error) {
+			// 	console.error(error);
+			// }
 		}
 	})
 }
