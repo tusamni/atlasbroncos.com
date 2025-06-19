@@ -11,6 +11,7 @@ import Container from "@/components/layout/Container";
 import Button from "@/components/buttons/Button";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import Image from "@/components/images/Image";
 import Section from "@/components/layout/Section";
 
 // props
@@ -24,7 +25,7 @@ export interface Props {
 	footerPadding?: boolean;
 }
 
-const { title, description, contactForm = true, transparentHeader = false, marginTop = true, marginBottom = true, footerPadding = true } = Astro.props;
+const { title, description, contactForm = true, transparentHeader = false, marginTop = true, marginBottom = false, footerPadding = true } = Astro.props;
 ---
 
 <html lang="en">
@@ -32,42 +33,36 @@ const { title, description, contactForm = true, transparentHeader = false, margi
 		<BaseHead title={title} description={description} />
 	</head>
 
-	<body class="min-h-screen bg-[radial-gradient(80vw_circle_at_top_center,_rgba(224,242,254,1),_transparent)]">
+	<body class="min-h-screen">
 		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5W2NH2T7" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 		<Header headerLight={transparentHeader ? true : false} />
 
-		<main class:list={["bg-[radial-gradient(80vw_circle_at_bottom_left,_rgba(224,242,254,1),_transparent)]", marginTop && "pt-32", marginBottom && "pb-32"]}>
+		<main class:list={[marginTop && "pt-32", marginBottom && "pb-32"]}>
 			<slot />
 
 			{
 				contactForm && (
-					<div class="mt-32">
-						<Section>
-							{footerPadding && <hr class="hidden lg:block" />}
+					<div class="py-60 relative w-full h-full">
+						<Image src="https://cdn.cosmicjs.com/f3d4a360-4c7c-11f0-8d02-d7de9448d6b1-R5C_8010.jpg" class="absolute inset-0 w-full h-full object-cover object-center" gallery={false} />
+						<div class="bg-gradient-to-br from-black via-black/40 to-transparent absolute inset-0" />
 
-							<Container>
-								<div class="h1 tracking-tight mb-8">Ready to Get Started?</div>
+						<Container classes="relative">
+							<div class="!text-8xl tracking-tighter mb-8 text-white font-semibold ">
+								Ready to
+								<br />
+								Get Started?
+							</div>
 
-								<div class="grid grid-cols-6 gap-12">
-									<div class="col-span-6 lg:col-span-3 order-1 lg:order-2 space-y-8">
-										<div class="font-light text-gray-700 leading-relaxed">
-											Ready to bring your vintage Bronco dream to life? Contact us today to discuss your restoration project. Our team is here to guide you through every step of the process, ensuring your Bronco is restored to
-											its full potential.
-										</div>
-
-										<div class="grid grid-cols-2 gap-6">
-											<div class="flex flex-col gap-1">
-												<div class="text-lg font-medium">Call Us</div>
-												<div class="font-light">(512) 560-2474</div>
-											</div>
-										</div>
-									</div>
-
-									<ContactForm />
+							<div class="space-y-12 max-w-2xl">
+								<div class="font-light leading-relaxed text-xl text-white">
+									Ready to bring your vintage Bronco dream to life? Contact us today to discuss your restoration project. Our team is here to guide you through every step of the process, ensuring your Bronco is restored to its full
+									potential.
 								</div>
-							</Container>
-						</Section>
+
+								<ContactForm />
+							</div>
+						</Container>
 					</div>
 				)
 			}

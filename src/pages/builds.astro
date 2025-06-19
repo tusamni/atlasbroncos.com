@@ -56,9 +56,7 @@ const imagesNormal = [
 						{
 							imagesNormal.map((i) => (
 								<div class="swiper-slide text-center">
-									<div class="relative">
-										<Image src={i} rounded={true} sizes="(min-width: 768px) 90vw, (min-width: 1280px) 1050px, 100vw" />
-									</div>
+										<Image src={i} rounded={true} sizes="(min-width: 768px) 90vw, (min-width: 1280px) 1050px, 100vw" lazy={false} />
 								</div>
 							))
 						}
@@ -132,6 +130,7 @@ const imagesNormal = [
 		initialSlide: 1,
 		centeredSlides: true,
 		loop: true,
+		loopAdditionalSlides: 1,
 		navigation: {
 			nextEl: ".swiper-button-next-custom",
 			prevEl: ".swiper-button-prev-custom",
@@ -143,16 +142,16 @@ const imagesNormal = [
 				return current + " of " + total;
 			},
 		},
-		breakpoints: {
-			1440: {
-				spaceBetween: 36,
-			},
-			1024: {
-				spaceBetween: 36,
-			},
-			768: {
-				spaceBetween: 36,
-			},
-		},
+		// breakpoints: {
+		// 	1440: {
+		// 		spaceBetween: 36,
+		// 	},
+		// 	1024: {
+		// 		spaceBetween: 36,
+		// 	},
+		// 	768: {
+		// 		spaceBetween: 36,
+		// 	},
+		// },
 	});
 </script>

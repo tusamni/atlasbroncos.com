@@ -5,10 +5,24 @@ import HeadingBase from "@/components/sections/HeadingBase";
 import Image from "@/components/images/Image";
 import Section from "@/components/layout/Section";
 
+const header = "https://cdn.cosmicjs.com/f45e1eb0-4c7c-11f0-8d02-d7de9448d6b1-R5C_7291.jpg";
 const images = [
-	"https://cdn.cosmicjs.com/e886c5a0-c983-11ef-bee4-3bb1d3c55332-jack-finnigan-rriAI0nhcbc-unsplash.jpg",
-	"https://cdn.cosmicjs.com/e9280eb0-c983-11ef-bee4-3bb1d3c55332-cherry-laithang-tLxQhu4qkjg-unsplash.jpg",
-	"https://cdn.cosmicjs.com/e9612010-c983-11ef-bee4-3bb1d3c55332-robert-godwin-cdksyTqEXzo-unsplash.jpg",
+	{
+		src: "https://cdn.cosmicjs.com/d304d3d0-4c7c-11f0-8d02-d7de9448d6b1-R5C_7327.jpg",
+		columns: "col-span-1",
+	},
+	{
+		src: "https://cdn.cosmicjs.com/ef2720e0-4c7c-11f0-8d02-d7de9448d6b1-R5C_7244.jpg",
+		columns: "col-span-1",
+	},
+	{
+		src: "https://cdn.cosmicjs.com/f1a23300-4c7c-11f0-8d02-d7de9448d6b1-R5C_7381.jpg",
+		columns: "col-span-1",
+	},
+	{
+		src: "https://cdn.cosmicjs.com/f25ef350-4c7c-11f0-8d02-d7de9448d6b1-R5C_7310.jpg",
+		columns: "col-span-1",
+	},
 ];
 const team = [
 	{
@@ -39,11 +53,20 @@ const team = [
 		</Container>
 
 		<Container>
-			<div class="grid grid-cols-3 gap-8">
+			<div class="grid grid-cols-4 gap-8">
+				<div class="col-span-4 flex flex-col space-y-4">
+					<Image src={header} class="w-full h-full object-cover" sizes="95vw" />
+
+					<div class="flex flex-col justify-center items-center">
+						<div class="font-semibold">John Smith</div>
+						<div class="text-sm">CEO</div>
+					</div>
+				</div>
+
 				{
 					images.map((i) => (
-						<div class="flex flex-col space-y-4 h-[200px] sm:h-[275px] md:h-[350px] lg:h-[500px] xl:h-[650px]">
-							<Image src={i} class="w-full h-full rounded-2xl object-cover" sizes="33vw" />
+						<div class:list={["flex flex-col space-y-4 h-[200px] sm:h-[275px] md:h-[350px] lg:h-[500px] xl:h-[650px]", i.columns]}>
+							<Image src={i.src} class="w-full h-full object-cover" sizes="33vw" />
 
 							<div class="flex flex-col justify-center items-center">
 								<div class="font-semibold">John Smith</div>

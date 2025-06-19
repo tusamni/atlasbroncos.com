@@ -8,29 +8,31 @@ import Metadata from "@/components/sections/Metadata";
 import Section from "@/components/layout/Section";
 
 const items = [
-	"https://cdn.cosmicjs.com/a8b10a90-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_084.jpg",
-	"https://cdn.cosmicjs.com/8bffc3f0-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_052.jpg",
-	"https://cdn.cosmicjs.com/c7792340-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_132.jpg",
+	"https://cdn.cosmicjs.com/d0cbd3c0-4c7c-11f0-8d02-d7de9448d6b1-R5C_6792.jpg",
+	"https://cdn.cosmicjs.com/8aadef90-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_057.jpg",
+	"https://cdn.cosmicjs.com/cdf952d0-4c7c-11f0-8d02-d7de9448d6b1-R5C_8151.jpg",
 ];
 ---
 
-<BaseLayout marginTop={false}>
-	<Section>
-		<video width="320" height="240" controls autoplay loop muted class="w-full h-full">
-			<source src="https://cdn.cosmicjs.com/89d78800-d45f-11ef-bee4-3bb1d3c55332-blue_bronco_hero_v05-1440p.mp4" type="video/mp4" />
-		</video>
+<BaseLayout marginTop={false} transparentHeader={true}>
+	<div class="bg-black text-white pb-48">
+		<Section>
+			<Image src="https://cdn.cosmicjs.com/f43eafd0-4c7c-11f0-8d02-d7de9448d6b1-R5C_7768.jpg" gallery={false} />
+			<!-- <video width="320" height="240" autoplay loop muted class="w-full h-full">
+				<source src="https://cdn.cosmicjs.com/89d78800-d45f-11ef-bee4-3bb1d3c55332-blue_bronco_hero_v05-1440p.mp4" type="video/mp4" />
+			</video> -->
 
-		<Container>
-			<HeadingBase>
-				<h1 class="mb-4">At Atlas Broncos, we specialize in frame-off, Vintage Bronco restorations.</h1>
-				<div class="text-lg md:text-xl lg:text-2xl font-light leading-relaxed md:leading-normal">
-					Our team of experienced professionals brings over 80 years of combined expertise in restoring classic vehicles, and we are passionate about bringing these timeless off-road legends back to life with modern precision and
-					craftsmanship.
+			<Container>
+				<div class="-mt-64 -mx-12 bg-black rounded-tr-xl p-12 relative max-w-5xl text-balance">
+					<h1 class="mb-4">At Atlas Broncos, we specialize in frame-off, Vintage Bronco restorations.</h1>
+					<div class="text-lg md:text-xl lg:text-2xl font-light leading-relaxed md:leading-normal">
+						Our team of experienced professionals brings over 80 years of combined expertise in restoring classic vehicles, and we are passionate about bringing these timeless off-road legends back to life with modern precision and
+						craftsmanship.
+					</div>
 				</div>
-			</HeadingBase>
-		</Container>
+			</Container>
 
-		<!-- <div>
+			<!-- <div>
 			<Container>
 				<Metadata />
 			</Container>
@@ -49,40 +51,40 @@ const items = [
 			</Container>
 		</div> -->
 
-		<Container classes="space-y-10 lg:space-y-24">
-			<div class="space-y-4">
-				<div class="label">Atlas Broncos</div>
-				<h2 class="text-balance max-w-[16em]">Where passion meets decades of experience</h2>
-			</div>
+			<Container classes="space-y-10 lg:space-y-24">
+				<div class="flex justify-end">
+					<h2 class="text-balance max-w-3xl text-right">Where passion meets decades of experience</h2>
+				</div>
 
-			<div class="grid grid-cols-6 gap-12">
-				<div class="space-y-6 col-span-6 lg:col-span-2 flex flex-col h-full justify-between">
-					<div class="space-y-4">
-						<div class="h6">Why Choose Atlas?</div>
-						<div class="font-light space-y-4">
-							<p>When you choose Atlas Broncos, you're not just getting a restored Bronco—you're getting a vehicle built with passion, expertise, and an uncompromising attention to detail.</p>
-							<p>We take pride in every Bronco we restore, ensuring that it's not only visually stunning but also built to perform at the highest level, whether you're cruising on the highway or exploring rugged trails.</p>
+				<div class="grid grid-cols-6 gap-12">
+					<div class="space-y-6 col-span-6 lg:col-span-2 flex flex-col h-full justify-between">
+						<div class="space-y-4">
+							<h3>Why Choose Atlas Broncos?</h3>
+							<div class="font-light space-y-4">
+								<p>When you choose Atlas Broncos, you're not just getting a restored Bronco—you're getting a vehicle built with passion, expertise, and an uncompromising attention to detail.</p>
+								<p>We take pride in every Bronco we restore, ensuring that it's not only visually stunning but also built to perform at the highest level, whether you're cruising on the highway or exploring rugged trails.</p>
+							</div>
+						</div>
+
+						<ButtonLink theme="light">Contact Us</ButtonLink>
+					</div>
+
+					<div class="w-full h-full col-span-6 lg:col-span-4">
+						<div class="grid grid-cols-6 gap-6 h-full">
+							{
+								items.map((i, n) => (
+									<Image
+										pictureClass={["h-full w-full lg:col-span-2", n == 0 ? "col-span-6" : "col-span-3"]}
+										class="rounded-lg h-full w-full object-cover shadow-2xl"
+										src={i}
+										sizes={n == 0 ? "(min-width: 1024px) 350px, 100vw" : "(min-width: 1024px) 350px, 50vw"}
+									/>
+								))
+							}
 						</div>
 					</div>
-
-					<ButtonLink>Contact Us</ButtonLink>
 				</div>
-
-				<div class="w-full h-full col-span-6 lg:col-span-4">
-					<div class="grid grid-cols-6 gap-6 h-full">
-						{
-							items.map((i, n) => (
-								<Image
-									pictureClass={["h-full w-full lg:col-span-2", n == 0 ? "col-span-6" : "col-span-3"]}
-									class="rounded-lg h-full w-full object-cover shadow-2xl"
-									src={i}
-									sizes={n == 0 ? "(min-width: 1024px) 350px, 100vw" : "(min-width: 1024px) 350px, 50vw"}
-								/>
-							))
-						}
-					</div>
-				</div>
-			</div>
-		</Container>
-	</Section>
+			</Container>
+		</Section>
+	</div>
 </BaseLayout>

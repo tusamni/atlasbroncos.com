@@ -9,7 +9,7 @@ export interface Props {
 	rounded: boolean;
 	lazy?: boolean;
 }
-const { src, gallery = true, pictureClass, rounded = false, lazy = true, ...attrs } = Astro.props;
+const { src, gallery = true, pictureClass, rounded = true, lazy = true, ...attrs } = Astro.props;
 
 // image details
 const imageName = src.replace("https://cdn.cosmicjs.com/", "");
@@ -26,7 +26,7 @@ for (let size of imageConfig.imageSizes) {
 const imageSrcSet = imageOptimized.join(", ");
 ---
 
-<div class:list={[pictureClass, gallery && "gallery hover:cursor-pointer *:hover:scale-105 *:duration-300 *:transition-all overflow-hidden relative group w-full h-full", rounded && "rounded-lg"]}>
+<div class:list={[pictureClass, gallery && "gallery hover:cursor-pointer !overflow-hidden relative group w-full h-full [&>img]:hover:scale-102 [&>img]:transition-all *:duration-500", rounded && "rounded-xl"]}>
 	{
 		imageMetadata ? (
 			<img
@@ -49,8 +49,8 @@ const imageSrcSet = imageOptimized.join(", ");
 
 	{
 		gallery && (
-			<div class:list={["absolute bottom-0 right-0 rounded-tl-lg size-7 bg-white flex justify-center items-center group-hover:size-9 transition-all duration-300 pointer-events-none", rounded && "rounded-br-lg"]}>
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-4 group-hover:size-5 transition-all duration-300 fill-gray-700">
+			<div class:list={["z-10 absolute bottom-3 right-3 rounded-full size-7 bg-white flex justify-center items-center pointer-events-none"]}>
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-4 fill-gray-700">
 					<path d="M10.75 4.75a.75.75 0 0 0-1.5 0v4.5h-4.5a.75.75 0 0 0 0 1.5h4.5v4.5a.75.75 0 0 0 1.5 0v-4.5h4.5a.75.75 0 0 0 0-1.5h-4.5v-4.5Z" />
 				</svg>
 			</div>

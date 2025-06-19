@@ -1,12 +1,24 @@
-@import url("typography.css");
-@import url("buttons.css");
-@import url("forms.css");
+@import "tailwindcss";
+@plugin "@tailwindcss/forms";
+@plugin "@tailwindcss/typography";
+
+@import "./typography";
+@import "./buttons";
+@import "./forms.css";
+
+@theme inline {
+    --font-sans: var(--font-inter);
+}
 
 html {
 	@apply 2xl:text-[calc(1rem+.15vw)] text-[calc(1rem+.1vw)]
 }
 body {
-	@apply bg-white font-sans text-gray-800 antialiased
+	@apply font-sans text-gray-800 antialiased
+}
+
+.is-pinned {
+	@apply bg-black/80 py-4 transition-all duration-300 ease-in-out;
 }
 
 /* alpinejs hide */

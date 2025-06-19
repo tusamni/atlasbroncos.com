@@ -1,13 +1,26 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig, fontProviders } from 'astro/config';
 
 import alpinejs from '@astrojs/alpinejs';
 import netlify from "@astrojs/netlify";
 import sitemap from "@astrojs/sitemap";
-import tailwind from '@astrojs/tailwind';
+import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
 	adapter: netlify(),
-	integrations: [alpinejs(), sitemap(), tailwind({ applyBaseStyles: true })],
+	experimental: {
+		fonts: [
+			{
+				provider: fontProviders.google(),
+				name: "Inter",
+				cssVariable: "--font-inter",
+				weights: ["100 900"],
+			},
+		],
+	},
+	integrations: [alpinejs(), sitemap()],
 	site: 'https://atlasbroncos.com',
+	vite: {
+		plugins: [tailwindcss()]
+	},
 });

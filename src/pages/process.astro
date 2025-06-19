@@ -13,7 +13,14 @@ const images = [
 	"https://cdn.cosmicjs.com/9abe2df0-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_076.jpg",
 	"https://cdn.cosmicjs.com/8962d1f0-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_049.jpg",
 ];
-
+const shop = [
+	"https://cdn.cosmicjs.com/c1e6f600-4c7c-11f0-8d02-d7de9448d6b1-R5C_7463.jpg",
+	"https://cdn.cosmicjs.com/d11b7a60-4c7c-11f0-8d02-d7de9448d6b1-R5C_7451.jpg",
+	"https://cdn.cosmicjs.com/e7fc9070-4c7c-11f0-8d02-d7de9448d6b1-R5C_7361.jpg",
+	"https://cdn.cosmicjs.com/e389f410-4c7c-11f0-8d02-d7de9448d6b1-R5C_7371.jpg",
+	"https://cdn.cosmicjs.com/d30fa940-4c7c-11f0-8d02-d7de9448d6b1-R5C_7403.jpg",
+	"https://cdn.cosmicjs.com/cd6724f0-4c7c-11f0-8d02-d7de9448d6b1-R5C_6738.jpg",
+];
 const features = [
 	{
 		title: "Frame-Off Restoration",
@@ -63,7 +70,7 @@ const features = [
 
 	<Section>
 		<div class="grid grid-cols-3 md:grid-cols-6 shadow-2xl">
-			{images.map((i) => <Image src={i} class="object-cover w-full h-full aspect-square" sizes="20vw" />)}
+			{images.map((i) => <Image src={i} class="object-cover w-full h-full aspect-square" sizes="20vw" rounded={false} />)}
 		</div>
 
 		<Container>
@@ -105,6 +112,10 @@ const features = [
 						))
 					}
 				</div>
+			</div>
+
+			<div class="grid grid-cols-3 gap-6 mt-16">
+				{shop.map((i) => <Image src={i} class="object-cover w-full h-full aspect-square" sizes="33vw" />)}
 			</div>
 		</Container>
 	</Section>
