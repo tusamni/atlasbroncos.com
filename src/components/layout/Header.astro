@@ -10,12 +10,12 @@ interface Props {
 const { headerLight = false } = Astro.props;
 ---
 
-<header class:list={["z-50 py-4 lg:py-6", headerLight ? "lg:absolute top-0 left-0 right-0 bg-black lg:bg-black/30 lg:backdrop-blur-sm" : "relative"]}>
+<header class:list={["z-50 py-4 lg:py-6", headerLight ? "lg:absolute top-0 left-0 right-0 bg-white" : "relative"]}>
 	<div x-data="{ open: false }">
 		<Container>
 			<div class="relative flex md:items-center justify-between flex-col pt-0 md:flex-row">
 				<div class="w-full md:w-auto flex flex-row items-center justify-between text-gray-900 text-sm">
-					<a class:list={["shrink-0 w-48 sm:w-56 relative z-10", headerLight ? "text-white" : "text-black"]} :class="{'!text-black': open }" href="/">
+					<a class:list={["shrink-0 w-48 sm:w-56 relative z-10", headerLight ? "text-black" : "text-black"]} :class="{'!text-black': open }" href="/">
 						{headerLight ? <img src="https://imgix.cosmicjs.com/36618920-ea5b-11ef-a238-c1ad09f4b1ad-white-small.png" /> : <img src="https://imgix.cosmicjs.com/cc562a90-ea5a-11ef-a238-c1ad09f4b1ad-black-small.png" />}
 					</a>
 

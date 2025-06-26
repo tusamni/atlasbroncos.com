@@ -23,9 +23,10 @@ export interface Props {
 	marginTop?: boolean;
 	marginBottom?: boolean;
 	footerPadding?: boolean;
+	bgColor: string;
 }
 
-const { title, description, contactForm = true, transparentHeader = false, marginTop = true, marginBottom = false, footerPadding = true } = Astro.props;
+const { title, description, contactForm = true, transparentHeader = false, marginTop = true, marginBottom = false, footerPadding = true, bgColor } = Astro.props;
 ---
 
 <html lang="en">
@@ -33,40 +34,40 @@ const { title, description, contactForm = true, transparentHeader = false, margi
 		<BaseHead title={title} description={description} />
 	</head>
 
-	<body class="min-h-screen">
+	<body class:list={["min-h-screen", bgColor]}>
 		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5W2NH2T7" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 		<Header headerLight={transparentHeader ? true : false} />
 
-		<main class:list={[marginTop && "pt-32", marginBottom && "pb-32"]}>
+		<main class:list={[marginTop && "pt-16 lg:pt-32", marginBottom && "pt-16 lg:pb-32"]}>
 			<slot />
-
-			{
-				contactForm && (
-					<div class="py-60 relative w-full h-full">
-						<Image src="https://cdn.cosmicjs.com/f3d4a360-4c7c-11f0-8d02-d7de9448d6b1-R5C_8010.jpg" class="absolute inset-0 w-full h-full object-cover object-center" gallery={false} />
-						<div class="bg-gradient-to-br from-black via-black/40 to-transparent absolute inset-0" />
-
-						<Container classes="relative">
-							<div class="!text-8xl tracking-tighter mb-8 text-white font-semibold ">
-								Ready to
-								<br />
-								Get Started?
-							</div>
-
-							<div class="space-y-12 max-w-2xl">
-								<div class="font-light leading-relaxed text-xl text-white">
-									Ready to bring your vintage Bronco dream to life? Contact us today to discuss your restoration project. Our team is here to guide you through every step of the process, ensuring your Bronco is restored to its full
-									potential.
-								</div>
-
-								<ContactForm />
-							</div>
-						</Container>
-					</div>
-				)
-			}
 		</main>
+
+		{
+			contactForm && (
+				<div class="py-60 relative w-full h-full">
+					<Image src="https://cdn.cosmicjs.com/f3d4a360-4c7c-11f0-8d02-d7de9448d6b1-R5C_8010.jpg" class="absolute inset-0 w-full h-full object-cover object-center" gallery={false} />
+					<div class="bg-gradient-to-br from-black via-black/40 to-transparent absolute inset-0" />
+
+					<Container classes="relative">
+						<div class="!text-8xl tracking-tighter mb-8 text-white font-semibold ">
+							Ready to
+							<br />
+							Get Started?
+						</div>
+
+						<div class="space-y-12 max-w-2xl">
+							<div class="font-light leading-relaxed text-xl text-white">
+								Ready to bring your vintage Bronco dream to life? Contact us today to discuss your restoration project. Our team is here to guide you through every step of the process, ensuring your Bronco is restored to its full
+								potential.
+							</div>
+
+							<ContactForm />
+						</div>
+					</Container>
+				</div>
+			)
+		}
 
 		<Footer />
 

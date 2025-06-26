@@ -1,28 +1,17 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout";
+import Button from "@/components/buttons/Button";
 import Container from "@/components/layout/Container";
 import HeadingBase from "@/components/sections/HeadingBase";
 import Image from "@/components/images/Image";
 import Section from "@/components/layout/Section";
 
-const header = "https://cdn.cosmicjs.com/f45e1eb0-4c7c-11f0-8d02-d7de9448d6b1-R5C_7291.jpg";
 const images = [
-	{
-		src: "https://cdn.cosmicjs.com/d304d3d0-4c7c-11f0-8d02-d7de9448d6b1-R5C_7327.jpg",
-		columns: "col-span-1",
-	},
-	{
-		src: "https://cdn.cosmicjs.com/ef2720e0-4c7c-11f0-8d02-d7de9448d6b1-R5C_7244.jpg",
-		columns: "col-span-1",
-	},
-	{
-		src: "https://cdn.cosmicjs.com/f1a23300-4c7c-11f0-8d02-d7de9448d6b1-R5C_7381.jpg",
-		columns: "col-span-1",
-	},
-	{
-		src: "https://cdn.cosmicjs.com/f25ef350-4c7c-11f0-8d02-d7de9448d6b1-R5C_7310.jpg",
-		columns: "col-span-1",
-	},
+	"https://cdn.cosmicjs.com/d3693af0-4c7c-11f0-8d02-d7de9448d6b1-R5C_7278.jpg",
+	"https://cdn.cosmicjs.com/d304d3d0-4c7c-11f0-8d02-d7de9448d6b1-R5C_7327.jpg",
+	"https://cdn.cosmicjs.com/ef2720e0-4c7c-11f0-8d02-d7de9448d6b1-R5C_7244.jpg",
+	"https://cdn.cosmicjs.com/f1a23300-4c7c-11f0-8d02-d7de9448d6b1-R5C_7381.jpg",
+	"https://cdn.cosmicjs.com/f25ef350-4c7c-11f0-8d02-d7de9448d6b1-R5C_7310.jpg",
 ];
 const team = [
 	{
@@ -44,45 +33,40 @@ const team = [
 ];
 ---
 
-<BaseLayout>
-	<Section>
+<BaseLayout bgColor="bg-stone-200" marginBottom={true}>
+	<Section size="small">
 		<Container>
 			<HeadingBase>
 				<h1>Our team is composed of experts who share a deep passion for vintage vehicles, particularly the Ford Bronco.</h1>
 			</HeadingBase>
 		</Container>
 
-		<Container>
-			<div class="grid grid-cols-4 gap-8">
-				<div class="col-span-4 flex flex-col space-y-4">
-					<Image src={header} class="w-full h-full object-cover" sizes="95vw" />
+		<div class="bg-stone-100 pb-12 pt-16">
+			<Container>
+				<div class="grid lg:grid-cols-5 gap-6">
+					{
+						images.map((i) => (
+							<div class:list={["flex flex-col space-y-4"]}>
+								<Image src={i} class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-200 " sizes="100vw" gallery={false} />
 
-					<div class="flex flex-col justify-center items-center">
-						<div class="font-semibold">John Smith</div>
-						<div class="text-sm">CEO</div>
-					</div>
-				</div>
-
-				{
-					images.map((i) => (
-						<div class:list={["flex flex-col space-y-4 h-[200px] sm:h-[275px] md:h-[350px] lg:h-[500px] xl:h-[650px]", i.columns]}>
-							<Image src={i.src} class="w-full h-full object-cover" sizes="33vw" />
-
-							<div class="flex flex-col justify-center items-center">
-								<div class="font-semibold">John Smith</div>
-								<div class="text-sm">CEO</div>
+								<div class="flex flex-col justify-center items-center">
+									<div class="font-semibold">John Smith</div>
+									<div class="text-sm">CEO</div>
+								</div>
 							</div>
-						</div>
-					))
-				}
-			</div>
-		</Container>
+						))
+					}
+				</div>
+			</Container>
+		</div>
 
 		<Container>
-			<div class="grid lg:grid-cols-8 gap-8">
-				<div class="col-span-8 lg:col-span-5 flex flex-col gap-8 w-full h-full">
-					<div class="h4">With decades of hands-on experience, we've built or restored thousands of vehicles, refining our techniques along the way.</div>
+			<h2 class="h3 text-balance max-w-6xl mb-12">With decades of hands-on experience, we've built or restored thousands of vehicles, refining our techniques along the way.</h2>
 
+			<div class="grid lg:grid-cols-8 gap-8">
+				<Image src="https://cdn.cosmicjs.com/f2045030-4c7c-11f0-8d02-d7de9448d6b1-R5C_8020.jpg" pictureClass="shadow-2xl col-span-4 relative" class="absolute rounded w-full h-full object-cover" sizes="100vw" gallery={false} />
+
+				<div class="col-span-4 space-y-8">
 					<div class="font-light leading-relaxed">
 						Originally, our focus was on Ford retractables, and our team has won numerous awards for excellence in this area. In 2020, we decided to channel our skills and passion into restoring Vintage Broncos, giving these classics the
 						attention they deserve. Every restoration is a labor of love, and our reputation for quality has followed us into this new chapter of our business.
@@ -91,7 +75,7 @@ const team = [
 					<div class="grid grid-cols-2 gap-4">
 						{
 							team.map((t) => (
-								<div class="space-y-2 p-6 border border-black/10 rounded">
+								<div class="space-y-2 p-6 border border-stone-300 rounded">
 									<div class="text-lg font-medium">{t.title}</div>
 									<div class="text-sm font-light text-balance">{t.content}</div>
 								</div>
@@ -99,6 +83,10 @@ const team = [
 						}
 					</div>
 				</div>
+			</div>
+
+			<div class="flex justify-center mt-12">
+				<Button>Get Started!</Button>
 			</div>
 		</Container>
 	</Section>
