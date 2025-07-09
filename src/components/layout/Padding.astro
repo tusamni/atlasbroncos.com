@@ -1,0 +1,13 @@
+---
+// props
+export interface Props {
+	paddingTop?: "small" | "large";
+	paddingBottom?: "small" | "large";
+	classes?: string;
+}
+const { paddingTop = "small", paddingBottom = "small", classes } = Astro.props;
+---
+
+<div class:list={[paddingTop == "small" && "pt-12 sm:pt-24", paddingTop == "large" && "pt-16 sm:pt-32", paddingBottom == "small" && "pb-12 sm:pb-24", paddingBottom == "large" && "pb-16 sm:pb-32", classes]}>
+	<slot />
+</div>

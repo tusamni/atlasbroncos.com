@@ -4,14 +4,27 @@ import Button from "@/components/buttons/Button";
 import Container from "@/components/layout/Container";
 import HeadingBase from "@/components/sections/HeadingBase";
 import Image from "@/components/images/Image";
+import Padding from "@/components/layout/Padding";
 import Section from "@/components/layout/Section";
 
+const ceo = "https://cdn.cosmicjs.com/d3693af0-4c7c-11f0-8d02-d7de9448d6b1-R5C_7278.jpg";
 const images = [
-	"https://cdn.cosmicjs.com/d3693af0-4c7c-11f0-8d02-d7de9448d6b1-R5C_7278.jpg",
-	"https://cdn.cosmicjs.com/d304d3d0-4c7c-11f0-8d02-d7de9448d6b1-R5C_7327.jpg",
-	"https://cdn.cosmicjs.com/ef2720e0-4c7c-11f0-8d02-d7de9448d6b1-R5C_7244.jpg",
-	"https://cdn.cosmicjs.com/f1a23300-4c7c-11f0-8d02-d7de9448d6b1-R5C_7381.jpg",
-	"https://cdn.cosmicjs.com/f25ef350-4c7c-11f0-8d02-d7de9448d6b1-R5C_7310.jpg",
+	{
+		url: "https://cdn.cosmicjs.com/d304d3d0-4c7c-11f0-8d02-d7de9448d6b1-R5C_7327.jpg",
+		position: "object-[50%_20%]",
+	},
+	{
+		url: "https://cdn.cosmicjs.com/d23f39e0-4c7c-11f0-8d02-d7de9448d6b1-R5C_7268.jpg",
+		position: "",
+	},
+	{
+		url: "https://cdn.cosmicjs.com/f0874d20-4c7c-11f0-8d02-d7de9448d6b1-R5C_7392.jpg",
+		position: "",
+	},
+	{
+		url: "https://cdn.cosmicjs.com/f169e4f0-4c7c-11f0-8d02-d7de9448d6b1-R5C_7317.jpg",
+		position: "",
+	},
 ];
 const team = [
 	{
@@ -33,7 +46,7 @@ const team = [
 ];
 ---
 
-<BaseLayout bgColor="bg-stone-200" marginBottom={true}>
+<BaseLayout bgColor="bg-stone-100" marginBottom={false}>
 	<Section size="small">
 		<Container>
 			<HeadingBase>
@@ -41,53 +54,81 @@ const team = [
 			</HeadingBase>
 		</Container>
 
-		<div class="bg-stone-100 pb-12 pt-16">
-			<Container>
-				<div class="grid lg:grid-cols-5 gap-6">
-					{
-						images.map((i) => (
-							<div class:list={["flex flex-col space-y-4"]}>
-								<Image src={i} class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-200 " sizes="100vw" gallery={false} />
+		<div class="grid lg:grid-cols-3 lg:grid-rows-2 h-[50vh]">
+			<Image src={ceo} pictureClass="row-span-2" class="w-full h-full object-cover transition duration-200 rounded" sizes="100vw" gallery={false} />
+			{images.map((i) => <Image src={i.url} class:list={["w-full h-full object-cover transition duration-200 rounded", i.position]} sizes="100vw" gallery={false} />)}
+		</div>
+	</Section>
 
-								<div class="flex flex-col justify-center items-center">
-									<div class="font-semibold">John Smith</div>
-									<div class="text-sm">CEO</div>
-								</div>
-							</div>
-						))
-					}
+	<div class="bg-stone-800">
+		<Padding paddingTop="large" paddingBottom="large">
+			<Container>
+				<div class="mx-auto max-w-4xl">
+					<div class="space-y-10">
+						<h2 class="h3 text-white text-balance max-w-6xl">With decades of experience, we've built and restored thousands of vehicles.</h2>
+
+						<hr class="text-stone-700" />
+
+						<div class="font-light leading-relaxed text-lg text-stone-300">
+							Originally, our focus was on Ford retractables, and our team has won numerous awards for excellence in this area. In 2020, we decided to channel our skills and passion into restoring Vintage Broncos, giving these classics
+							the attention they deserve. Every restoration is a labor of love, and our reputation for quality has followed us into this new chapter of our business.
+						</div>
+
+						<hr class="text-stone-700" />
+
+						<div class="grid grid-cols-2 gap-8 text-stone-300">
+							{
+								team.map((t) => (
+									<div class="space-y-2">
+										<div class="text-lg font-medium text-white">{t.title}</div>
+										<div class="text-sm font-light text-balance text-stone-400">{t.content}</div>
+									</div>
+								))
+							}
+						</div>
+					</div>
 				</div>
 			</Container>
-		</div>
+		</Padding>
+	</div>
 
-		<Container>
-			<h2 class="h3 text-balance max-w-6xl mb-12">With decades of hands-on experience, we've built or restored thousands of vehicles, refining our techniques along the way.</h2>
+	<!-- <div class="bg-stone-800">
+		<Padding paddingTop="large" paddingBottom="large">
+			<Container>
+				<div class="mx-auto grid grid-cols-1 gap-x-16 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+					<Image
+						src="https://cdn.cosmicjs.com/c98d1f10-4c7c-11f0-8d02-d7de9448d6b1-R5C_6851.jpg"
+						pictureClass="w-full h-full relative"
+						class="absolute rounded-xl shadow-xl md:-ml-4 lg:-ml-0 w-full h-full object-cover"
+						sizes="100vw"
+						gallery={false}
+					/>
 
-			<div class="grid lg:grid-cols-8 gap-8">
-				<Image src="https://cdn.cosmicjs.com/f2045030-4c7c-11f0-8d02-d7de9448d6b1-R5C_8020.jpg" pictureClass="shadow-2xl col-span-4 relative" class="absolute rounded w-full h-full object-cover" sizes="100vw" gallery={false} />
+					<div class="space-y-10">
+						<h2 class="h3 text-white text-balance max-w-6xl">With decades of experience, we've built and restored thousands of vehicles.</h2>
 
-				<div class="col-span-4 space-y-8">
-					<div class="font-light leading-relaxed">
-						Originally, our focus was on Ford retractables, and our team has won numerous awards for excellence in this area. In 2020, we decided to channel our skills and passion into restoring Vintage Broncos, giving these classics the
-						attention they deserve. Every restoration is a labor of love, and our reputation for quality has followed us into this new chapter of our business.
-					</div>
+						<hr class="text-stone-700" />
 
-					<div class="grid grid-cols-2 gap-4">
-						{
-							team.map((t) => (
-								<div class="space-y-2 p-6 border border-stone-300 rounded">
-									<div class="text-lg font-medium">{t.title}</div>
-									<div class="text-sm font-light text-balance">{t.content}</div>
-								</div>
-							))
-						}
+						<div class="font-light leading-relaxed text-lg text-stone-300">
+							Originally, our focus was on Ford retractables, and our team has won numerous awards for excellence in this area. In 2020, we decided to channel our skills and passion into restoring Vintage Broncos, giving these classics
+							the attention they deserve. Every restoration is a labor of love, and our reputation for quality has followed us into this new chapter of our business.
+						</div>
+
+						<hr class="text-stone-700" />
+
+						<div class="grid grid-cols-2 gap-8 text-stone-300">
+							{
+								team.map((t) => (
+									<div class="space-y-2">
+										<div class="text-lg font-medium text-white">{t.title}</div>
+										<div class="text-sm font-light text-balance text-stone-400">{t.content}</div>
+									</div>
+								))
+							}
+						</div>
 					</div>
 				</div>
-			</div>
-
-			<div class="flex justify-center mt-12">
-				<Button>Get Started!</Button>
-			</div>
-		</Container>
-	</Section>
+			</Container>
+		</Padding>
+	</div> -->
 </BaseLayout>

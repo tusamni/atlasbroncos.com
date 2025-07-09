@@ -16,6 +16,18 @@ export default defineConfig({
 				cssVariable: "--font-inter",
 				weights: ["100 900"],
 			},
+			{
+				provider: fontProviders.google(),
+				name: "Manrope",
+				cssVariable: "--font-manrope",
+				weights: ["200 800"],
+			},
+			{
+				provider: fontProviders.google(),
+				name: "Fira Sans",
+				cssVariable: "--font-firasans",
+				weights: ["300 700"],
+			},
 		],
 	},
 	integrations: [alpinejs(), sitemap()],
