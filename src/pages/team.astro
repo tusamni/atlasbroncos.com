@@ -46,89 +46,37 @@ const team = [
 ];
 ---
 
-<BaseLayout bgColor="bg-stone-100" marginBottom={false}>
-	<Section size="small">
-		<Container>
-			<HeadingBase>
-				<h1>Our team is composed of experts who share a deep passion for vintage vehicles, particularly the Ford Bronco.</h1>
-			</HeadingBase>
-		</Container>
-
-		<div class="grid lg:grid-cols-3 lg:grid-rows-2 h-[50vh]">
-			<Image src={ceo} pictureClass="row-span-2" class="w-full h-full object-cover transition duration-200 rounded" sizes="100vw" gallery={false} />
-			{images.map((i) => <Image src={i.url} class:list={["w-full h-full object-cover transition duration-200 rounded", i.position]} sizes="100vw" gallery={false} />)}
-		</div>
-	</Section>
-
-	<div class="bg-stone-800">
-		<Padding paddingTop="large" paddingBottom="large">
-			<Container>
-				<div class="mx-auto max-w-4xl">
-					<div class="space-y-10">
-						<h2 class="h3 text-white text-balance max-w-6xl">With decades of experience, we've built and restored thousands of vehicles.</h2>
-
-						<hr class="text-stone-700" />
-
-						<div class="font-light leading-relaxed text-lg text-stone-300">
-							Originally, our focus was on Ford retractables, and our team has won numerous awards for excellence in this area. In 2020, we decided to channel our skills and passion into restoring Vintage Broncos, giving these classics
-							the attention they deserve. Every restoration is a labor of love, and our reputation for quality has followed us into this new chapter of our business.
-						</div>
-
-						<hr class="text-stone-700" />
-
-						<div class="grid grid-cols-2 gap-8 text-stone-300">
-							{
-								team.map((t) => (
-									<div class="space-y-2">
-										<div class="text-lg font-medium text-white">{t.title}</div>
-										<div class="text-sm font-light text-balance text-stone-400">{t.content}</div>
-									</div>
-								))
-							}
-						</div>
-					</div>
-				</div>
-			</Container>
-		</Padding>
+<BaseLayout bgColor="bg-gray-200" marginTop={false} marginBottom={false} contactBg={true}>
+	<div class="grid lg:grid-cols-3 lg:grid-rows-2 h-[50vh]">
+		<Image src={ceo} pictureClass="row-span-2" class="w-full h-full object-cover" sizes="100vw" gallery={false} />
+		{images.map((i) => <Image src={i.url} class:list={["w-full h-full object-cover", i.position]} sizes="100vw" gallery={false} />)}
 	</div>
 
-	<!-- <div class="bg-stone-800">
-		<Padding paddingTop="large" paddingBottom="large">
-			<Container>
-				<div class="mx-auto grid grid-cols-1 gap-x-16 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
-					<Image
-						src="https://cdn.cosmicjs.com/c98d1f10-4c7c-11f0-8d02-d7de9448d6b1-R5C_6851.jpg"
-						pictureClass="w-full h-full relative"
-						class="absolute rounded-xl shadow-xl md:-ml-4 lg:-ml-0 w-full h-full object-cover"
-						sizes="100vw"
-						gallery={false}
-					/>
+	<Padding paddingTop="large" paddingBottom="large" classes="bg-gray-800">
+		<Container>
+			<div class="grid grid-cols-2">
+				<h2 class="h3 text-white text-balance max-w-6xl">With decades of experience, we've built and restored thousands of vehicles.</h2>
 
-					<div class="space-y-10">
-						<h2 class="h3 text-white text-balance max-w-6xl">With decades of experience, we've built and restored thousands of vehicles.</h2>
+				<div class="space-y-10">
+					<div class="font-light leading-relaxed text-lg text-stone-300">
+						Originally, our focus was on Ford retractables, and our team has won numerous awards for excellence in this area. In 2020, we decided to channel our skills and passion into restoring Vintage Broncos, giving these classics the
+						attention they deserve. Every restoration is a labor of love, and our reputation for quality has followed us into this new chapter of our business.
+					</div>
 
-						<hr class="text-stone-700" />
+					<hr class="text-gray-700" />
 
-						<div class="font-light leading-relaxed text-lg text-stone-300">
-							Originally, our focus was on Ford retractables, and our team has won numerous awards for excellence in this area. In 2020, we decided to channel our skills and passion into restoring Vintage Broncos, giving these classics
-							the attention they deserve. Every restoration is a labor of love, and our reputation for quality has followed us into this new chapter of our business.
-						</div>
-
-						<hr class="text-stone-700" />
-
-						<div class="grid grid-cols-2 gap-8 text-stone-300">
-							{
-								team.map((t) => (
-									<div class="space-y-2">
-										<div class="text-lg font-medium text-white">{t.title}</div>
-										<div class="text-sm font-light text-balance text-stone-400">{t.content}</div>
-									</div>
-								))
-							}
-						</div>
+					<div class="grid grid-cols-2 gap-8 text-gray-300">
+						{
+							team.map((t) => (
+								<div class="space-y-2">
+									<div class="text-lg font-medium text-white">{t.title}</div>
+									<div class="text-sm font-light text-balance text-gray-300">{t.content}</div>
+								</div>
+							))
+						}
 					</div>
 				</div>
-			</Container>
-		</Padding>
-	</div> -->
+			</div>
+		</Container>
+	</Padding>
 </BaseLayout>

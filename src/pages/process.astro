@@ -58,61 +58,50 @@ const features = [
 ];
 ---
 
-<BaseLayout bgColor="bg-stone-100" marginTop={false} marginBottom={false} contactBg={false}>
-	<div class="relative after:absolute after:inset-0 after:z-10 after:bg-gradient-to-bl after:from-black/25 after:to-black/90 before:absolute before:inset-0 before:z-10 before:bg-radial-gradient before:opacity-40">
+<BaseLayout bgColor="bg-gray-800" marginTop={false} marginBottom={false} contactBg={false} transparentHeader={true}>
+	<div class="relative after:absolute after:inset-0 after:z-10 after:bg-gradient-to-bl after:from-black/90 after:to-black/40 h-[50vh]">
 		<Image src="https://cdn.cosmicjs.com/62344d70-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_009.jpg" gallery={false} sizes="100vw" pictureClass="absolute top-0 left-0 w-full h-full" class="w-full h-full object-cover" />
-
-		<Container classes="relative z-30 flex items-end pb-24 min-h-screen md:min-h-[50rem]">
-			<HeadingBase>
-				<h1 class="text-white">At Atlas Broncos, we offer a complete frame-off restoration that leaves no detail untouched.</h1>
-			</HeadingBase>
-		</Container>
 	</div>
 
-	<div class="grid grid-cols-3 md:grid-cols-6 shadow-2xl">
-		{images.map((i) => <Image src={i} class="object-cover w-full h-full aspect-square" sizes="20vw" rounded={false} />)}
-	</div>
+	<Container classes="-mt-32 relative z-10">
+		<div class="grid grid-cols-3 md:grid-cols-6 gap-6">
+			{images.map((i) => <Image src={i} pictureClass="shadow-2xl" class="object-cover w-full h-full aspect-square rounded" sizes="20vw" rounded={false} />)}
+		</div>
+	</Container>
 
-	<Padding classes="">
+	<Padding classes="bg-gradient-to-b from-gray-800 to-gray-700">
 		<Container>
-			<div class="grid lg:grid-cols-2 gap-12">
-				<h2 class="text-stone-900 col-span-2">The Atlas Process</h2>
-				<div class="space-y-6 md:space-y-8 w-9/10">
-					<div class="space-y-6 text-stone-800">
-						<hr class="text-stone-300" />
-						<p class="text-xl lg:text-2xl font-light leading-relaxed md:leading-normal">Every vehicle is meticulously disassembled, inspected, and restored from the ground up to ensure every component meets our high standards.</p>
-						<hr class="text-stone-300" />
+			<div class="z-10 grid lg:grid-cols-2">
+				<h1 class="col-span-2 w-3/4 text-balance mb-20 text-white">At Atlas Broncos, we offer a complete frame-off restoration that leaves no detail untouched.</h1>
 
-						<p class="text-base font-light leading-relaxed">
-							We specialize in retaining the original VIN and model year, preserving the integrity and history of each Bronco—something that is becoming increasingly rare in today's market.
-						</p>
-						<p class="text-base font-light leading-relaxed">
+				<div class="space-y-6 md:space-y-8 w-9/10">
+					<div class="space-y-6 text-stone-300">
+						<p class="text-xl lg:text-2xl font-light leading-relaxed md:leading-normal">Every vehicle is meticulously disassembled, inspected, and restored from the ground up to ensure every component meets our high standards.</p>
+
+						<hr class="text-gray-700" />
+
+						<p class="text-base leading-relaxed">We specialize in retaining the original VIN and model year, preserving the integrity and history of each Bronco—something that is becoming increasingly rare in today's market.</p>
+						<p class="text-base leading-relaxed">
 							Our process incorporates modern enhancements that give these classic Broncos new life while retaining their vintage charm. From installing the powerful Ford Coyote 5.0 engine to customizing exhaust systems and upgrading
 							the suspension, we ensure every Bronco we restore performs as beautifully as it looks.
 						</p>
 					</div>
 				</div>
 
-				<div class="space-y-6">
-					<div class="grid sm:grid-cols-2 gap-6">
-						{
-							features.map((f) => (
-								<div class="gap-1 flex flex-col">
-									<div class="text-base font-medium flex gap-x-1 items-center text-stone-600">
-										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5 mt-1">
-											<path
-												fill-rule="evenodd"
-												d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z"
-												clip-rule="evenodd"
-											/>
-										</svg>
+				<div>
+					<h2 class="h5 text-white mb-8">The Atlas Process</h2>
 
-										{f.title}
+					<div class="space-y-6">
+						<div class="grid sm:grid-cols-2 gap-6">
+							{
+								features.map((f) => (
+									<div class="gap-1 flex flex-col">
+										<div class="text-lg font-medium text-stone-200">{f.title}</div>
+										<div class="text-sm font-light text-balance text-stone-300">{f.description}</div>
 									</div>
-									<div class="text-sm font-light text-balance text-stone-300 max-w-7/8">{f.description}</div>
-								</div>
-							))
-						}
+								))
+							}
+						</div>
 					</div>
 				</div>
 			</div>

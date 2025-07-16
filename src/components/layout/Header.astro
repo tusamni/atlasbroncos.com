@@ -10,7 +10,7 @@ interface Props {
 const { headerLight = false } = Astro.props;
 ---
 
-<header class:list={["z-50 py-4 lg:py-6", headerLight ? "lg:absolute top-0 left-0 right-0 bg-white" : "relative"]}>
+<header class:list={["z-50 py-4 lg:py-6", headerLight ? "lg:absolute top-0 left-0 right-0" : "relative"]}>
 	<div x-data="{ open: false }">
 		<Container>
 			<div class="relative flex md:items-center justify-between flex-col pt-0 md:flex-row">

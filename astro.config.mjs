@@ -24,9 +24,9 @@ export default defineConfig({
 			},
 			{
 				provider: fontProviders.google(),
-				name: "Fira Sans",
-				cssVariable: "--font-firasans",
-				weights: ["300 700"],
+				name: "Noto Sans",
+				cssVariable: "--font-heading",
+				weights: ["100 900"],
 			},
 		],
 	},

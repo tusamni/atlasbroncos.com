@@ -8,14 +8,14 @@
 
 @theme inline {
     --font-sans: var(--font-manrope);
-	--font-heading: var(--font-firasans);
+	--font-heading: var(--font-heading);
 }
 
 html {
 	@apply 2xl:text-[calc(1rem+.15vw)] text-[calc(1rem+.1vw)]
 }
 body {
-	@apply font-sans text-black antialiased
+	@apply font-sans text-black antialiased;
 }
 
 .is-pinned {
