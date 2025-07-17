@@ -4,7 +4,7 @@ import ButtonLink from "@/components/buttons/ButtonLink";
 import Container from "@/components/layout/Container";
 import HeadingBase from "@/components/sections/HeadingBase";
 import Image from "@/components/images/Image";
-import Metadata from "@/components/sections/Metadata";
+import Padding from "@/components/layout/Padding";
 import Section from "@/components/layout/Section";
 
 const items = [
@@ -12,49 +12,44 @@ const items = [
 	"https://cdn.cosmicjs.com/8aadef90-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_057.jpg",
 	"https://cdn.cosmicjs.com/cdf952d0-4c7c-11f0-8d02-d7de9448d6b1-R5C_8151.jpg",
 ];
+
+const images = [
+	"https://cdn.cosmicjs.com/f48d4500-4c7c-11f0-8d02-d7de9448d6b1-R5C_7804.jpg",
+	"https://cdn.cosmicjs.com/f4c93c90-4c7c-11f0-8d02-d7de9448d6b1-R5C_7873.jpg",
+	"https://cdn.cosmicjs.com/bca10410-4c7c-11f0-8d02-d7de9448d6b1-R5C_6746.jpg",
+	"https://cdn.cosmicjs.com/c8a2e620-4c7c-11f0-8d02-d7de9448d6b1-R5C_6932.jpg",
+	"https://cdn.cosmicjs.com/c98d1f10-4c7c-11f0-8d02-d7de9448d6b1-R5C_6851.jpg",
+	"https://cdn.cosmicjs.com/c21cd310-4c7c-11f0-8d02-d7de9448d6b1-R5C_8190.jpg",
+];
 ---
 
-<BaseLayout marginTop={false} transparentHeader={false}>
-	<div class="bg-white pb-48">
+<BaseLayout bgColor="bg-stone-800" marginTop={false} marginBottom={false} contactBg={false} transparentHeader={true}>
+	<div class="relative flex h-[100vh] after:absolute after:inset-0 after:z-10 after:bg-gradient-to-b after:from-black/90 after:via-black/5 after:to-black/90">
+		<Image src="https://cdn.cosmicjs.com/dfd32da0-4c7c-11f0-8d02-d7de9448d6b1-R5C_8137.jpg" gallery={false} sizes="100vw" pictureClass="absolute top-0 left-0 w-full h-full" class="w-full h-full object-cover object-top" />
+	</div>
+
+	<Container classes="-mt-140 relative z-10 flex flex-col">
+		<h1 class="self-end text-right mb-10 text-white text-balance py-8 px-10 bg-black/40 w-4/7 rounded">We specialize in frame-off, Vintage Bronco restorations.</h1>
+
+		<div class="grid grid-cols-3 md:grid-cols-6 gap-6 bg-stone-800 rounded-t px-10 pt-10 -mx-10">
+			{images.map((i) => <Image src={i} pictureClass="shadow-2xl" class="object-cover w-full h-full aspect-square rounded" sizes="15vw" rounded={false} />)}
+		</div>
+	</Container>
+
+	<div class="bg-stone-800">
 		<Section>
-			<Image src="https://cdn.cosmicjs.com/f43eafd0-4c7c-11f0-8d02-d7de9448d6b1-R5C_7768.jpg" gallery={false} pictureClass="h-[60vh] md:h-screen lg:h-[900px]" class="object-cover object-bottom w-full h-full" />
+			<Padding>
+				<Container>
+					<div class="xl:max-w-5xl text-balance">
+						<h2 class="text-white text-balance max-w-3xl">Where passion meets decades of experience</h2>
 
-			<Container>
-				<div class="md:-mt-80 sm:-mt-60 bg-white rounded-t-xl sm:p-12 relative xl:max-w-5xl text-balance">
-					<h1 class="mb-4">At Atlas Broncos, we specialize in frame-off, Vintage Bronco restorations.</h1>
-					<div class="text-lg md:text-xl lg:text-2xl font-light leading-relaxed md:leading-normal">
-						Our team of experienced professionals brings over 80 years of combined expertise in restoring classic vehicles, and we are passionate about bringing these timeless off-road legends back to life with modern precision and
-						craftsmanship.
+						<div class="text-stone-100 text-lg md:text-xl lg:text-2xl font-light leading-relaxed md:leading-normal">
+							Our team of experienced professionals brings over 80 years of combined expertise in restoring classic vehicles, and we are passionate about bringing these timeless off-road legends back to life with modern precision and
+							craftsmanship.
+						</div>
 					</div>
-				</div>
-			</Container>
-
-			<!-- <div>
-			<Container>
-				<Metadata />
-			</Container>
-
-			<Container fullWidth={true}>
-				<div class="relative grid md:grid-cols-2 md:grid-rows-2 md:gap-6">
-					<Image
-						src="https://cdn.cosmicjs.com/a5a96fe0-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_098.jpg"
-						pictureClass="row-span-2"
-						class="w-full h-full object-cover md:rounded-lg md:shadow-2xl"
-						sizes="(min-width: 768px) 50vw, 100vw"
-					/>
-					<Image src="https://cdn.cosmicjs.com/d2e8fe80-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_146.jpg" class="w-full h-full object-cover md:rounded-lg md:shadow-2xl" sizes="(min-width: 768px) 100vw, 100vw" />
-					<Image src="https://cdn.cosmicjs.com/c72d7440-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_133.jpg" class="w-full h-full object-cover md:rounded-lg md:shadow-2xl" sizes="(min-width: 768px) 50vw, 100vw" />
-				</div>
-			</Container>
-		</div> -->
-
-			<Image src="https://cdn.cosmicjs.com/cd8e8310-4c7c-11f0-8d02-d7de9448d6b1-R5C_6896.jpg" rounded={false} />
-
-			<Container classes="space-y-10 lg:space-y-24">
-				<div class="flex justify-end">
-					<h2 class="text-balance max-w-3xl text-center lg:text-right">Where passion meets decades of experience</h2>
-				</div>
-			</Container>
+				</Container>
+			</Padding>
 
 			<Container>
 				<div class="grid grid-cols-6 gap-12">

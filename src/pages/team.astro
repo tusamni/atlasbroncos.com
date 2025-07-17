@@ -2,10 +2,11 @@
 import BaseLayout from "@/layouts/BaseLayout";
 import Button from "@/components/buttons/Button";
 import Container from "@/components/layout/Container";
-import HeadingBase from "@/components/sections/HeadingBase";
+import HorizontalRule from "@/components/sections/HorizontalRule";
 import Image from "@/components/images/Image";
 import Padding from "@/components/layout/Padding";
-import Section from "@/components/layout/Section";
+import Paragraph from "@/components/sections/Paragraph";
+import SmallFeature from "@/components/sections/SmallFeature";
 
 const ceo = "https://cdn.cosmicjs.com/d3693af0-4c7c-11f0-8d02-d7de9448d6b1-R5C_7278.jpg";
 const images = [
@@ -47,7 +48,7 @@ const team = [
 ---
 
 <BaseLayout bgColor="bg-gray-200" marginTop={false} marginBottom={false} contactBg={true}>
-	<div class="grid lg:grid-cols-3 lg:grid-rows-2 h-[50vh]">
+	<div class="grid lg:grid-cols-3 lg:grid-rows-2 min-h-[500px] h-[60vh] gap-6 px-6 pb-6">
 		<Image src={ceo} pictureClass="row-span-2" class="w-full h-full object-cover" sizes="100vw" gallery={false} />
 		{images.map((i) => <Image src={i.url} class:list={["w-full h-full object-cover", i.position]} sizes="100vw" gallery={false} />)}
 	</div>
@@ -58,20 +59,20 @@ const team = [
 				<h2 class="h3 text-white text-balance max-w-6xl">With decades of experience, we've built and restored thousands of vehicles.</h2>
 
 				<div class="space-y-10">
-					<div class="font-light leading-relaxed text-lg text-stone-300">
+					<Paragraph>
 						Originally, our focus was on Ford retractables, and our team has won numerous awards for excellence in this area. In 2020, we decided to channel our skills and passion into restoring Vintage Broncos, giving these classics the
 						attention they deserve. Every restoration is a labor of love, and our reputation for quality has followed us into this new chapter of our business.
-					</div>
+					</Paragraph>
 
-					<hr class="text-gray-700" />
+					<HorizontalRule />
 
 					<div class="grid grid-cols-2 gap-8 text-gray-300">
 						{
 							team.map((t) => (
-								<div class="space-y-2">
-									<div class="text-lg font-medium text-white">{t.title}</div>
-									<div class="text-sm font-light text-balance text-gray-300">{t.content}</div>
-								</div>
+								<SmallFeature>
+									<div slot="heading">{t.title}</div>
+									<div slot="description">{t.content}</div>
+								</SmallFeature>
 							))
 						}
 					</div>

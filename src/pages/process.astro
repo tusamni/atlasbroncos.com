@@ -1,10 +1,11 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout";
 import Container from "@/components/layout/Container";
-import HeadingBase from "@/components/sections/HeadingBase";
+import HorizontalRule from "@/components/sections/HorizontalRule";
 import Image from "@/components/images/Image";
 import Padding from "@/components/layout/Padding";
-import Section from "@/components/layout/Section";
+import Paragraph from "@/components/sections/Paragraph";
+import SmallFeature from "@/components/sections/SmallFeature";
 
 const images = [
 	"https://cdn.cosmicjs.com/77d59080-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_026.jpg",
@@ -78,13 +79,13 @@ const features = [
 					<div class="space-y-6 text-stone-300">
 						<p class="text-xl lg:text-2xl font-light leading-relaxed md:leading-normal">Every vehicle is meticulously disassembled, inspected, and restored from the ground up to ensure every component meets our high standards.</p>
 
-						<hr class="text-gray-700" />
+						<HorizontalRule />
 
-						<p class="text-base leading-relaxed">We specialize in retaining the original VIN and model year, preserving the integrity and history of each Bronco—something that is becoming increasingly rare in today's market.</p>
-						<p class="text-base leading-relaxed">
+						<Paragraph>We specialize in retaining the original VIN and model year, preserving the integrity and history of each Bronco—something that is becoming increasingly rare in today's market.</Paragraph>
+						<Paragraph>
 							Our process incorporates modern enhancements that give these classic Broncos new life while retaining their vintage charm. From installing the powerful Ford Coyote 5.0 engine to customizing exhaust systems and upgrading
 							the suspension, we ensure every Bronco we restore performs as beautifully as it looks.
-						</p>
+						</Paragraph>
 					</div>
 				</div>
 
@@ -95,10 +96,10 @@ const features = [
 						<div class="grid sm:grid-cols-2 gap-6">
 							{
 								features.map((f) => (
-									<div class="gap-1 flex flex-col">
-										<div class="text-lg font-medium text-stone-200">{f.title}</div>
-										<div class="text-sm font-light text-balance text-stone-300">{f.description}</div>
-									</div>
+									<SmallFeature>
+										<div slot="heading">{f.title}</div>
+										<div slot="description">{f.description}</div>
+									</SmallFeature>
 								))
 							}
 						</div>
