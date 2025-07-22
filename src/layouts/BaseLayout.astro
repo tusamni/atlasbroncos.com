@@ -12,6 +12,7 @@ import Button from "@/components/buttons/Button";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Image from "@/components/images/Image";
+import Map from "@/components/backgrounds/Map";
 import Padding from "@/components/layout/Padding";
 import Section from "@/components/layout/Section";
 
@@ -24,11 +25,10 @@ export interface Props {
 	marginTop?: boolean;
 	marginBottom?: boolean;
 	footerPadding?: boolean;
-	contactBg?: boolean;
 	bgColor: string;
 }
 
-const { title, description, contactForm = true, transparentHeader = false, marginTop = true, marginBottom = false, footerPadding = true, contactBg = true, bgColor } = Astro.props;
+const { title, description, contactForm = true, transparentHeader = false, marginTop = true, marginBottom = false, footerPadding = true, bgColor } = Astro.props;
 ---
 
 <html lang="en">
@@ -47,29 +47,28 @@ const { title, description, contactForm = true, transparentHeader = false, margi
 
 		{
 			contactForm && (
-				<Padding paddingBottom="large" paddingTop="large" classes="relative">
-					{ contactBg && (
-						<Image src="https://cdn.cosmicjs.com/c22dc300-4c7c-11f0-8d02-d7de9448d6b1-R5C_8279.jpg" class="absolute inset-0 w-full h-full object-cover object-center" gallery={false} />
-						<div class="bg-gradient-to-br from-black via-black/40 to-transparent absolute inset-0" />
-					)}
-					
-					<Container classes="relative">
-						<div class="h1 mb-8 text-white">
-							Ready to
-							<br />
-							Get Started?
-						</div>
+				<Map opacity={0.05}>
+					<Padding paddingBottom="large" paddingTop="large" classes="relative">
+						<Container classes="relative">
+							<div class="grid grid-cols-5 gap-8">
+								<div class="col-span-2">
+									<div class="h1 mb-8 text-white">
+										Ready to
+										<br />
+										Get Started?
+									</div>
 
-						<div class="space-y-12 max-w-2xl text-stone-300">
-							<div class="font-light leading-relaxed text-xl">
-								Ready to bring your vintage Bronco dream to life? Contact us today to discuss your restoration project. Our team is here to guide you through every step of the process, ensuring your Bronco is restored to its full
-								potential.
+									<div class="font-light leading-relaxed text-xl text-stone-300">
+										Ready to bring your vintage Bronco dream to life? Contact us today to discuss your restoration project. Our team is here to guide you through every step of the process, ensuring your Bronco is restored to its
+										full potential.
+									</div>
+								</div>
+
+								<ContactForm />
 							</div>
-
-							<ContactForm />
-						</div>
-					</Container>
-				</Padding>
+						</Container>
+					</Padding>
+				</Map>
 			)
 		}
 

@@ -9,6 +9,18 @@
 @theme inline {
     --font-sans: var(--font-manrope);
 	--font-heading: var(--font-heading);
+
+	--color-rock-50: #f5f4f1;
+	--color-rock-100: #e7e1da;
+	--color-rock-200: #d0c4b8;
+	--color-rock-300: #b5a18f;
+	--color-rock-400: #a0846f;
+	--color-rock-500: #917461;
+	--color-rock-600: #7c5f52;
+	--color-rock-700: #644b44;
+	--color-rock-800: #56413d;
+	--color-rock-900: #443432;
+	--color-rock-950: #2a1f1e;
 }
 
 html {

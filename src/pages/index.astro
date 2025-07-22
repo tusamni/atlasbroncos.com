@@ -2,9 +2,10 @@
 import BaseLayout from "@/layouts/BaseLayout";
 import ButtonLink from "@/components/buttons/ButtonLink";
 import Container from "@/components/layout/Container";
-import HeadingBase from "@/components/sections/HeadingBase";
 import Image from "@/components/images/Image";
 import Padding from "@/components/layout/Padding";
+import LargeHeading from "@/components/sections/text/LargeHeading";
+import Paragraph from "@/components/sections/text/Paragraph";
 import Section from "@/components/layout/Section";
 
 const items = [
@@ -23,64 +24,68 @@ const images = [
 ];
 ---
 
-<BaseLayout bgColor="bg-stone-800" marginTop={false} marginBottom={false} contactBg={false} transparentHeader={true}>
-	<div class="relative flex h-[100vh] after:absolute after:inset-0 after:z-10 after:bg-gradient-to-b after:from-black/90 after:via-black/5 after:to-black/90">
+<BaseLayout bgColor="bg-rock-900" marginTop={false} marginBottom={false} transparentHeader={true}>
+	<div class="relative flex h-[100vh] after:absolute after:inset-0 after:z-10 after:bg-gradient-to-b after:from-black/90 after:via-black/20 after:to-black">
 		<Image src="https://cdn.cosmicjs.com/dfd32da0-4c7c-11f0-8d02-d7de9448d6b1-R5C_8137.jpg" gallery={false} sizes="100vw" pictureClass="absolute top-0 left-0 w-full h-full" class="w-full h-full object-cover object-top" />
 	</div>
 
-	<Container classes="-mt-140 relative z-10 flex flex-col">
-		<h1 class="self-end text-right mb-10 text-white text-balance py-8 px-10 bg-black/40 w-4/7 rounded">We specialize in frame-off, Vintage Bronco restorations.</h1>
+	<Container classes="-mt-110 relative z-10 flex flex-col">
+		<h1 class="self-end text-right text-white text-balance py-8 px-12 w-5/7 rounded">We specialize in frame-off,<br />Vintage Bronco restorations.</h1>
 
-		<div class="grid grid-cols-3 md:grid-cols-6 gap-6 bg-stone-800 rounded-t px-10 pt-10 -mx-10">
+		<div class="grid grid-cols-3 md:grid-cols-6 gap-6 mt-14">
 			{images.map((i) => <Image src={i} pictureClass="shadow-2xl" class="object-cover w-full h-full aspect-square rounded" sizes="15vw" rounded={false} />)}
 		</div>
 	</Container>
 
-	<div class="bg-stone-800">
-		<Section>
-			<Padding>
+	<div class="bg-gradient-to-b from-rock-900 to-rock-700">
+		<Padding>
+			<Section>
 				<Container>
-					<div class="xl:max-w-5xl text-balance">
+					<div class="xl:max-w-5xl text-balance space-y-8">
 						<h2 class="text-white text-balance max-w-3xl">Where passion meets decades of experience</h2>
 
-						<div class="text-stone-100 text-lg md:text-xl lg:text-2xl font-light leading-relaxed md:leading-normal">
+						<LargeHeading classes="text-stone-200">
 							Our team of experienced professionals brings over 80 years of combined expertise in restoring classic vehicles, and we are passionate about bringing these timeless off-road legends back to life with modern precision and
 							craftsmanship.
+						</LargeHeading>
+					</div>
+				</Container>
+
+				<Container>
+					<div class="grid grid-cols-6 gap-12">
+						<div class="space-y-6 col-span-6 lg:col-span-2 flex flex-col h-full justify-between">
+							<div class="space-y-4">
+								<h3>Why Choose<br />Atlas Broncos?</h3>
+								<div class="font-light space-y-4">
+									<Paragraph classes="text-stone-200"
+										>When you choose Atlas Broncos, you're not just getting a restored Bronco—you're getting a vehicle built with passion, expertise, and an uncompromising attention to detail.</Paragraph
+									>
+									<Paragraph classes="text-stone-200"
+										>We take pride in every Bronco we restore, ensuring that it's not only visually stunning but also built to perform at the highest level, whether you're cruising on the highway or exploring rugged trails.
+									</Paragraph>
+								</div>
+							</div>
+
+							<ButtonLink>Contact Us</ButtonLink>
+						</div>
+
+						<div class="w-full h-full col-span-6 lg:col-span-4">
+							<div class="grid grid-cols-6 gap-6 h-full">
+								{
+									items.map((i, n) => (
+										<Image
+											pictureClass={["h-full w-full lg:col-span-2", n == 0 ? "col-span-6" : "col-span-3"]}
+											class="rounded-lg h-full w-full object-cover shadow-2xl"
+											src={i}
+											sizes={n == 0 ? "(min-width: 1024px) 350px, 100vw" : "(min-width: 1024px) 350px, 50vw"}
+										/>
+									))
+								}
+							</div>
 						</div>
 					</div>
 				</Container>
-			</Padding>
-
-			<Container>
-				<div class="grid grid-cols-6 gap-12">
-					<div class="space-y-6 col-span-6 lg:col-span-2 flex flex-col h-full justify-between">
-						<div class="space-y-4">
-							<h3>Why Choose Atlas Broncos?</h3>
-							<div class="font-light space-y-4">
-								<p>When you choose Atlas Broncos, you're not just getting a restored Bronco—you're getting a vehicle built with passion, expertise, and an uncompromising attention to detail.</p>
-								<p>We take pride in every Bronco we restore, ensuring that it's not only visually stunning but also built to perform at the highest level, whether you're cruising on the highway or exploring rugged trails.</p>
-							</div>
-						</div>
-
-						<ButtonLink>Contact Us</ButtonLink>
-					</div>
-
-					<div class="w-full h-full col-span-6 lg:col-span-4">
-						<div class="grid grid-cols-6 gap-6 h-full">
-							{
-								items.map((i, n) => (
-									<Image
-										pictureClass={["h-full w-full lg:col-span-2", n == 0 ? "col-span-6" : "col-span-3"]}
-										class="rounded-lg h-full w-full object-cover shadow-2xl"
-										src={i}
-										sizes={n == 0 ? "(min-width: 1024px) 350px, 100vw" : "(min-width: 1024px) 350px, 50vw"}
-									/>
-								))
-							}
-						</div>
-					</div>
-				</div>
-			</Container>
-		</Section>
+			</Section>
+		</Padding>
 	</div>
 </BaseLayout>
