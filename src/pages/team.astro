@@ -47,10 +47,10 @@ const team = [
 ];
 ---
 
-<BaseLayout bgColor="bg-gray-200" marginTop={false} marginBottom={false} contactBg={true}>
+<BaseLayout bgColor="bg-gray-700" marginTop={false} marginBottom={false} contactBg={true}>
 	<div class="grid lg:grid-cols-3 lg:grid-rows-2 min-h-[500px] h-[60vh] gap-6 px-6 pb-6">
-		<Image src={ceo} pictureClass="row-span-2" class="w-full h-full object-cover" sizes="100vw" gallery={false} />
-		{images.map((i) => <Image src={i.url} class:list={["w-full h-full object-cover", i.position]} sizes="100vw" gallery={false} />)}
+		<Image src={ceo} pictureClass="row-span-2" class="w-full h-full object-cover" sizes="100vw" />
+		{images.map((i) => <Image src={i.url} class:list={["w-full h-full object-cover", i.position]} sizes="100vw" />)}
 	</div>
 
 	<Padding paddingTop="large" paddingBottom="large" classes="bg-gray-800">
@@ -59,7 +59,7 @@ const team = [
 				<h2 class="h3 text-white text-balance max-w-6xl">With decades of experience, we've built and restored thousands of vehicles.</h2>
 
 				<div class="space-y-10">
-					<Paragraph>
+					<Paragraph classes="text-gray-200">
 						Originally, our focus was on Ford retractables, and our team has won numerous awards for excellence in this area. In 2020, we decided to channel our skills and passion into restoring Vintage Broncos, giving these classics the
 						attention they deserve. Every restoration is a labor of love, and our reputation for quality has followed us into this new chapter of our business.
 					</Paragraph>

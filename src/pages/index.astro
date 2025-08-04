@@ -5,14 +5,11 @@ import Container from "@/components/layout/Container";
 import Image from "@/components/images/Image";
 import Padding from "@/components/layout/Padding";
 import LargeHeading from "@/components/sections/text/LargeHeading";
+import Metadata from "@/components/sections/Metadata";
 import Paragraph from "@/components/sections/text/Paragraph";
 import Section from "@/components/layout/Section";
 
-const items = [
-	"https://cdn.cosmicjs.com/d0cbd3c0-4c7c-11f0-8d02-d7de9448d6b1-R5C_6792.jpg",
-	"https://cdn.cosmicjs.com/8aadef90-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_057.jpg",
-	"https://cdn.cosmicjs.com/cdf952d0-4c7c-11f0-8d02-d7de9448d6b1-R5C_8151.jpg",
-];
+const items = ["https://cdn.cosmicjs.com/d0cbd3c0-4c7c-11f0-8d02-d7de9448d6b1-R5C_6792.jpg", "https://cdn.cosmicjs.com/f52e18e0-4c7c-11f0-8d02-d7de9448d6b1-R5C_7715.jpg", "https://cdn.cosmicjs.com/e30ea990-4c7c-11f0-8d02-d7de9448d6b1-R5C_7357.jpg"];
 
 const images = [
 	"https://cdn.cosmicjs.com/f48d4500-4c7c-11f0-8d02-d7de9448d6b1-R5C_7804.jpg",
@@ -22,40 +19,59 @@ const images = [
 	"https://cdn.cosmicjs.com/c98d1f10-4c7c-11f0-8d02-d7de9448d6b1-R5C_6851.jpg",
 	"https://cdn.cosmicjs.com/c21cd310-4c7c-11f0-8d02-d7de9448d6b1-R5C_8190.jpg",
 ];
+
+const team = [
+	"https://cdn.cosmicjs.com/c77e0540-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_131.jpg",
+	"https://cdn.cosmicjs.com/cd6724f0-4c7c-11f0-8d02-d7de9448d6b1-R5C_6738.jpg",
+	"https://cdn.cosmicjs.com/cdf6bac0-4c7c-11f0-8d02-d7de9448d6b1-R5C_6730.jpg",
+	"https://cdn.cosmicjs.com/98a64a70-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_070.jpg",
+	"https://cdn.cosmicjs.com/ce240c50-4c7c-11f0-8d02-d7de9448d6b1-R5C_7255.jpg",
+	"https://cdn.cosmicjs.com/efc053a0-4c7c-11f0-8d02-d7de9448d6b1-R5C_7339.jpg",
+	"https://cdn.cosmicjs.com/f0874d20-4c7c-11f0-8d02-d7de9448d6b1-R5C_7392.jpg",
+	"https://cdn.cosmicjs.com/f45e1eb0-4c7c-11f0-8d02-d7de9448d6b1-R5C_7291.jpg",
+];
 ---
 
-<BaseLayout bgColor="bg-rock-900" marginTop={false} marginBottom={false} transparentHeader={true}>
-	<div class="relative flex h-[100vh] after:absolute after:inset-0 after:z-10 after:bg-gradient-to-b after:from-black/90 after:via-black/20 after:to-black">
-		<Image src="https://cdn.cosmicjs.com/dfd32da0-4c7c-11f0-8d02-d7de9448d6b1-R5C_8137.jpg" gallery={false} sizes="100vw" pictureClass="absolute top-0 left-0 w-full h-full" class="w-full h-full object-cover object-top" />
+<BaseLayout bgColor="bg-stone-700" marginTop={false} marginBottom={false} transparentHeader={true}>
+	<div class="relative flex h-[70vh] after:absolute after:inset-0 after:z-10 after:bg-gradient-to-b after:from-black/90 after:via-black/20 after:to-black">
+		<Image src="https://cdn.cosmicjs.com/d0fafa10-4c7c-11f0-8d02-d7de9448d6b1-R5C_8200.jpg" gallery={false} sizes="100vw" pictureClass="absolute top-0 left-0 w-full h-full" class="w-full h-full object-cover object-right" />
 	</div>
 
-	<Container classes="-mt-110 relative z-10 flex flex-col">
-		<h1 class="self-end text-right text-white text-balance py-8 px-12 w-5/7 rounded">We specialize in frame-off,<br />Vintage Bronco restorations.</h1>
-
-		<div class="grid grid-cols-3 md:grid-cols-6 gap-6 mt-14">
+	<Container classes="-mt-28 relative z-10 flex flex-col">
+		<div class="grid grid-cols-3 md:grid-cols-6 gap-6">
 			{images.map((i) => <Image src={i} pictureClass="shadow-2xl" class="object-cover w-full h-full aspect-square rounded" sizes="15vw" rounded={false} />)}
+
+			<div class="md:col-span-6">
+				<Metadata />
+			</div>
 		</div>
+
+		<h1 class="mt-12 mx-auto relative z-10 text-white w-full text-balance mb-24 bg-stone-700 p-12 rounded-lg"><span class="font-light">At Atlas Broncos,</span> we<br />specialize in frame-off,<br />Vintage Bronco restorations.</h1>
 	</Container>
 
-	<div class="bg-gradient-to-b from-rock-900 to-rock-700">
+	<div class="bg-stone-700">
 		<Padding>
 			<Section>
-				<Container>
-					<div class="xl:max-w-5xl text-balance space-y-8">
-						<h2 class="text-white text-balance max-w-3xl">Where passion meets decades of experience</h2>
+				<div class="-mt-75 grid grid-cols-4 top-60 right-24 rounded-lg overflow-clip w-full">
+					{team.map((i, n) => <Image pictureClass="h-80 w-auto" class="w-full h-full object-cover opacity-20 hover:opacity-70 duration-500" src={i} sizes="25vw" gallery={false} />)}
+				</div>
 
-						<LargeHeading classes="text-stone-200">
-							Our team of experienced professionals brings over 80 years of combined expertise in restoring classic vehicles, and we are passionate about bringing these timeless off-road legends back to life with modern precision and
-							craftsmanship.
-						</LargeHeading>
-					</div>
-				</Container>
+				<Container classes="-mt-60">
+					<div class="grid grid-cols-2 gap-16">
+						<div class="z-10 space-y-16 bg-stone-700 p-12 rounded-lg">
+							<div class="space-y-8">
+								<h2 class="text-balance">Where passion meets decades of experience</h2>
 
-				<Container>
-					<div class="grid grid-cols-6 gap-12">
-						<div class="space-y-6 col-span-6 lg:col-span-2 flex flex-col h-full justify-between">
-							<div class="space-y-4">
-								<h3>Why Choose<br />Atlas Broncos?</h3>
+								<Paragraph classes="text-stone-200 text-xl">
+									Our team of experienced professionals brings over 80 years of combined expertise in restoring classic vehicles, and we are passionate about bringing these timeless off-road legends back to life with modern
+									precision and craftsmanship.
+								</Paragraph>
+
+								<a href="/team" class="text-white font-medium underline">Meet Our Team &gt;</a>
+							</div>
+
+							<div class="space-y-8">
+								<h3 class="text-balance">Why Choose Atlas Broncos?</h3>
 								<div class="font-light space-y-4">
 									<Paragraph classes="text-stone-200"
 										>When you choose Atlas Broncos, you're not just getting a restored Bronco—you're getting a vehicle built with passion, expertise, and an uncompromising attention to detail.</Paragraph
@@ -69,20 +85,7 @@ const images = [
 							<ButtonLink>Contact Us</ButtonLink>
 						</div>
 
-						<div class="w-full h-full col-span-6 lg:col-span-4">
-							<div class="grid grid-cols-6 gap-6 h-full">
-								{
-									items.map((i, n) => (
-										<Image
-											pictureClass={["h-full w-full lg:col-span-2", n == 0 ? "col-span-6" : "col-span-3"]}
-											class="rounded-lg h-full w-full object-cover shadow-2xl"
-											src={i}
-											sizes={n == 0 ? "(min-width: 1024px) 350px, 100vw" : "(min-width: 1024px) 350px, 50vw"}
-										/>
-									))
-								}
-							</div>
-						</div>
+						<div></div>
 					</div>
 				</Container>
 			</Section>

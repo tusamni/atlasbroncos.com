@@ -16,15 +16,15 @@ const { headerLight = false } = Astro.props;
 			<div class="relative flex md:items-center justify-between flex-col pt-0 md:flex-row">
 				<div class="w-full md:w-auto flex flex-row items-center justify-between text-gray-900 text-sm">
 					<a class:list={["shrink-0 w-48 sm:w-56 relative z-10", headerLight ? "text-black" : "text-black"]} :class="{'!text-black': open }" href="/">
-						{headerLight ? <img src="https://imgix.cosmicjs.com/36618920-ea5b-11ef-a238-c1ad09f4b1ad-white-small.png" /> : <img src="https://imgix.cosmicjs.com/cc562a90-ea5a-11ef-a238-c1ad09f4b1ad-black-small.png" />}
+						<img src="https://imgix.cosmicjs.com/36618920-ea5b-11ef-a238-c1ad09f4b1ad-white-small.png" />
 					</a>
 
 					<div class="flex gap-4 md:hidden z-10">
-						<ButtonLink href="/contact" theme={headerLight ? "light" : "dark"} arrow={false} classes="!hidden sm:!flex">Contact</ButtonLink>
+						<ButtonLink href="/contact" theme="light" arrow={false} classes="!hidden sm:!flex">Contact</ButtonLink>
 
 						<button @click="open = !open">
 							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-8">
-								<path class:list={[headerLight && "text-white"]} :class="{'hidden': open, 'inline-flex': !open }" stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+								<path class="text-white" :class="{'hidden': open, 'inline-flex': !open }" stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
 								<path :class="{'hidden': !open, 'inline-flex': open }" x-cloak stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"></path>
 							</svg>
 						</button>
@@ -35,7 +35,7 @@ const { headerLight = false } = Astro.props;
 					<nav class="flex md:mx-auto md:space-x-4 lg:space-x-6 flex-col md:flex-row space-y-4 md:space-y-0">
 						{
 							Navigation.map((n) => (
-								<a class:list={["text-lg md:text-sm lg:text-lg transition-colors", headerLight ? "text-gray-50 hover:text-white" : "text-gray-950 hover:text-black"]} href={n.href}>
+								<a class:list={["text-lg md:text-sm lg:text-lg transition-colors", "text-gray-50 hover:text-white"]} href={n.href}>
 									{n.title}
 								</a>
 							))
@@ -43,7 +43,7 @@ const { headerLight = false } = Astro.props;
 					</nav>
 				</div>
 
-				<ButtonLink href="/contact" theme={headerLight ? "light" : "dark"} arrow={true} classes="!hidden md:!inline-flex">Contact</ButtonLink>
+				<ButtonLink href="/contact" theme="light" arrow={true} classes="!hidden md:!inline-flex">Contact</ButtonLink>
 			</div>
 		</Container>
 

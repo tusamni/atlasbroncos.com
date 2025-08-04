@@ -28,7 +28,7 @@ export interface Props {
 	bgColor: string;
 }
 
-const { title, description, contactForm = true, transparentHeader = false, marginTop = true, marginBottom = false, footerPadding = true, bgColor } = Astro.props;
+const { title, description, contactForm = true, transparentHeader = false, marginTop = true, marginBottom = false, bgColor } = Astro.props;
 ---
 
 <html lang="en">
@@ -45,34 +45,7 @@ const { title, description, contactForm = true, transparentHeader = false, margi
 			<slot />
 		</main>
 
-		{
-			contactForm && (
-				<Map opacity={0.05}>
-					<Padding paddingBottom="large" paddingTop="large" classes="relative">
-						<Container classes="relative">
-							<div class="grid grid-cols-5 gap-8">
-								<div class="col-span-2">
-									<div class="h1 mb-8 text-white">
-										Ready to
-										<br />
-										Get Started?
-									</div>
-
-									<div class="font-light leading-relaxed text-xl text-stone-300">
-										Ready to bring your vintage Bronco dream to life? Contact us today to discuss your restoration project. Our team is here to guide you through every step of the process, ensuring your Bronco is restored to its
-										full potential.
-									</div>
-								</div>
-
-								<ContactForm />
-							</div>
-						</Container>
-					</Padding>
-				</Map>
-			)
-		}
-
-		<Footer />
+		<Footer contactForm={contactForm} />
 
 		<script>
 			// modal
