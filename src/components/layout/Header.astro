@@ -10,13 +10,13 @@ interface Props {
 const { headerLight = false } = Astro.props;
 ---
 
-<header class:list={["z-50 py-4 lg:py-6", headerLight ? "lg:absolute top-0 left-0 right-0" : "relative"]}>
+<header class:list={["z-50 py-4 lg:py-6 sticky top-0 bg-stone-100", headerLight ? "lg:absolute top-0 left-0 right-0" : "relative"]}>
 	<div x-data="{ open: false }">
 		<Container>
 			<div class="relative flex md:items-center justify-between flex-col pt-0 md:flex-row">
 				<div class="w-full md:w-auto flex flex-row items-center justify-between text-gray-900 text-sm">
 					<a class:list={["shrink-0 w-48 sm:w-56 relative z-10", headerLight ? "text-black" : "text-black"]} :class="{'!text-black': open }" href="/">
-						<img src="https://imgix.cosmicjs.com/36618920-ea5b-11ef-a238-c1ad09f4b1ad-white-small.png" />
+						<img src="https://cdn.cosmicjs.com/cc562a90-ea5a-11ef-a238-c1ad09f4b1ad-black-small.png" />
 					</a>
 
 					<div class="flex gap-4 md:hidden z-10">
@@ -35,7 +35,7 @@ const { headerLight = false } = Astro.props;
 					<nav class="flex md:mx-auto md:space-x-4 lg:space-x-6 flex-col md:flex-row space-y-4 md:space-y-0">
 						{
 							Navigation.map((n) => (
-								<a class:list={["text-lg md:text-sm lg:text-lg transition-colors", "text-gray-50 hover:text-white"]} href={n.href}>
+								<a class:list={["text-lg md:text-sm lg:text-base transition-colors font-medium", "text-black hover:text-stone-800"]} href={n.href}>
 									{n.title}
 								</a>
 							))
@@ -43,7 +43,19 @@ const { headerLight = false } = Astro.props;
 					</nav>
 				</div>
 
-				<ButtonLink href="/contact" theme="light" arrow={true} classes="!hidden md:!inline-flex">Contact</ButtonLink>
+				<div class="relative group">
+					<div class="absolute -inset-x-6 -inset-y-3">
+						<div class="w-full h-full max-w-sm mx-auto lg:mx-0 blur-lg bg-gradient-to-r opacity-20 from-gold-drop-200 via-orange-300 to-gold-drop-200 group-hover:opacity-40 transition-all duration-300"></div>
+					</div>
+					<a
+						href="#"
+						title=""
+						class="relative z-10 inline-flex items-center justify-center w-full px-3 py-2 text-sm font-semibold text-white transition-all duration-200 bg-black group-hover:bg-stone-800 border-2 border-transparent sm:w-auto rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2"
+						role="button"
+					>
+						Let's Chat!
+					</a>
+				</div>
 			</div>
 		</Container>
 

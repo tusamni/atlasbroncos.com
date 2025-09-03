@@ -8,7 +8,7 @@
 
 @theme inline {
     --font-sans: var(--font-manrope);
-	--font-heading: var(--font-heading);
+	--font-heading: var(--font-manrope);
 
 	--color-rock-50: #f5f4f1;
 	--color-rock-100: #e7e1da;
@@ -21,6 +21,20 @@
 	--color-rock-800: #56413d;
 	--color-rock-900: #443432;
 	--color-rock-950: #2a1f1e;
+
+	--color-gold-drop-50: #fffaec;
+	--color-gold-drop-100: #fff4d4;
+	--color-gold-drop-200: #ffe6a7;
+	--color-gold-drop-300: #ffd370;
+	--color-gold-drop-400: #ffb436;
+	--color-gold-drop-500: #ff9c0f;
+	--color-gold-drop-600: #f58105;
+	--color-gold-drop-700: #c86106;
+	--color-gold-drop-800: #9e4b0e;
+	--color-gold-drop-900: #7f3f0f;
+	--color-gold-drop-950: #451e05;
+
+
 }
 
 html {

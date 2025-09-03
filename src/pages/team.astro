@@ -4,9 +4,12 @@ import Button from "@/components/buttons/Button";
 import Container from "@/components/layout/Container";
 import HorizontalRule from "@/components/sections/HorizontalRule";
 import Image from "@/components/images/Image";
+import LargeHeading from "@/components/sections/text/LargeHeading";
 import Padding from "@/components/layout/Padding";
 import Paragraph from "@/components/sections/text/Paragraph";
-import SmallFeature from "@/components/sections/SmallFeature";
+import Section from "@/components/layout/Section";
+import HeadingBase from "@/components/sections/HeadingBase";
+import LargeFeature from "@/components/sections/LargeFeature";
 
 const ceo = "https://cdn.cosmicjs.com/d3693af0-4c7c-11f0-8d02-d7de9448d6b1-R5C_7278.jpg";
 const images = [
@@ -30,7 +33,7 @@ const images = [
 const team = [
 	{
 		title: "Experience",
-		content: "Our team collectively boasts over 180 years of experience in automotive restoration.",
+		content: "Our team collectively boasts over 180 years of experience in automotive restoration excellence.",
 	},
 	{
 		title: "Heritage",
@@ -47,36 +50,51 @@ const team = [
 ];
 ---
 
-<BaseLayout bgColor="bg-gray-700" marginTop={false} marginBottom={false} contactBg={true}>
-	<div class="grid lg:grid-cols-3 lg:grid-rows-2 min-h-[500px] h-[60vh] gap-6 px-6 pb-6">
+<BaseLayout bgColor="bg-stone-100" marginTop={false} marginBottom={false} contactBg={true}>
+	<Padding>
+		<Section>
+			<Container>
+				<HeadingBase>
+					<h1 class="text-white">With decades of experience, we've built and restored thousands of vehicles.</h1>
+				</HeadingBase>
+			</Container>
+		</Section>
+	</Padding>
+
+	<div class="grid lg:grid-cols-3 lg:grid-rows-2 min-h-[500px] h-[60vh] gap-10 px-6 pb-6">
 		<Image src={ceo} pictureClass="row-span-2" class="w-full h-full object-cover" sizes="100vw" />
 		{images.map((i) => <Image src={i.url} class:list={["w-full h-full object-cover", i.position]} sizes="100vw" />)}
 	</div>
 
-	<Padding paddingTop="large" paddingBottom="large" classes="bg-gray-800">
+	<Padding paddingTop="large" paddingBottom="large">
 		<Container>
-			<div class="grid grid-cols-2">
-				<h2 class="h3 text-white text-balance max-w-6xl">With decades of experience, we've built and restored thousands of vehicles.</h2>
+			<div>
+				<div class="grid grid-cols-2 gap-8">
+					<h3>Originally, our focus was on Ford retractables, and our team has won numerous awards for excellence in this area.</h3>
 
-				<div class="space-y-10">
-					<Paragraph classes="text-gray-200">
-						Originally, our focus was on Ford retractables, and our team has won numerous awards for excellence in this area. In 2020, we decided to channel our skills and passion into restoring Vintage Broncos, giving these classics the
-						attention they deserve. Every restoration is a labor of love, and our reputation for quality has followed us into this new chapter of our business.
-					</Paragraph>
+					<div class="space-y-8">
+						<LargeHeading classes="text-stone-800"> In 2020, we decided to channel our skills and passion into restoring Vintage Broncos, giving these classics the attention they deserve. </LargeHeading>
 
-					<HorizontalRule />
-
-					<div class="grid grid-cols-2 gap-8 text-gray-300">
-						{
-							team.map((t) => (
-								<SmallFeature>
-									<div slot="heading">{t.title}</div>
-									<div slot="description">{t.content}</div>
-								</SmallFeature>
-							))
-						}
+						<LargeHeading classes="text-stone-800"> Every restoration is a labor of love, and our reputation for quality has followed us into this new chapter of our business. </LargeHeading>
 					</div>
 				</div>
+			</div>
+
+			<div class="mt-32 space-y-12">
+				<HorizontalRule />
+
+				<div class="grid grid-cols-4 gap-12">
+					{
+						team.map((t) => (
+							<LargeFeature>
+								<div slot="heading">{t.title}</div>
+								<div slot="description">{t.content}</div>
+							</LargeFeature>
+						))
+					}
+				</div>
+
+				<HorizontalRule />
 			</div>
 		</Container>
 	</Padding>

@@ -1,9 +1,13 @@
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
-	@apply text-white;
+	@apply text-stone-900;
+
+	span {
+		@apply font-semibold;
+	}
 }
-h1, .h1 { @apply text-4xl md:text-[5xl] lg:text-6xl xl:text-7xl tracking-tighter xl:leading-tight font-bold font-heading; }
-h2, .h2 { @apply text-[1.9rem] md:text-[2.2rem] lg:text-[2.6rem] xl:text-7xl tracking-tighter font-semibold font-heading; }
-h3, .h3 { @apply text-[1.7rem] md:text-[2rem] lg:text-[2.3rem] xl:text-5xl tracking-tight font-semibold font-heading; }
+h1, .h1 { @apply text-[2.1rem] md:text-[2.4rem] lg:text-[2.9rem] xl:text-7xl tracking-tighter leading-18 font-light; }
+h2, .h2 { @apply text-[1.9rem] md:text-[2.2rem] lg:text-[2.6rem] xl:text-6xl tracking-tighter leading-18 font-light; }
+h3, .h3 { @apply text-[1.7rem] md:text-[2rem] lg:text-[2.3rem] xl:text-5xl tracking-tight font-light; }
 h4, .h4 { @apply text-[1.5rem] md:text-[1.7rem] lg:text-[2rem] xl:text-[2.5rem] leading-tight }
 h5, .h5 { @apply xl:text-[2rem] font-medium text-[1.35rem] }
 h6, .h6 { @apply xl:text-[1.25rem] xl:leading-[1.6rem] text-[1.2rem]}

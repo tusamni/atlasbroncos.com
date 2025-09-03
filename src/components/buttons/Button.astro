@@ -1,6 +1,6 @@
 ---
 interface Props {
-	theme?: "light" | "dark";
+	theme?: "light" | "dark" | "alt";
 	arrow?: boolean;
 	classes?: string;
 }
@@ -8,7 +8,7 @@ interface Props {
 const { theme = "dark", arrow = false, classes, ...attrs } = Astro.props;
 ---
 
-<button class:list={["btn group", classes, theme == "dark" ? "btn-dark" : "btn-light"]} {...attrs}>
+<button class:list={["btn group", classes, theme == "dark" && "btn-dark", theme == "light" && "btn-light", theme == "alt" && "btn-alt"]} {...attrs}>
 	<span class="mr-auto">
 		<slot />
 	</span>

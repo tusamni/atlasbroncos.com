@@ -1,7 +1,35 @@
-.btn {
-	@apply shadow-2xl inline-flex items-center justify-center h-12 rounded-full px-5 font-sans font-medium transition-colors w-fit;
 
-	.btn-arrow {
+/* <div class="relative group">
+	<div class="absolute -inset-x-6 -inset-y-3">
+		<div class="w-full h-full max-w-sm mx-auto lg:mx-0 blur-lg bg-gradient-to-r opacity-20 from-gold-drop-200 via-orange-300 to-gold-drop-200 group-hover:opacity-40 transition-all duration-300"></div>
+	</div>
+	<a
+		href="#"
+		title=""
+		class="relative z-10 inline-flex items-center justify-center w-full px-3 py-2 text-sm font-semibold text-white transition-all duration-200 bg-black group-hover:bg-stone-800 border-2 border-transparent sm:w-auto rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2"
+		role="button"
+	>
+		Let's Chat!
+	</a>
+</div> */
+
+
+a.btn {
+	@apply relative w-fit;
+
+	div.btn-shadow {
+		@apply absolute -inset-x-6 -inset-y-3;
+
+		div {
+			@apply w-full h-full max-w-sm mx-auto lg:mx-0 blur-lg bg-gradient-to-r opacity-20 from-gold-drop-200 via-orange-300 to-gold-drop-200 group-hover:opacity-40 transition-all duration-300;
+		}
+	}
+
+	div.btn-text {
+		@apply w-full relative z-10 inline-flex items-center justify-center px-3 py-2 text-sm font-semibold text-white transition-all duration-200 bg-black group-hover:bg-stone-800 border-2 border-transparent sm:w-auto rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2;
+	}
+
+	/* .btn-arrow {
 		@apply flex items-center justify-center w-8 h-8 ml-6 -mr-3 rounded-full transition-colors;
 
 		svg {
@@ -26,4 +54,16 @@
 			}
 		}
 	}
+
+	&.btn-alt {
+		@apply bg-emerald-600 text-white hover:bg-emerald-500;
+
+		.btn-arrow {
+			@apply bg-emerald-700 group-hover:bg-emerald-600;
+
+			svg {
+				@apply fill-white;
+			}
+		}
+	} */
 }

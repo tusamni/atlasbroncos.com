@@ -1,6 +1,6 @@
 ---
 interface Props {
-	theme?: "light" | "dark";
+	theme?: "light" | "dark" | "alt";
 	arrow?: boolean;
 	classes?: string;
 }
@@ -8,11 +8,15 @@ interface Props {
 const { theme = "dark", arrow = false, classes, ...attrs } = Astro.props;
 ---
 
-<a class:list={["btn group", classes, theme == "dark" ? "btn-dark" : "btn-light"]} {...attrs}>
-	<span class="mr-auto">
+<a class:list={["btn group", classes, theme == "dark" && "btn-dark", theme == "light" && "btn-light", theme == "alt" && "btn-alt"]} {...attrs}>
+	<div class="btn-shadow">
+		<div></div>
+	</div>
+
+	<div class="btn-text">
 		<slot />
-	</span>
-	{
+	</div>
+	<!-- {
 		arrow && (
 			<span class="btn-arrow">
 				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -20,5 +24,5 @@ const { theme = "dark", arrow = false, classes, ...attrs } = Astro.props;
 				</svg>
 			</span>
 		)
-	}
+	} -->
 </a>
