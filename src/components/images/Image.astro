@@ -26,13 +26,14 @@ for (let size of imageConfig.imageSizes) {
 const imageSrcSet = imageOptimized.join(", ");
 ---
 
-<div class:list={[pictureClass, gallery && "gallery hover:cursor-pointer !overflow-hidden relative group w-full h-full", rounded && "rounded-xl"]}>
+<div class:list={[pictureClass, "hover:[&>img]:scale-[102%] overflow-hidden [&>img]:transition-all [&>img]:duration-400", gallery && "gallery hover:cursor-pointer relative group w-full h-full", rounded && "rounded-xl"]}>
 	{
 		imageMetadata ? (
 			<img
 				srcset={imageSrcSet}
 				src={`${imageMetadata.data.imgix_url}?auto=format`}
 				alt={imageMetadata.data.alt}
+				d
 				width={imageMetadata.data.width}
 				height={imageMetadata.data.height}
 				data-img={imageSrcSet}
@@ -49,7 +50,7 @@ const imageSrcSet = imageOptimized.join(", ");
 
 	{
 		gallery && (
-			<div class:list={["z-10 absolute bottom-0 right-0 rounded-br rounded-tl size-6 bg-white/80 group-hover:bg-white flex justify-center items-center pointer-events-none group-hover:size-8 duration-300 transition-all"]}>
+			<div class:list={["z-10 absolute bottom-0 right-0 rounded-br rounded-tl size-6 bg-white group-hover:bg-white flex justify-center items-center pointer-events-none group-hover:size-8 duration-300 transition-all"]}>
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-4 fill-gray-700">
 					<path d="M10.75 4.75a.75.75 0 0 0-1.5 0v4.5h-4.5a.75.75 0 0 0 0 1.5h4.5v4.5a.75.75 0 0 0 1.5 0v-4.5h4.5a.75.75 0 0 0 0-1.5h-4.5v-4.5Z" />
 				</svg>
