@@ -60,16 +60,9 @@ const features = [
 ];
 ---
 
-<BaseLayout bgColor="bg-stone-100" marginTop={false} marginBottom={false} contactBg={false} transparentHeader={true}>
-	<div class="relative after:absolute after:inset-0 after:z-10 after:bg-gradient-to-bl after:from-black/90 after:to-black/40 h-[50vh]">
-		<Image
-			src="https://cdn.cosmicjs.com/62344d70-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_009.jpg"
-			gallery={false}
-			sizes="100vw"
-			pictureClass="absolute top-0 left-0 w-full h-full"
-			class="w-full h-full object-cover"
-			style="image-rendering: crisp-edges;"
-		/>
+<BaseLayout bgColor="bg-stone-100" marginTop={false} marginBottom={false} contactBg={false}>
+	<div class="rounded mx-10 relative after:absolute after:inset-0 after:z-10 after:bg-gradient-to-bl after:from-black/90 after:to-black/40 h-[50vh] after:rounded-lg">
+		<Image src="https://cdn.cosmicjs.com/62344d70-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_009.jpg" gallery={false} sizes="100vw" pictureClass="absolute top-0 left-0 w-full h-full" class="w-full h-full object-cover" />
 	</div>
 
 	<Container classes="-mt-32 relative z-10">
