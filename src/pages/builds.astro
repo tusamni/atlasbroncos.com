@@ -86,40 +86,38 @@ const imagesNormal = [
 					</div>
 				</Container>
 			</div>
+
+			<Container>
+				<div class="space-y-4">
+					<h2>Available Models</h2>
+					<div class="md:text-balance text-lg md:text-xl lg:text-2xl font-light leading-normal">
+						Each Atlas Bronco is restored with precision and care, combining vintage aesthetics with modern technology for a driving experience unlike any other.
+					</div>
+				</div>
+
+				<div class="lg:w-3/4 grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8 xl:gap-12 mt-16">
+					{
+						models.map((m) => (
+							<div class="relative space-y-5 group p-6 border border-stone-400/20 rounded-xl hover:bg-stone-50 transition-colors duration-300">
+								<div class="h5">{m.title}</div>
+								<div class="font-light leading-relaxed">{m.description}</div>
+								<div>
+									<div class="font-semibold flex gap-2">
+										Get Started!
+										<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 ml-0 group-hover:ml-1 transform duration-300">
+											<path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+										</svg>
+									</div>
+
+									<a href="/contact" class="absolute inset-0" />
+								</div>
+							</div>
+						))
+					}
+				</div>
+			</Container>
 		</Section>
 	</Padding>
-
-	<div class="py-24">
-		<Container>
-			<div class="space-y-4">
-				<h2>Available Models</h2>
-				<div class="md:text-balance text-lg md:text-xl lg:text-2xl font-light leading-normal">
-					Each Atlas Bronco is restored with precision and care, combining vintage aesthetics with modern technology for a driving experience unlike any other.
-				</div>
-			</div>
-
-			<div class="lg:w-3/4 grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8 xl:gap-12 mt-16">
-				{
-					models.map((m) => (
-						<div class="relative space-y-5 group p-6 border border-stone-400/20 rounded hover:bg-stone-50 transition-colors duration-300">
-							<div class="h5">{m.title}</div>
-							<div class="font-light leading-relaxed">{m.description}</div>
-							<div>
-								<div class="font-semibold flex gap-2">
-									Get Started!
-									<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 ml-0 group-hover:ml-1 transform duration-300">
-										<path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
-									</svg>
-								</div>
-
-								<a href="/contact" class="absolute inset-0" />
-							</div>
-						</div>
-					))
-				}
-			</div>
-		</Container>
-	</div>
 </BaseLayout>
 
 <script>

@@ -11,26 +11,26 @@ export interface Props {
 const { contactForm = true } = Astro.props;
 ---
 
-<footer class:list={["bg-stone-900 text-white relative rounded-t-2xl"]}>
+<footer class:list={["bg-stone-900 text-white relative rounded-t-4xl md:mx-6"]}>
 	{
 		contactForm && (
 			<Container>
 				<Padding>
 					<div class="grid grid-cols-5 gap-8">
-						<div class="col-span-2">
-							<div class="h1 mb-8  !text-white">
+						<div class="col-span-5 lg:col-span-2">
+							<div class="h1 mb-8  !text-white text-center lg:text-left">
 								Ready to
 								<br />
 								Get Started?
 							</div>
 
-							<div class="font-light leading-relaxed text-xl text-stone-300">
+							<div class="font-light leading-relaxed text-xl md:text-lg lg:text-xl text-stone-300">
 								Ready to bring your vintage Bronco dream to life? Contact us today to discuss your restoration project. Our team is here to guide you through every step of the process, ensuring your Bronco is restored to its full
 								potential.
 							</div>
 						</div>
 
-						<ContactForm />
+						<ContactForm classes="col-span-5 lg:col-span-3" />
 					</div>
 				</Padding>
 
@@ -41,7 +41,7 @@ const { contactForm = true } = Astro.props;
 
 	<Padding>
 		<Container>
-			<div class="shrink-0 w-3/4 sm:w-72 relative z-10">
+			<div class="shrink-0 w-2/3 sm:w-72 relative z-10">
 				<a href="/">
 					<img src="https://imgix.cosmicjs.com/36618920-ea5b-11ef-a238-c1ad09f4b1ad-white-small.png" class="w-full" />
 				</a>
@@ -50,7 +50,7 @@ const { contactForm = true } = Astro.props;
 			<div class="space-y-20 mt-10">
 				<div class="md:grid grid-cols-2 justify-between block md:gap-20">
 					<div class="max-w-full xl:max-w-[22rem] 2xl:max-w-[27rem] mr-0 lg:mr-10 mb-25 lg:mb-0">
-						<div class="mb-8 h6 text-balance">At Atlas Broncos, we specialize in the complete frame-off restoration of Vintage Broncos.</div>
+						<div class="mb-8 h6 text-balance !text-stone-300 !leading-relaxed">At Atlas Broncos, we specialize in the complete frame-off restoration of Vintage Broncos.</div>
 					</div>
 
 					<div class="w-full col-span-2 md:col-span-1">

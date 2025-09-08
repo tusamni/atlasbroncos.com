@@ -4,6 +4,11 @@ export const prerender = false;
 import { actions } from "astro:actions";
 import Button from "@/components/buttons/Button";
 
+interface Props {
+	classes?: string;
+}
+const { classes, ...attrs } = Astro.props;
+
 // content
 const result = Astro.getActionResult(actions.contact);
 if (result && !result.error) {
@@ -11,7 +16,7 @@ if (result && !result.error) {
 }
 ---
 
-<form class="space-y-8 col-span-3" id="form-contact" action={actions.contact} method="POST">
+<div class:list={[classes, "space-y-8"]} id="form-contact" action={actions.contact} method="POST">
 	{
 		result?.error && (
 			<ul class="col-span-2">
@@ -52,8 +57,8 @@ if (result && !result.error) {
 	<input type="hidden" name="path" id="path" value={Astro.url.pathname} />
 	<input type="hidden" name="marketing" id="marketing" value="" />
 
-	<Button arrow={true} theme="light">Contact Us</Button>
-</form>
+	<Button arrow={true} shadow={false} theme="light">Contact Us</Button>
+</div>
 
 <script is:inline>
 	// insert marketing data into form variable

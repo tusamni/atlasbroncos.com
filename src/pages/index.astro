@@ -37,60 +37,73 @@ const team = [
 ---
 
 <BaseLayout bgColor="bg-stone-100" marginTop={false} marginBottom={true}>
-	<Container size="medium" classes="mt-32 mb-32">
-		<div class="grid grid-cols-12">
-			<div class="col-span-3 flex justify-between flex-col">
-				<p class="text-balance">Each Atlas Bronco is restored with precision and care, combining vintage aesthetics with modern technology for a driving experience unlike any other.</p>
-				<p class="text-base">Ready to Build? <a href="/contact" class="font-bold">Get started &gt;</a></p>
-			</div>
+	<Padding>
+		<Section>
+			<Container size="medium">
+				<div class="grid grid-cols-12 gap-y-8 md:gap-y-0">
+					<div class="col-span-12 md:col-span-3 flex justify-between flex-col gap-y-8">
+						<p class="text-balance">Each Atlas Bronco is restored with precision and care, combining vintage aesthetics with modern technology for a driving experience unlike any other.</p>
+						<div class="text-base inline-flex md:flex md:flex-col lg:inline-flex lg:flex-row gap-x-1">
+							<div>Ready to Build?</div>
+							<div><a href="/contact" class="font-bold">Get started &gt;</a></div>
+						</div>
+					</div>
 
-			<h1 class="col-span-8 col-start-5">At Atlas Broncos, we specialize in <span>frame-off, Vintage Bronco restorations.</span></h1>
-		</div>
-	</Container>
+					<h1 class="order-first md:order-last col-span-12 md:col-span-8 md:col-start-5">At Atlas Broncos, we specialize in <span>frame-off, Vintage Bronco restorations.</span></h1>
+				</div>
+			</Container>
 
-	<Container size="large">
-		<div class="h-[40vh] min-h-[700px] grid grid-cols-3 grid-rows-2 gap-10">
-			<Image src="https://cdn.cosmicjs.com/f52e18e0-4c7c-11f0-8d02-d7de9448d6b1-R5C_7715.jpg" pictureClass="col-span-2 row-span-2" class="w-full h-full object-cover object-right" sizes="70vw" />
-			<Image src="https://cdn.cosmicjs.com/e4e1bbe0-4c7c-11f0-8d02-d7de9448d6b1-R5C_6912.jpg" pictureClass="col-start-3" class="object-cover w-full h-full" sizes="30vw" />
-			<Image src="https://cdn.cosmicjs.com/c22dc300-4c7c-11f0-8d02-d7de9448d6b1-R5C_8279.jpg" pictureClass="col-start-3" class="object-cover w-full h-full" sizes="30vw" />
-		</div>
-	</Container>
+			<Container size="large">
+				<div class="md:h-[40vh] md:min-h-[700px] grid grid-cols-12 md:grid-rows-2 gap-8 md:gap-10">
+					<Image src="https://cdn.cosmicjs.com/f52e18e0-4c7c-11f0-8d02-d7de9448d6b1-R5C_7715.jpg" pictureClass="col-span-12 lg:col-span-9 lg:row-span-2" class="w-full h-full object-cover lg:object-left" sizes="70vw" />
+					<Image src="https://cdn.cosmicjs.com/e4e1bbe0-4c7c-11f0-8d02-d7de9448d6b1-R5C_6912.jpg" pictureClass="col-span-12 sm:col-span-6 lg:col-span-3 lg:col-start-10" class="object-cover w-full h-full" sizes="30vw" />
+					<Image src="https://cdn.cosmicjs.com/c22dc300-4c7c-11f0-8d02-d7de9448d6b1-R5C_8279.jpg" pictureClass="col-span-12 sm:col-span-6 lg:col-span-3 lg:col-start-10" class="object-cover w-full h-full lg:object-right" sizes="30vw" />
+				</div>
+			</Container>
 
-	<Container classes="mt-32 mb-32">
-		<div class="grid grid-cols-12">
-			<h2 class="text-balance !text-stone-900 col-span-6">Where passion meets <span>decades of experience</span></h2>
+			<Container>
+				<div class="grid grid-cols-12 gap-y-8 md:gap-y-0">
+					<h2 class="text-balance col-span-12 md:col-span-6">Where passion meets <span>decades of experience</span></h2>
 
-			<div class="col-start-8 col-span-4 space-y-8">
-				<Paragraph classes="text-stone-900 text-lg">
-					Our team of experienced professionals brings over 80 years of combined expertise in restoring classic vehicles, and we are passionate about bringing these timeless off-road legends back to life with modern precision and
-					craftsmanship.
-				</Paragraph>
+					<div class="col-span-12 md:col-start-8 md:col-span-4 space-y-8">
+						<Paragraph classes="text-stone-900 text-lg">
+							Our team of experienced professionals brings over 80 years of combined expertise in restoring classic vehicles, and we are passionate about bringing these timeless off-road legends back to life with modern precision and
+							craftsmanship.
+						</Paragraph>
 
-				<a href="/team" class="text-stone-950 text-lg font-bold">Meet Our Team &gt;</a>
-			</div>
-		</div>
-	</Container>
+						<a href="/team" class="text-stone-950 text-lg font-bold">Meet Our Team &gt;</a>
+					</div>
+				</div>
+			</Container>
 
-	<Container size="large">
-		<div class="h-[40vh] min-h-[700px] grid grid-cols-3 grid-rows-2 gap-10">
-			<Image src="https://cdn.cosmicjs.com/c709e6b0-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_137.jpg" class="object-cover w-full h-full" sizes="30vw" />
-			<Image src="https://cdn.cosmicjs.com/c3a69770-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_122.jpg" pictureClass="col-start-2 col-span-2 row-span-2" class="w-full h-full object-cover object-[40%]" sizes="70vw" />
-			<Image src="https://cdn.cosmicjs.com/a861b210-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_083.jpg" class="object-cover w-full h-full" sizes="30vw" />
-		</div>
-	</Container>
+			<Container size="large">
+				<div class="md:h-[40vh] md:min-h-[700px] grid grid-cols-12 md:grid-rows-2 gap-8 md:gap-10">
+					<Image src="https://cdn.cosmicjs.com/c709e6b0-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_137.jpg" pictureClass="col-span-12 lg:col-span-3" class="object-cover w-full h-full" sizes="30vw" />
+					<Image
+						src="https://cdn.cosmicjs.com/c3a69770-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_122.jpg"
+						pictureClass="col-span-12 sm:col-span-6 lg:col-span-9 lg:row-span-2"
+						class="w-full h-full object-cover md:object-[30%]"
+						sizes="70vw"
+					/>
+					<Image src="https://cdn.cosmicjs.com/a861b210-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_083.jpg" pictureClass="col-span-12 sm:col-span-6 lg:col-span-3" class="object-cover w-full h-full" sizes="30vw" />
+				</div>
+			</Container>
 
-	<Container classes="mt-32 mb-32">
-		<div class="grid grid-cols-12">
-			<h2 class="col-span-4 text-balance">Why Choose <span>Atlas Broncos</span>?</h2>
+			<Container>
+				<div class="grid grid-cols-12 gap-y-8 sm:gap-y-0">
+					<h2 class="text-balance w-3/4 sm:w-full col-span-12 sm:col-span-6">Why Choose <span>Atlas Broncos</span>?</h2>
 
-			<div class="col-start-8 col-span-4 space-y-8">
-				<Paragraph classes="text-stone-900 text-lg">When you choose Atlas Broncos, you're not just getting a restored Bronco—you're getting a vehicle built with passion, expertise, and an uncompromising attention to detail.</Paragraph>
-				<Paragraph classes="text-stone-900 text-lg">
-					We take pride in every Bronco we restore, ensuring that it's not only visually stunning but also built to perform at the highest level, whether you're cruising on the highway or exploring rugged trails.
-				</Paragraph>
+					<div class="col-span-12 sm:col-start-8 sm:col-span-4 space-y-8">
+						<Paragraph classes="text-stone-900 text-lg">When you choose Atlas Broncos, you're not just getting a restored Bronco—you're getting a vehicle built with passion, expertise, and an uncompromising attention to detail.</Paragraph
+						>
+						<Paragraph classes="text-stone-900 text-lg">
+							We take pride in every Bronco we restore, ensuring that it's not only visually stunning but also built to perform at the highest level, whether you're cruising on the highway or exploring rugged trails.
+						</Paragraph>
 
-				<a href="/team" class="text-stone-950 text-lg font-bold">Let's Chat! &gt;</a>
-			</div>
-		</div>
-	</Container>
+						<a href="/team" class="text-stone-950 text-lg font-bold">Let's Chat! &gt;</a>
+					</div>
+				</div>
+			</Container>
+		</Section>
+	</Padding>
 </BaseLayout>

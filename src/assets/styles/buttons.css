@@ -14,8 +14,8 @@
 </div> */
 
 
-a.btn {
-	@apply relative w-fit;
+.btn {
+	@apply relative w-fit rounded;
 
 	div.btn-shadow {
 		@apply absolute -inset-x-6 -inset-y-3;
@@ -26,7 +26,7 @@ a.btn {
 	}
 
 	div.btn-text {
-		@apply w-full relative z-10 inline-flex items-center justify-center px-3 py-2 text-sm font-semibold text-white transition-all duration-200 bg-black group-hover:bg-stone-800 border-2 border-transparent sm:w-auto rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2;
+		@apply w-full relative z-50 inline-flex items-center justify-center px-3 py-2 text-sm font-semibold transition-all duration-200 border-2 border-transparent sm:w-auto rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2;
 	}
 
 	/* .btn-arrow {
@@ -37,11 +37,11 @@ a.btn {
 		}
 	}
 
-	&.btn-light {
-		@apply bg-white text-black hover:bg-gradient-to-br from-white via-white to-gray-100 border-2 border-white;
+	*/ &.btn-light {
+		@apply bg-white text-black;
 
 		.btn-arrow { @apply bg-black }
-	}
+	} 
 	
 	&.btn-dark {
 		@apply bg-black text-white hover:bg-gray-900;
@@ -55,7 +55,7 @@ a.btn {
 		}
 	}
 
-	&.btn-alt {
+	/* &.btn-alt {
 		@apply bg-emerald-600 text-white hover:bg-emerald-500;
 
 		.btn-arrow {

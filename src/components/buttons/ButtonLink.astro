@@ -2,16 +2,21 @@
 interface Props {
 	theme?: "light" | "dark" | "alt";
 	arrow?: boolean;
+	shadow?: boolean;
 	classes?: string;
 }
 
-const { theme = "dark", arrow = false, classes, ...attrs } = Astro.props;
+const { theme = "dark", arrow = false, shadow = true, classes, ...attrs } = Astro.props;
 ---
 
 <a class:list={["btn group", classes, theme == "dark" && "btn-dark", theme == "light" && "btn-light", theme == "alt" && "btn-alt"]} {...attrs}>
-	<div class="btn-shadow">
-		<div></div>
-	</div>
+	{
+		shadow && (
+			<div class="btn-shadow">
+				<div />
+			</div>
+		)
+	}
 
 	<div class="btn-text">
 		<slot />
