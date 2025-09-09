@@ -12,11 +12,7 @@ import HeadingBase from "@/components/sections/HeadingBase";
 import LargeFeature from "@/components/sections/LargeFeature";
 
 const images = [
-	{
-		url: "https://cdn.cosmicjs.com/d3693af0-4c7c-11f0-8d02-d7de9448d6b1-R5C_7278.jpg",
-		name: "John Smith",
-		position: "CEO"
-	},
+	
 	{
 		url: "https://cdn.cosmicjs.com/d304d3d0-4c7c-11f0-8d02-d7de9448d6b1-R5C_7327.jpg",
 		name: "John Smith",
@@ -24,6 +20,11 @@ const images = [
 	},
 	{
 		url: "https://cdn.cosmicjs.com/ef2720e0-4c7c-11f0-8d02-d7de9448d6b1-R5C_7244.jpg",
+		name: "John Smith",
+		position: "CEO"
+	},
+	{
+		url: "https://cdn.cosmicjs.com/d3693af0-4c7c-11f0-8d02-d7de9448d6b1-R5C_7278.jpg",
 		name: "John Smith",
 		position: "CEO"
 	},
@@ -75,7 +76,7 @@ const team = [
 								<div class="embla__container flex gap-8">
 									{
 										images.map((i) => (
-											<div class="embla__slide text-center basis-md grow-0 shrink-0 h-full">
+											<div class="embla__slide text-center basis-xs sm:basis-sm md:basis-md grow-0 shrink-0 h-full">
 												<Image src={i.url} pictureClass="w-full h-full" class="w-full h-full object-cover" rounded={true} sizes="(min-width: 768px) 90vw, (min-width: 1280px) 1050px, 100vw" lazy={false} />
 												<div class="flex flex-col mt-2">
 													<div class="font-semibold text-sm">{i.name}</div>
@@ -188,7 +189,8 @@ const team = [
 	}
 
 	const options = {
-		loop: false
+		loop: false,
+		startIndex: 2,
 	}
 
 	const emblaNode = document.querySelector(".embla");
