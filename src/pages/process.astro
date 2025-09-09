@@ -63,8 +63,8 @@ const features = [
 <BaseLayout bgColor="bg-stone-100" marginTop={false} marginBottom={false} contactBg={false}>
 	<Container classes="relative z-10">
 		<div class="grid grid-cols-12 gap-4 md:gap-6">
-			<Image src="https://cdn.cosmicjs.com/dfd32da0-4c7c-11f0-8d02-d7de9448d6b1-R5C_8137.jpg" sizes="100vw" pictureClass="col-span-12 md:col-span-6" class="w-full h-full object-cover" />
-			<Image src="https://cdn.cosmicjs.com/c4806590-4c7c-11f0-8d02-d7de9448d6b1-R5C_6944.jpg" sizes="100vw" pictureClass="col-span-12 md:col-span-6" class="w-full h-full object-cover" />
+			<Image src="https://cdn.cosmicjs.com/dfd32da0-4c7c-11f0-8d02-d7de9448d6b1-R5C_8137.jpg" sizes="100vw" pictureClass="col-span-6" class="w-full h-full object-cover" />
+			<Image src="https://cdn.cosmicjs.com/c4806590-4c7c-11f0-8d02-d7de9448d6b1-R5C_6944.jpg" sizes="100vw" pictureClass="col-span-6" class="w-full h-full object-cover" />
 			{images.map((i) => <Image src={i} pictureClass="shadow-2xl col-span-6 sm:col-span-4 lg:col-span-2" class="object-cover w-full h-full aspect-square" sizes="20vw" />)}
 		</div>
 	</Container>
@@ -74,8 +74,8 @@ const features = [
 			<div class="z-10 grid lg:grid-cols-2 gap-x-12">
 				<h1 class="col-span-2 md:w-3/4 md:text-balance mb-8 lg:mb-12">At Atlas Broncos, we offer a complete frame-off restoration that leaves no detail untouched.</h1>
 
-				<div class="col-span-2 md:col-span-1">
-					<div class="space-y-6 text-stone-800">
+				<div class="col-span-2 lg:col-span-1">
+					<div class="space-y-6 text-stone-800 md:w-3/4 lg:w-full">
 						<h2 class="h3 mb-8">The Atlas Process</h2>
 						<p class="text-xl lg:text-2xl font-light leading-relaxed md:leading-normal">Every vehicle is meticulously disassembled, inspected, and restored from the ground up to ensure every component meets our high standards.</p>
 
@@ -87,7 +87,7 @@ const features = [
 					</div>
 				</div>
 
-				<div class="col-span-2 md:col-span-1 space-y-6 mt-20">
+				<div class="col-span-2 lg:col-span-1 space-y-6 mt-20">
 					<div class="grid sm:grid-cols-2 gap-6">
 						{
 							features.map((f) => (
