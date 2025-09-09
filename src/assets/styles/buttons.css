@@ -15,7 +15,7 @@
 
 
 .btn {
-	@apply relative w-fit rounded;
+	@apply relative w-fit rounded-lg;
 
 	div.btn-shadow {
 		@apply absolute -inset-x-6 -inset-y-3;

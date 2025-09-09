@@ -28,30 +28,30 @@ if (result && !result.error) {
 	<div class="space-y-4">
 		<div class="flex flex-col w-full">
 			<label class="text-sm font-semibold text-white sr-only">Name</label>
-			<input type="text" name="name" id="name" class="w-full rounded shadow-2xl border border-gray-300 text-sm p-3" placeholder="First Name" required />
+			<input type="text" name="name" id="name" class="w-full rounded-lg shadow-2xl border border-gray-300 text-sm p-3" placeholder="First Name" required />
 		</div>
 
 		<div class="flex flex-col sm:flex-row gap-4">
 			<div class="w-full">
 				<label class="text-sm font-semibold text-white sr-only">Email</label>
-				<input type="email" name="email" id="email" class="w-full rounded shadow-2xl border border-gray-300 text-sm p-3" placeholder="Email" required />
+				<input type="email" name="email" id="email" class="w-full rounded-lg shadow-2xl border border-gray-300 text-sm p-3" placeholder="Email" required />
 			</div>
 
 			<div class="w-full">
 				<label class="text-sm font-semibold text-white sr-only">Phone</label>
-				<input type="tel" name="phone" id="phone" class="w-full rounded shadow-2xl border border-gray-300 text-sm p-3" placeholder="Phone" />
+				<input type="tel" name="phone" id="phone" class="w-full rounded-lg shadow-2xl border border-gray-300 text-sm p-3" placeholder="Phone" />
 			</div>
 		</div>
 
 		<div class="flex flex-col w-full">
 			<label class="text-sm font-semibold text-white sr-only">Message</label>
-			<textarea name="message" id="message" class="rounded shadow-2xl border border-gray-300 h-40 text-sm" placeholder="What can we help you with?"></textarea>
+			<textarea name="message" id="message" class="rounded-lg shadow-2xl border border-gray-300 h-40 text-sm" placeholder="What can we help you with?"></textarea>
 		</div>
 	</div>
 
 	<div class="hidden">
 		<label for="zip">Zip Code</label>
-		<input name="zip" id="zip" class="rounded shadow-2xl border border-gray-300 h-40 text-sm" placeholder="Zip Code" />
+		<input name="zip" id="zip" class="rounded-lg shadow-2xl border border-gray-300 h-40 text-sm" placeholder="Zip Code" />
 	</div>
 
 	<input type="hidden" name="path" id="path" value={Astro.url.pathname} />
