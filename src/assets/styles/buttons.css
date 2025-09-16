@@ -1,5 +1,5 @@
 .btn {
-	@apply relative w-fit rounded-lg;
+	@apply relative w-fit rounded-lg hover:cursor-pointer;
 
 	div.btn-shadow {
 		@apply absolute -inset-x-6 -inset-y-3;
