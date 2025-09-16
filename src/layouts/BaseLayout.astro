@@ -58,6 +58,16 @@ const isContact = Astro.url.pathname.includes("contact");
 					scale: 0.8,
 				});
 			}
+
+			// log visitdata
+			import * as visitData from "visitdata";
+			visitData.setOption("url_parameters", {
+				medium: ["utm_medium"],
+				source: ["utm_source"],
+				campaign: ["utm_campaign"],
+				gclid: ["gclid"],
+			});
+			document.getElementById("marketing").value = JSON.stringify(visitData.get());
 		</script>
 	</body>
 </html>

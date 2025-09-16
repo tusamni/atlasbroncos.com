@@ -58,8 +58,3 @@ const result = Astro.getActionResult(actions.contact);
 
 	<Button theme={theme}>Contact Us</Button>
 </form>
-
-<script is:inline>
-	// insert marketing data into form variable
-	document.getElementById("marketing").value = JSON.stringify(visitData.get());
-</script>
