@@ -13,12 +13,9 @@ const { shadow = true, theme = "light", classes, ...attrs } = Astro.props;
 
 // content
 const result = Astro.getActionResult(actions.contact);
-if (result && !result.error) {
-	return Astro.redirect(`/contact/success`);
-}
 ---
 
-<div class:list={[classes, "space-y-8"]} id="form-contact" action={actions.contact} method="POST">
+<form class:list={[classes, "space-y-8"]} id="form-contact" action={"/contact/success" + actions.contact} method="POST">
 	{
 		result?.error && (
 			<ul class="col-span-2">
@@ -60,7 +57,7 @@ if (result && !result.error) {
 	<input type="hidden" name="marketing" id="marketing" value="" />
 
 	<Button theme={theme}>Contact Us</Button>
-</div>
+</form>
 
 <script is:inline>
 	// insert marketing data into form variable

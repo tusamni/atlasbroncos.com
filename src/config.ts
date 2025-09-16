@@ -10,7 +10,7 @@ export const siteConfig = {
 		formatted: "(512) 609-0471",
 	},
 	email: {
-		base: "erik@eriksolsen.com",
+		base: "info@atlasbroncos.com",
 	},
 	url: "https://atlasbroncos.com",
 	description: "Atlas Broncos",

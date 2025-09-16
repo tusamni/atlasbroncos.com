@@ -54,42 +54,42 @@ export const server = {
 				console.error(error);
 			}
 
-			// new instance of mailersend
-			const mailerSend = new MailerSend({
-				apiKey: import.meta.env.MAILERSEND_TOKEN,
-			});
-			const sentFrom = new Sender(siteConfig.email.base, siteConfig.name);
+			// // new instance of mailersend
+			// const mailerSend = new MailerSend({
+			// 	apiKey: import.meta.env.MAILERSEND_TOKEN,
+			// });
+			// const sentFrom = new Sender(siteConfig.email.base, siteConfig.name);
 
-			// set personalization variables
-			const leadSubject = `New Lead from atlasbroncos.com - ${input.name}`;
-			const leadRecipients = [new Recipient(siteConfig.email.base, siteConfig.name)];
-			const leadReplyTo = new Sender(input.email, input.name);
-			const leadPersonalization = [
-				{
-					email: siteConfig.email.base,
-					data: {
-						name: input.name,
-						email: input.email,
-						phone: input.phone,
-						message: input.message,
-						path: input.path,
-						marketing: input.marketing
-					},
-				},
-			];
-			const leadParams = new EmailParams().setFrom(sentFrom).setTo(leadRecipients).setReplyTo(leadReplyTo).setSubject(leadSubject).setPersonalization(leadPersonalization).setTemplateId("3zxk54v15mz4jy6v");
+			// // set personalization variables
+			// const leadSubject = `New Lead from atlasbroncos.com - ${input.name}`;
+			// const leadRecipients = [new Recipient(siteConfig.email.base, siteConfig.name)];
+			// const leadReplyTo = new Sender(input.email, input.name);
+			// const leadPersonalization = [
+			// 	{
+			// 		email: siteConfig.email.base,
+			// 		data: {
+			// 			name: input.name,
+			// 			email: input.email,
+			// 			phone: input.phone,
+			// 			message: input.message,
+			// 			path: input.path,
+			// 			marketing: input.marketing
+			// 		},
+			// 	},
+			// ];
+			// const leadParams = new EmailParams().setFrom(sentFrom).setTo(leadRecipients).setReplyTo(leadReplyTo).setSubject(leadSubject).setPersonalization(leadPersonalization).setTemplateId("3zxk54v15mz4jy6v");
 
-			// send the contact email
-			try {
-				await mailerSend.email.send(leadParams);
-			} catch (error) {
-				console.error(error);
+			// // send the contact email
+			// try {
+			// 	await mailerSend.email.send(leadParams);
+			// } catch (error) {
+			// 	console.error(error);
 
-				throw new ActionError({
-					code: "MS_ERROR",
-					message: "There's been an error. Please try again later.",
-				});
-			}
+			// 	throw new ActionError({
+			// 		code: "MS_ERROR",
+			// 		message: "There's been an error. Please try again later.",
+			// 	});
+			// }
 
 			// const thanksSubject = `Thanks ${input.name}, I've Received Your Message!`;
 			// const thanksRecipients = [new Recipient(input.email, input.name)];
