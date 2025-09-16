@@ -1,22 +1,13 @@
 ---
+import { Models } from "@/config";
+
 import BaseLayout from "@/layouts/BaseLayout";
 import Container from "@/components/layout/Container";
-import HeadingBase from "@/components/sections/HeadingBase";
+import HeadingBase from "@/components/sections/text/HeadingBase";
 import Image from "@/components/images/Image";
 import Metadata from "@/components/sections/Metadata";
 import Padding from "@/components/layout/Padding";
 import Section from "@/components/layout/Section";
-
-const models = [
-	{
-		title: "Classic",
-		description: "These are faithful restorations of original models, retaining the timeless look and feel of the early Broncos while upgrading essential components for safety and performance.",
-	},
-	{
-		title: "Custom",
-		description: "For those who want something unique, we offer custom builds tailored to individual specifications. Choose your engine, transmission, suspension, paint, and more.",
-	},
-];
 
 const imagesIsolated = [
 	"https://cdn.cosmicjs.com/ad51ce60-a12b-11ef-b5a0-93db72e2be98-bronco-isolated_08.png",
@@ -40,7 +31,7 @@ const imagesNormal = [
 ];
 ---
 
-<BaseLayout bgColor="bg-stone-100" footerPadding={false} transparentHeader={true}>
+<BaseLayout>
 	<Padding>
 		<Section>
 			<Container>
@@ -97,7 +88,7 @@ const imagesNormal = [
 
 				<div class="lg:w-3/4 grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8 xl:gap-12 mt-16">
 					{
-						models.map((m) => (
+						Models.map((m) => (
 							<div class="relative space-y-5 group p-6 border border-stone-400/20 rounded-xl hover:bg-stone-50 transition-colors duration-300">
 								<div class="h5">{m.title}</div>
 								<div class="font-light leading-relaxed">{m.description}</div>

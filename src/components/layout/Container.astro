@@ -1,15 +1,11 @@
 ---
 interface Props {
 	size?: "small" | "medium" | "large";
-	fullWidth?: boolean;
 	classes?: string;
 }
-const { fullWidth = false, size = "medium", classes, ...attrs } = Astro.props;
+const { size = "medium", classes, ...attrs } = Astro.props;
 ---
 
-<div
-	class:list={["mx-auto lg:px-12 md:px-8", size == "medium" && "max-w-[90rem] 2xl:max-w-[96rem]", size == "small" && "max-w-[80rem] 2xl:max-w-[86rem]", size == "large" && "max-w-[100rem] 2xl:max-w-[106rem]", fullWidth ? "px-0" : "px-5", classes]}
-	{...attrs}
->
+<div class:list={["mx-auto px-5 lg:px-12 md:px-8", size == "medium" && "max-w-[90rem] 2xl:max-w-[96rem]", size == "small" && "max-w-[80rem] 2xl:max-w-[86rem]", size == "large" && "max-w-[100rem] 2xl:max-w-[106rem]", classes]} {...attrs}>
 	<slot />
 </div>

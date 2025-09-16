@@ -1,42 +1,13 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout";
-import ButtonLink from "@/components/buttons/ButtonLink";
 import Container from "@/components/layout/Container";
 import Image from "@/components/images/Image";
 import Padding from "@/components/layout/Padding";
-import LargeHeading from "@/components/sections/text/LargeHeading";
-import Metadata from "@/components/sections/Metadata";
 import Paragraph from "@/components/sections/text/Paragraph";
 import Section from "@/components/layout/Section";
-
-const items = ["https://cdn.cosmicjs.com/d0cbd3c0-4c7c-11f0-8d02-d7de9448d6b1-R5C_6792.jpg", "https://cdn.cosmicjs.com/f52e18e0-4c7c-11f0-8d02-d7de9448d6b1-R5C_7715.jpg", "https://cdn.cosmicjs.com/e30ea990-4c7c-11f0-8d02-d7de9448d6b1-R5C_7357.jpg"];
-const items2 = ["", ""];
-const images = [
-	"https://cdn.cosmicjs.com/f48d4500-4c7c-11f0-8d02-d7de9448d6b1-R5C_7804.jpg",
-	"https://cdn.cosmicjs.com/f4c93c90-4c7c-11f0-8d02-d7de9448d6b1-R5C_7873.jpg",
-	"https://cdn.cosmicjs.com/bca10410-4c7c-11f0-8d02-d7de9448d6b1-R5C_6746.jpg",
-	"https://cdn.cosmicjs.com/c8a2e620-4c7c-11f0-8d02-d7de9448d6b1-R5C_6932.jpg",
-	"https://cdn.cosmicjs.com/c98d1f10-4c7c-11f0-8d02-d7de9448d6b1-R5C_6851.jpg",
-	"https://cdn.cosmicjs.com/c21cd310-4c7c-11f0-8d02-d7de9448d6b1-R5C_8190.jpg",
-];
-
-const team = [
-	"https://cdn.cosmicjs.com/c77e0540-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_131.jpg",
-	"https://cdn.cosmicjs.com/cd6724f0-4c7c-11f0-8d02-d7de9448d6b1-R5C_6738.jpg",
-	"https://cdn.cosmicjs.com/cdf6bac0-4c7c-11f0-8d02-d7de9448d6b1-R5C_6730.jpg",
-	"https://cdn.cosmicjs.com/98a64a70-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_070.jpg",
-	"https://cdn.cosmicjs.com/ce240c50-4c7c-11f0-8d02-d7de9448d6b1-R5C_7255.jpg",
-	"https://cdn.cosmicjs.com/efc053a0-4c7c-11f0-8d02-d7de9448d6b1-R5C_7339.jpg",
-	"https://cdn.cosmicjs.com/f0874d20-4c7c-11f0-8d02-d7de9448d6b1-R5C_7392.jpg",
-	"https://cdn.cosmicjs.com/f45e1eb0-4c7c-11f0-8d02-d7de9448d6b1-R5C_7291.jpg",
-	"https://cdn.cosmicjs.com/7817f0b0-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_022.jpg",
-	"https://cdn.cosmicjs.com/bf6b95c0-4c7c-11f0-8d02-d7de9448d6b1-R5C_6989.jpg",
-	"https://cdn.cosmicjs.com/c22dc300-4c7c-11f0-8d02-d7de9448d6b1-R5C_8279.jpg",
-	"https://cdn.cosmicjs.com/c3a85510-4c7c-11f0-8d02-d7de9448d6b1-R5C_6999.jpg",
-];
 ---
 
-<BaseLayout bgColor="bg-stone-100" marginTop={false} marginBottom={true}>
+<BaseLayout>
 	<Padding>
 		<Section>
 			<Container size="medium">
@@ -100,7 +71,7 @@ const team = [
 							We take pride in every Bronco we restore, ensuring that it's not only visually stunning but also built to perform at the highest level, whether you're cruising on the highway or exploring rugged trails.
 						</Paragraph>
 
-						<a href="/team" class="text-stone-950 text-lg font-bold">Let's Chat! &gt;</a>
+						<a href="/contact" class="text-stone-950 text-lg font-bold">Let's Chat! &gt;</a>
 					</div>
 				</div>
 			</Container>

@@ -8,7 +8,6 @@
 
 @theme inline {
     --font-sans: var(--font-manrope);
-	--font-heading: var(--font-manrope);
 
 	--color-rock-50: #f5f4f1;
 	--color-rock-100: #e7e1da;
@@ -44,9 +43,7 @@ body {
 	@apply font-sans text-black antialiased;
 }
 
-.is-pinned {
-	@apply bg-black/80 py-4 transition-all duration-300 ease-in-out;
-}
+.bp-img img { @apply rounded-xl; } /* rounded corners for bigger picture */
 
 /* alpinejs hide */
 [x-cloak] {

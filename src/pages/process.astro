@@ -1,13 +1,14 @@
 ---
+import { Process } from "@/config";
+
 import BaseLayout from "@/layouts/BaseLayout";
 import ButtonLink from "@/components/buttons/ButtonLink";
 import Container from "@/components/layout/Container";
-import HorizontalRule from "@/components/sections/HorizontalRule";
 import Image from "@/components/images/Image";
 import Padding from "@/components/layout/Padding";
 import Paragraph from "@/components/sections/text/Paragraph";
 import Section from "@/components/layout/Section";
-import SmallFeature from "@/components/sections/SmallFeature";
+import SmallFeature from "@/components/sections/feature/SmallFeature";
 
 const images = [
 	"https://cdn.cosmicjs.com/77d59080-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_026.jpg",
@@ -23,47 +24,13 @@ const shop = [
 	"https://cdn.cosmicjs.com/d30fa940-4c7c-11f0-8d02-d7de9448d6b1-R5C_7403.jpg",
 	"https://cdn.cosmicjs.com/cd6724f0-4c7c-11f0-8d02-d7de9448d6b1-R5C_6738.jpg",
 ];
-const features = [
-	{
-		title: "Frame-Off Restoration",
-		description: "We dismantle each Bronco down to its frame, inspecting every part and restoring it to factory standards or better.",
-	},
-	{
-		title: "VIN and Model Year",
-		description: "We retain the original VIN number and model year of each Bronco, making each vehicle a unique piece of automotive history.",
-	},
-	{
-		title: "Modern Performance",
-		description: "Each Bronco is upgraded with a new Ford Coyote 5.0 engine, offering exceptional power and reliability.",
-	},
-	{
-		title: "Exhaust & Transmission",
-		description: "Our Broncos feature custom dual exhaust systems paired with a new 10-speed transmission.",
-	},
-	{
-		title: "Electrical & Wiring",
-		description: "We install a factory-new wiring harness to ensure the electrical systems meet modern safety standards while retaining the classic Bronco feel.",
-	},
-	{
-		title: "Suspension & Brakes",
-		description: "We enhance ride quality and performance with Bilstein suspension and Hydra-boost brakes, ensuring smooth handling and reliable stopping power.",
-	},
-	{
-		title: "Off-Road Ready",
-		description: "Each Bronco features 33” tires and a 3” lift for superior off-road performance and an unmistakable stance.",
-	},
-	{
-		title: "Custom Paint",
-		description: "Our state-of-the-art in-house paint center allows us to offer custom paint jobs tailored to your vision, ensuring every Bronco has a stunning finish.",
-	},
-];
 ---
 
-<BaseLayout bgColor="bg-stone-100" marginTop={false} marginBottom={false} contactBg={false}>
+<BaseLayout>
 	<Padding>
 		<Section>
 			<Container>
-				<h1 class="col-span-2 md:w-3/4 md:text-balance mb-8 lg:mb-12">At Atlas Broncos, we offer a complete frame-off restoration that leaves no detail untouched.</h1>
+				<h1 class="col-span-2 md:w-3/4 md:text-balance mb-8 lg:mb-12">At Atlas Broncos, we offer a <span>complete frame-off restoration</span> that leaves no detail untouched.</h1>
 			</Container>
 
 			<Container classes="relative z-10">
@@ -92,7 +59,7 @@ const features = [
 					<div class="col-span-2 lg:col-span-1 space-y-6 mt-20">
 						<div class="grid sm:grid-cols-2 gap-6">
 							{
-								features.map((f) => (
+								Process.map((f) => (
 									<SmallFeature>
 										<div slot="heading">{f.title}</div>
 										<div slot="description">{f.description}</div>
@@ -103,7 +70,7 @@ const features = [
 					</div>
 
 					<div class="flex justify-center col-span-2 mt-20">
-						<ButtonLink>Get Started!</ButtonLink>
+						<ButtonLink href="/contact">Get Started!</ButtonLink>
 					</div>
 				</div>
 			</Container>
@@ -111,7 +78,7 @@ const features = [
 	</Padding>
 
 	<Container>
-		<div class="grid grid-cols-6 gap-4 md:gap-6 mb-4 md:mb-6">
+		<div class="grid grid-cols-6 gap-4 md:gap-6 mb-4 md:mb-10">
 			{shop.map((i) => <Image src={i} pictureClass="col-span-3 sm:col-span-2" class="object-cover w-full h-full aspect-square" sizes="33vw" />)}
 		</div>
 	</Container>

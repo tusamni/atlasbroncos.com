@@ -1,34 +1,20 @@
 ---
 import "/src/assets/styles/_base.css";
 import "bigger-picture/css";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
 
 import BaseHead from "@/components/layout/BaseHead";
-import ContactForm from "@/components/sections/ContactForm";
-import Container from "@/components/layout/Container";
-import Button from "@/components/buttons/Button";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import Image from "@/components/images/Image";
-import Map from "@/components/backgrounds/Map";
-import Padding from "@/components/layout/Padding";
-import Section from "@/components/layout/Section";
 
 // props
 export interface Props {
 	title?: string;
 	description?: string;
-	contactForm?: boolean;
-	transparentHeader?: boolean;
-	marginTop?: boolean;
-	marginBottom?: boolean;
-	footerPadding?: boolean;
-	bgColor: string;
 }
 
-const { title, description, contactForm = true, transparentHeader = false, marginTop = true, marginBottom = false, bgColor } = Astro.props;
+const { title, description } = Astro.props;
+
+const isContact = Astro.url.pathname.includes("contact");
 ---
 
 <html lang="en">
@@ -36,16 +22,16 @@ const { title, description, contactForm = true, transparentHeader = false, margi
 		<BaseHead title={title} description={description} />
 	</head>
 
-	<body class:list={["min-h-screen", bgColor]}>
+	<body class:list={["min-h-screen bg-stone-100"]}>
 		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5W2NH2T7" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-		<Header headerLight={transparentHeader ? true : false} />
+		<Header />
 
-		<main class:list={[marginTop && "pt-8 lg:pt-32", marginBottom && "pb-8 lg:pb-32"]}>
+		<main>
 			<slot />
 		</main>
 
-		<Footer contactForm={contactForm} />
+		<Footer contactForm={isContact ? false : true} />
 
 		<script>
 			// modal

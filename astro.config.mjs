@@ -12,22 +12,10 @@ export default defineConfig({
 		fonts: [
 			{
 				provider: fontProviders.google(),
-				name: "Inter",
-				cssVariable: "--font-inter",
-				weights: ["100 900"],
-			},
-			{
-				provider: fontProviders.google(),
 				name: "Manrope",
 				cssVariable: "--font-manrope",
 				weights: ["200 800"],
-			},
-			{
-				provider: fontProviders.google(),
-				name: "Noto Sans",
-				cssVariable: "--font-heading",
-				weights: ["100 900"],
-			},
+			}
 		],
 	},
 	integrations: [alpinejs(), sitemap()],

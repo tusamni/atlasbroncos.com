@@ -1,33 +1,18 @@
 ---
 interface Props {
 	theme?: "light" | "dark" | "alt";
-	arrow?: boolean;
-	shadow?: boolean;
 	classes?: string;
 }
 
-const { theme = "dark", arrow = false, shadow = true, classes, ...attrs } = Astro.props;
+const { theme = "dark", classes, ...attrs } = Astro.props;
 ---
 
-<button class:list={["btn group", classes, theme == "dark" && "btn-dark", theme == "light" && "btn-light", theme == "alt" && "btn-alt"]} {...attrs}>
-	{
-		shadow && (
-			<div class="btn-shadow">
-				<div />
-			</div>
-		)
-	}
+<button class:list={["btn group", classes]} {...attrs}>
+	<div class="btn-shadow">
+		<div></div>
+	</div>
 
-	<div class="btn-text">
+	<div class:list={["btn-text", theme == "dark" && "btn-dark", theme == "light" && "btn-light", theme == "alt" && "btn-alt"]}>
 		<slot />
 	</div>
-	<!-- {
-		arrow && (
-			<span class="btn-arrow">
-				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-					<path d="M14.877 18.359l5.657-5.657a1 1 0 0 0 0-1.414l-5.657-5.657a1 1 0 0 0-1.402.012 1 1 0 0 0-.012 1.402l3.95 3.95H4.17a1 1 0 0 0-1 1 1 1 0 0 0 1 1h13.243l-3.95 3.95a1 1 0 0 0-.305.711 1 1 0 0 0 .293.716 1 1 0 0 0 .716.293 1 1 0 0 0 .711-.305z" />
-				</svg>
-			</span>
-		)
-	} -->
 </button>
