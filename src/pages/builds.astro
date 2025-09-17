@@ -9,16 +9,16 @@ import Metadata from "@/components/sections/Metadata";
 import Padding from "@/components/layout/Padding";
 import Section from "@/components/layout/Section";
 
-const imagesIsolated = [
-	"https://cdn.cosmicjs.com/ad51ce60-a12b-11ef-b5a0-93db72e2be98-bronco-isolated_08.png",
-	"https://cdn.cosmicjs.com/ad19a760-a12b-11ef-b5a0-93db72e2be98-bronco-isolated_01.png",
-	"https://cdn.cosmicjs.com/ad594870-a12b-11ef-b5a0-93db72e2be98-bronco-isolated_02.png",
-	"https://cdn.cosmicjs.com/ad548d80-a12b-11ef-b5a0-93db72e2be98-bronco-isolated_03.png",
-	"https://cdn.cosmicjs.com/ad3d5c00-a12b-11ef-b5a0-93db72e2be98-bronco-isolated_04.png",
-	"https://cdn.cosmicjs.com/ad247cd0-a12b-11ef-b5a0-93db72e2be98-bronco-isolated_05.png",
-	"https://cdn.cosmicjs.com/ad44d610-a12b-11ef-b5a0-93db72e2be98-bronco-isolated_06.png",
-	"https://cdn.cosmicjs.com/ad37b6b0-a12b-11ef-b5a0-93db72e2be98-bronco-isolated_07.png",
-];
+// const imagesIsolated = [
+// 	"https://cdn.cosmicjs.com/ad51ce60-a12b-11ef-b5a0-93db72e2be98-bronco-isolated_08.png",
+// 	"https://cdn.cosmicjs.com/ad19a760-a12b-11ef-b5a0-93db72e2be98-bronco-isolated_01.png",
+// 	"https://cdn.cosmicjs.com/ad594870-a12b-11ef-b5a0-93db72e2be98-bronco-isolated_02.png",
+// 	"https://cdn.cosmicjs.com/ad548d80-a12b-11ef-b5a0-93db72e2be98-bronco-isolated_03.png",
+// 	"https://cdn.cosmicjs.com/ad3d5c00-a12b-11ef-b5a0-93db72e2be98-bronco-isolated_04.png",
+// 	"https://cdn.cosmicjs.com/ad247cd0-a12b-11ef-b5a0-93db72e2be98-bronco-isolated_05.png",
+// 	"https://cdn.cosmicjs.com/ad44d610-a12b-11ef-b5a0-93db72e2be98-bronco-isolated_06.png",
+// 	"https://cdn.cosmicjs.com/ad37b6b0-a12b-11ef-b5a0-93db72e2be98-bronco-isolated_07.png",
+// ];
 const imagesNormal = [
 	"https://cdn.cosmicjs.com/e9114740-cdf5-11ef-bee4-3bb1d3c55332-blue-bronco-carousel-original_004.jpg",
 	"https://cdn.cosmicjs.com/e8af9f40-cdf5-11ef-bee4-3bb1d3c55332-blue-bronco-carousel-original_001.jpg",
@@ -54,7 +54,14 @@ const imagesNormal = [
 									{
 										imagesNormal.map((i) => (
 											<div class="embla__slide text-center basis-full sm:basis-sm md:basis-xl lg:basis-2xl grow-0 shrink-0 h-full">
-												<Image src={i} rounded={true} pictureClass="w-full h-full" class="embla__slide__number w-full h-full object-cover" sizes="(min-width: 768px) 90vw, (min-width: 1280px) 1050px, 100vw" lazy={false} />
+												<Image
+													src={i}
+													rounded={true}
+													pictureClass="w-full h-full"
+													class="embla__slide__number w-full h-full object-cover"
+													sizes="(min-width: 640px) 400px, (min-width: 768px) 600px, (min-width: 1024px) 715px, 90vw"
+													lazy={false}
+												/>
 											</div>
 										))
 									}

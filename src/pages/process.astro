@@ -35,9 +35,9 @@ const shop = [
 
 			<Container classes="relative z-10">
 				<div class="grid grid-cols-12 gap-4 md:gap-6">
-					<Image src="https://cdn.cosmicjs.com/9abe2df0-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_076.jpg" sizes="100vw" pictureClass="col-span-6" class="w-full h-full object-cover" />
-					<Image src="https://cdn.cosmicjs.com/98a64a70-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_070.jpg" sizes="100vw" pictureClass="col-span-6" class="w-full h-full object-cover" />
-					{images.map((i) => <Image src={i} pictureClass="shadow-2xl col-span-6 sm:col-span-3" class="object-cover w-full h-full sm:aspect-square" sizes="20vw" />)}
+					<Image src="https://cdn.cosmicjs.com/9abe2df0-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_076.jpg" sizes="40vw" pictureClass="col-span-6" class="w-full h-full object-cover" />
+					<Image src="https://cdn.cosmicjs.com/98a64a70-97be-11ef-b5a0-93db72e2be98-2024-10-02-studio-blue-bronco_070.jpg" sizes="40vw" pictureClass="col-span-6" class="w-full h-full object-cover" />
+					{images.map((i) => <Image src={i} pictureClass="shadow-2xl col-span-6 sm:col-span-3" class="object-cover w-full h-full sm:aspect-square" sizes="(min-width:640px) 20vw, 40vw" />)}
 				</div>
 			</Container>
 
@@ -79,7 +79,7 @@ const shop = [
 
 	<Container>
 		<div class="grid grid-cols-6 gap-4 md:gap-6 mb-4 md:mb-10">
-			{shop.map((i) => <Image src={i} pictureClass="col-span-3 sm:col-span-2" class="object-cover w-full h-full aspect-square" sizes="33vw" />)}
+			{shop.map((i) => <Image src={i} pictureClass="col-span-3 sm:col-span-2" class="object-cover w-full h-full aspect-square" sizes="(min-width:640px) 30vw, 40vw" />)}
 		</div>
 	</Container>
 </BaseLayout>
