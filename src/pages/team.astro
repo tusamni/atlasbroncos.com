@@ -30,7 +30,14 @@ import LargeFeature from "@/components/sections/feature/LargeFeature";
 									{
 										Team.map((i) => (
 											<div class="embla__slide text-center basis-xs sm:basis-sm md:basis-md grow-0 shrink-0 h-full">
-												<Image src={i.url} pictureClass="w-full h-full" class="embla__slide__number w-full h-full object-cover" rounded={true} sizes="(min-width: 768px) 90vw, (min-width: 1280px) 1050px, 100vw" lazy={false} />
+												<Image
+													src={i.url}
+													pictureClass="w-full h-full"
+													class="embla__slide__number w-full h-full object-cover"
+													rounded={true}
+													sizes="(min-width: 640px) 400px, (min-width: 768px) 490px, (min-width: 1536px) 520px, 333px"
+													lazy={false}
+												/>
 												<div class="flex flex-col mt-2">
 													<div class="font-semibold text-sm">{i.name}</div>
 													<div class=" text-sm">{i.position}</div>
