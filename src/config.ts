@@ -6,8 +6,8 @@ export const siteConfig = {
 	name: "Atlas Broncos",
 	nameShort: "Atlas",
 	phone: {
-		base: "+15126090471",
-		formatted: "(512) 609-0471",
+		base: "+15122003850",
+		formatted: "(512) 200-3850",
 	},
 	email: {
 		base: "info@atlasbroncos.com",
