@@ -12,6 +12,12 @@ export const siteConfig = {
 	email: {
 		base: "info@atlasbroncos.com",
 	},
+	address: {
+		street: "12500 County Road 3100",
+		city: "Rolla",
+		state: "MO",
+		zip: "65401",
+	},
 	url: "https://atlasbroncos.com",
 	description: "Atlas Broncos",
 };

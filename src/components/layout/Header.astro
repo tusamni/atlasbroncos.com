@@ -1,5 +1,5 @@
 ---
-import { Navigation } from "@/config";
+import { siteConfig, Navigation } from "@/config";
 import ButtonLink from "@/components/buttons/ButtonLink";
 import Container from "@/components/layout/Container";
 ---
@@ -85,7 +85,7 @@ import Container from "@/components/layout/Container";
 					<div class="flex justify-between items-center mt-10">
 						<ButtonLink href="/contact">Let's Chat!</ButtonLink>
 
-						<div class="text-lg font-medium tracking-tighter"><a href="tel:123-456-7890">(800) 123-4567</a></div>
+						<div class="text-lg font-medium tracking-tighter"><a href={`tel:${siteConfig.phone.base}`}>{siteConfig.phone.formatted}</a></div>
 					</div>
 				</Container>
 			</div>
