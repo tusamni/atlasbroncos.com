@@ -40,7 +40,7 @@ const { title, description, image = "/blog-placeholder-1.jpg" } = Astro.props;
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
 
-<script type="text/partytown">
+<script>
 	(function (w, d, s, l, i) {
 		w[l] = w[l] || [];
 		w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
