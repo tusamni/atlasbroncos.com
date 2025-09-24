@@ -61,12 +61,7 @@ export const Team = [
 		url: "https://cdn.cosmicjs.com/f1a23300-4c7c-11f0-8d02-d7de9448d6b1-R5C_7381.jpg",
 		name: "John Smith",
 		position: "CEO",
-	},
-	{
-		url: "https://cdn.cosmicjs.com/f25ef350-4c7c-11f0-8d02-d7de9448d6b1-R5C_7310.jpg",
-		name: "John Smith",
-		position: "CEO",
-	},
+	}
 ]
 
 export const Timeline = [
