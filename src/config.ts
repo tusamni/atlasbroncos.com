@@ -27,10 +27,10 @@ export const Navigation = [
 		title: "Home",
 		href: "/"
 	},
-	{
-		title: "Builds",
-		href: "/builds"
-	},
+	// {
+	// 	title: "Builds",
+	// 	href: "/builds"
+	// },
 	{
 		title: "Process",
 		href: "/process"
