@@ -200,12 +200,12 @@ export const Specifications = [
 		description: "",
 		items: [
 			{
-				title: "Paint",
-				description: "Custom",
+				title: "Paint *",
+				description: "Customize to your liking!",
 			},
 			{
-				title: "Wheels",
-				description: "Custom",
+				title: "Wheels *",
+				description: "Customize to your liking!",
 			},
 			{
 				title: "Fenders",
@@ -220,12 +220,12 @@ export const Specifications = [
 				description: "Battery Minder",
 			},
 			{
-				title: "Top",
-				description: "AB custom bikini & Rampage zip tops",
+				title: "Top *",
+				description: "AB custom bikini or Rampage zip tops",
 			},
 			{
-				title: "Bumpers",
-				description: "",
+				title: "Bumpers *",
+				description: "Customize to your liking!",
 			},
 		]
 	},
@@ -242,7 +242,7 @@ export const Specifications = [
 				description: "New factory wiring harness",
 			},
 			{
-				title: "Seating",
+				title: "Seating *",
 				description: "Premium full leather",
 			},
 			{
@@ -250,7 +250,7 @@ export const Specifications = [
 				description: "Powered",
 			},
 			{
-				title: "Stereo",
+				title: "Stereo *",
 				description: "Modern bluetooth stereo",
 			},
 			{
