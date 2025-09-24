@@ -133,3 +133,134 @@ export const Models = [
 		description: "For those who want something unique, we offer custom builds tailored to individual specifications. Choose your engine, transmission, suspension, paint, and more.",
 	},
 ];
+
+export const Specifications = [
+	{
+		title: "Powertrain",
+		description: "",
+		items: [
+			{
+				title: "Engine",
+				description: "Coyote Gen 3 5.0L",
+			},
+			{
+				title: "Transmission",
+				description: "Ford 10-Speed",
+			},
+			{
+				title: "Transfer Case",
+				description: "Updated Dana 20",
+			},
+			{
+				title: "Exhaust",
+				description: "Dual Magnaflow",
+			},
+			{
+				title: "Headers",
+				description: "Custom ceramic coated",
+			},
+		]
+	},
+	{
+		title: "Chassis",
+		description: "",
+		items: [
+			{
+				title: "Frame",
+				description: "Original Ford frame with VIN painstakingly refurbished",
+			},
+			{
+				title: "Front Axle",
+				description: "Dana 44",
+			},
+			{
+				title: "Rear Axle",
+				description: "Ford 9\"",
+			},
+			{
+				title: "Suspension",
+				description: "Atlas proprietary Bilstein configuration with 3\" lift",
+			},
+			{
+				title: "Brakes",
+				description: "Hydroboost four wheel disc brakes",
+			},
+			{
+				title: "Steering",
+				description: "Hydroboost power steering",
+			},
+			{
+				title: "Tires",
+				description: "33\" x 12.5\" x 15\" All Terrain Tires",
+			},
+		]
+	},
+	{
+		title: "Exterior",
+		description: "",
+		items: [
+			{
+				title: "Paint",
+				description: "Custom",
+			},
+			{
+				title: "Wheels",
+				description: "Custom",
+			},
+			{
+				title: "Fenders",
+				description: "",
+			},
+			{
+				title: "Side Steps",
+				description: "AMP powered side steps",
+			},
+			{
+				title: "Charging",
+				description: "Battery Minder",
+			},
+			{
+				title: "Top",
+				description: "AB custom bikini & Rampage zip tops",
+			},
+			{
+				title: "Bumpers",
+				description: "",
+			},
+		]
+	},
+	{
+		title: "Interior",
+		description: "",
+		items: [
+			{
+				title: "Tub",
+				description: "Original factory tub with new parts",
+			},
+			{
+				title: "Wiring",
+				description: "New factory wiring harness",
+			},
+			{
+				title: "Seating",
+				description: "Premium full leather",
+			},
+			{
+				title: "Windows",
+				description: "Powered",
+			},
+			{
+				title: "Stereo",
+				description: "Modern bluetooth stereo",
+			},
+			{
+				title: "Instruments",
+				description: "Digital instrument cluster",
+			},
+			{
+				title: "Cage",
+				description: "Safety cage",
+			},
+		]
+	}
+]
