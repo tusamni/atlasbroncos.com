@@ -1,0 +1,23 @@
+import BiggerPicture from "bigger-picture";
+
+let bp = BiggerPicture({
+	target: document.body,
+});
+
+// function to open BiggerPicture
+function openGallery(e) {
+	e.preventDefault();
+	bp.open({
+		items: imageLinks,
+		el: e.currentTarget,
+		scale: 0.8,
+	});
+}
+
+// open (will be a child of the target element above)
+let imageLinks = document.querySelectorAll(`.gallery img`);
+
+// add click listener to open BiggerPicture
+for (let link of imageLinks) {
+	link.addEventListener("click", openGallery);
+}
