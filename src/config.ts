@@ -71,7 +71,7 @@ export const Team = [
 export const Timeline = [
 	{
 		title: "Experience",
-		content: "Our team collectively boasts over 180 years of experience in automotive restoration excellence.",
+		content: "Our team collectively boasts over 80 years of experience in automotive restoration excellence.",
 	},
 	{
 		title: "Heritage",
