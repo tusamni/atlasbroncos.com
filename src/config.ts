@@ -208,10 +208,6 @@ export const Specifications = [
 				description: "Customize to your liking!",
 			},
 			{
-				title: "Fenders",
-				description: "",
-			},
-			{
 				title: "Side Steps",
 				description: "AMP powered side steps",
 			},
