@@ -14,7 +14,7 @@
 	"debug.console.fontSize": 10,
 	"workbench.preferredDarkColorTheme": "GitHub Dark",
 	"workbench.preferredLightColorTheme": "GitHub Dark",
-	"workbench.iconTheme": "monospace",
+	"workbench.iconTheme": "material-icon-theme",
 	"window.autoDetectColorScheme": true,
 	"css.lint.unknownAtRules": "ignore",
 	"[css]": {
