@@ -58,7 +58,6 @@ export const server = {
 			const mailerSend = new MailerSend({
 				apiKey: import.meta.env.MAILERSEND_TOKEN,
 			});
-			// const sentFrom = new Sender( siteConfig.name);
 			const sentFrom = new Sender(siteConfig.email.base, siteConfig.name);
 
 			// set personalization variables
@@ -82,17 +81,7 @@ export const server = {
 			const leadParams = new EmailParams().setFrom(sentFrom).setTo(leadRecipients).setBcc(leadBcc).setReplyTo(leadReplyTo).setSubject(leadSubject).setPersonalization(leadPersonalization).setTemplateId("3zxk54v15mz4jy6v");
 
 			// send the contact email
-			try {
-				await mailerSend.email.send(leadParams);
-				console.log("lead email sent");
-			} catch (error) {
-				console.error(error);
-
-				throw new ActionError({
-					code: "MS_ERROR",
-					message: "There's been an error. Please try again later.",
-				});
-			}
+			await mailerSend.email.send(leadParams).then((response) => console.log(response.body)).catch((error) => console.error(error));
 
 			const thanksSubject = `Thanks ${input.name}, We've Received Your Message!`;
 			const thanksRecipients = [new Recipient(input.email, input.name)];
