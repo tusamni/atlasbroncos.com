@@ -2,7 +2,7 @@
 	@apply relative w-fit rounded-lg hover:cursor-pointer;
 
 	div.btn-shadow {
-		@apply absolute -inset-x-6 -inset-y-3;
+		@apply absolute -inset-x-6 -inset-y-3 pointer-events-none;
 
 		div {
 			@apply -z-10 w-full h-full max-w-sm mx-auto lg:mx-0 blur-lg bg-gradient-to-r opacity-20 from-gold-drop-200 via-orange-300 to-gold-drop-200 group-hover:opacity-40 transition-all duration-300;
