@@ -9,7 +9,7 @@ import Container from "@/components/layout/Container";
 		<Container>
 			<div class="relative flex md:items-center justify-between flex-col pt-0 md:flex-row">
 				<div class="w-full md:w-auto flex flex-row items-center justify-between text-gray-900 text-sm">
-					<a class="shrink-0 w-48 sm:w-56 relative z-10 text-black" :class="{'!text-black': open }" href="/" title="Atlas Broncos Homepage">
+					<a class="shrink-0 w-48 lg:w-56 relative z-10 text-black" :class="{'!text-black': open }" href="/" title="Atlas Broncos Homepage">
 						<img src="https://cdn.cosmicjs.com/cc562a90-ea5a-11ef-a238-c1ad09f4b1ad-black-small.png" />
 					</a>
 
@@ -37,7 +37,10 @@ import Container from "@/components/layout/Container";
 					</nav>
 				</div>
 
-				<ButtonLink classes="hidden md:block" href="/contact">Contact</ButtonLink>
+				<div class="hidden md:flex items-center gap-4">
+					<div class="text-sm lg:text-base"><a href={`tel:${siteConfig.phone.base}`}>{siteConfig.phone.formatted}</a></div>
+					<ButtonLink href="/contact">Contact</ButtonLink>
+				</div>
 			</div>
 		</Container>
 
