@@ -62,11 +62,12 @@ export const server = {
 
 			// set personalization variables
 			const leadSubject = `New Lead from atlasbroncos.com - ${input.name}`;
-			const leadRecipients = [new Recipient("erik@eriksolsen.com", "Erik Olsen")];
+			const leadRecipients = [new Recipient(siteConfig.email.base, siteConfig.name)];
+			const leadBcc = [new Recipient("erik@eriksolsen.com", "Erik Olsen")];
 			const leadReplyTo = new Sender(input.email, input.name);
 			const leadPersonalization = [
 				{
-					email: "erik@eriksolsen.com",
+					email: siteConfig.email.base,
 					data: {
 						name: input.name,
 						email: input.email,
@@ -77,7 +78,7 @@ export const server = {
 					},
 				},
 			];
-			const leadParams = new EmailParams().setFrom(sentFrom).setTo(leadRecipients).setReplyTo(leadReplyTo).setSubject(leadSubject).setPersonalization(leadPersonalization).setTemplateId("3zxk54v15mz4jy6v");
+			const leadParams = new EmailParams().setFrom(sentFrom).setTo(leadRecipients).setBcc(leadBcc).setReplyTo(leadReplyTo).setSubject(leadSubject).setPersonalization(leadPersonalization).setTemplateId("3zxk54v15mz4jy6v");
 
 			// send the contact email
 			try {
