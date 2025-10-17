@@ -59,7 +59,7 @@ export const server = {
 				apiKey: import.meta.env.MAILERSEND_TOKEN,
 			});
 			// const sentFrom = new Sender( siteConfig.name);
-			const sentFrom = new Sender("info@atlasbroncos.com", siteConfig.name);
+			const sentFrom = new Sender(siteConfig.email.base, siteConfig.name);
 
 			// set personalization variables
 			const leadSubject = `New Lead from atlasbroncos.com - ${input.name}`;
@@ -79,7 +79,7 @@ export const server = {
 					},
 				},
 			];
-			const leadParams = new EmailParams().setFrom(sentFrom).setTo(leadRecipients).setReplyTo(leadReplyTo).setSubject(leadSubject).setPersonalization(leadPersonalization).setTemplateId("3zxk54v15mz4jy6v");
+			const leadParams = new EmailParams().setFrom(sentFrom).setTo(leadRecipients).setBcc(leadBcc).setReplyTo(leadReplyTo).setSubject(leadSubject).setPersonalization(leadPersonalization).setTemplateId("3zxk54v15mz4jy6v");
 
 			// send the contact email
 			try {
