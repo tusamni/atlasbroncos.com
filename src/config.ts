@@ -10,7 +10,8 @@ export const siteConfig = {
 		formatted: "(512) 200-3850",
 	},
 	email: {
-		base: "info@atlasbroncos.com",
+		//base: "info@atlasbroncos.com",
+		base: "erik@eriksolsen.com",
 	},
 	address: {
 		street: "12500 County Road 3100",

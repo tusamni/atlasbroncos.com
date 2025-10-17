@@ -58,7 +58,8 @@ export const server = {
 			const mailerSend = new MailerSend({
 				apiKey: import.meta.env.MAILERSEND_TOKEN,
 			});
-			const sentFrom = new Sender(siteConfig.email.base, siteConfig.name);
+			// const sentFrom = new Sender( siteConfig.name);
+			const sentFrom = new Sender("info@atlasbroncos.com", siteConfig.name);
 
 			// set personalization variables
 			const leadSubject = `New Lead from atlasbroncos.com - ${input.name}`;
