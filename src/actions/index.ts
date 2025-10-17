@@ -78,11 +78,12 @@ export const server = {
 					},
 				},
 			];
-			const leadParams = new EmailParams().setFrom(sentFrom).setTo(leadRecipients).setBcc(leadBcc).setReplyTo(leadReplyTo).setSubject(leadSubject).setPersonalization(leadPersonalization).setTemplateId("3zxk54v15mz4jy6v");
+			const leadParams = new EmailParams().setFrom(sentFrom).setTo(leadRecipients).setReplyTo(leadReplyTo).setSubject(leadSubject).setPersonalization(leadPersonalization).setTemplateId("3zxk54v15mz4jy6v");
 
 			// send the contact email
 			try {
 				await mailerSend.email.send(leadParams);
+				console.log("lead email sent");
 			} catch (error) {
 				console.error(error);
 
@@ -108,6 +109,7 @@ export const server = {
 			// send the thanks email
 			try {
 				await mailerSend.email.send(thanksParams);
+				console.log("thanks email sent");
 			} catch (error) {
 				console.error(error);
 			}
