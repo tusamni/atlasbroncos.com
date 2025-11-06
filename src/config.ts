@@ -230,8 +230,8 @@ export const Specifications = [
 		description: "",
 		items: [
 			{
-				title: "Tub",
-				description: "Original factory tub with new parts",
+				title: "Body",
+				description: "Original factory body with new parts",
 			},
 			{
 				title: "Wiring",
